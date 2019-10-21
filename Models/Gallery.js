@@ -4,7 +4,8 @@ Schema = mongoose.Schema;
 const GallerySchema = new Schema({
   name: String,
   category: String,
-  order: Array
+  order: Array,
+  photos: Array
 });
 
 const Gallery = mongoose.model("Gallery", GallerySchema);

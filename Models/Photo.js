@@ -3,6 +3,7 @@ Schema = mongoose.Schema;
 
 const PhotoSchema = new Schema({
   caption: String,
+  category: String,
   gallery: String,
   searchTags: Array,
   location: String
