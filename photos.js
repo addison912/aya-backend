@@ -9,6 +9,13 @@
 
 // curl -O
 
+// downloads = []
+// document.querySelectorAll("#page-gallery img").forEach(item => {
+//   let category = !!document.querySelector(".current_page_ancestor")? document.querySelector(".current_page_ancestor").innerText : document.querySelector(".current_page_item").innerText;
+//   let gallery = document.querySelector(".current_page_item").innerText;
+//   downloads.push({"location":item.getAttribute("src").match(/uploads\/.+\/(.+)$/)[1], "caption":item.getAttribute("alt"), category, gallery, searchTags: []})});
+// downloads = JSON.stringify(downloads)
+
 const landing = [
   "http://www.ayabrackett.com/wp-content/uploads/2013/04/07opener_albuquerqueballoons.jpg",
   "http://www.ayabrackett.com/wp-content/uploads/2014/09/AliceBed.jpg",
