@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, "dist")));
 app.use("/uploads", express.static("uploads"));
+app.use("/assets", express.static("assets"));
 
 // app.post("/verify", verifyToken, (req, res) => {
 //   let verified = jwt.verify(req.token, "waffles");

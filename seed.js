@@ -4133,20 +4133,20 @@ let galleries = [
   }
 ];
 
-simpleCreate(db.Photo, photos, "photos");
-// simpleCreate(db.Gallery, galleries, "galleries");
+// simpleCreate(db.Photo, photos, "photos");
+// // simpleCreate(db.Gallery, galleries, "galleries");
 
-function simpleCreate(DB, object_list, name) {
-  DB.deleteMany({}, (err, objects) => {
-    DB.create(object_list, (err, objects) => {
-      if (err) {
-        return console.log("err", err);
-      }
-      console.log("deleted all", name);
-      console.log("created", objects.length, name);
-    });
-  });
-}
+// function simpleCreate(DB, object_list, name) {
+//   DB.deleteMany({}, (err, objects) => {
+//     DB.create(object_list, (err, objects) => {
+//       if (err) {
+//         return console.log("err", err);
+//       }
+//       console.log("deleted all", name);
+//       console.log("created", objects.length, name);
+//     });
+//   });
+// }
 
 db.Gallery.deleteMany({}, function(err, objects) {
   console.log("deleted all galleries");
