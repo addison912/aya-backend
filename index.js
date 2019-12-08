@@ -16,6 +16,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, "dist")));
+
+const galleryRoutes = require("./routes/gallery");
+// app.use("/photo", routes.user);
+app.use("/api/gallery", galleryRoutes);
 app.use("/uploads", express.static("uploads"));
 app.use("/assets", express.static("assets"));
 

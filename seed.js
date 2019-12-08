@@ -4047,6 +4047,7 @@ let galleries = [
     name: "Portraits",
     category: "Portraits"
   },
+  { name: "Home", category: "Home" },
   {
     name: "Nest",
     category: "Advertising"
