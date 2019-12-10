@@ -16,3 +16,15 @@
     url("fonts/PitchMedium.ttf") format("truetype"),
     url("fonts/PitchMedium.svg#PitchMedium") format("svg");
 }
+
+@font-face {
+  font-family: "GT America Bold";
+  src: url("fonts/gt-america-bold.woff2") format("woff2"),
+    url("fonts/gt-america-bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "GT America";
+  src: url("fonts/gt-america-regular-webfont.woff2") format("woff2"),
+    url("fonts/gt-america-regular-webfont.woff") format("woff");
+}
