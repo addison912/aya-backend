@@ -1,4 +1,4 @@
-const Gallery = require("../models/Gallery");
+const Gallery = require("../Models/Gallery");
 
 module.exports = {
   index: (req, res) => {
