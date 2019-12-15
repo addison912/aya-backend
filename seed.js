@@ -1411,609 +1411,609 @@ let photos = [
   {
     location: "AyaBrackett_MSL_Holiday_1-775x468.jpg",
     caption: "Martha Stewart Living",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "AyaBrackett_MSL_Holiday_3-775x468.jpg",
     caption: "Martha Stewart Living",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "AyaBrackett_MSL_Holiday_2-775x468.jpg",
     caption: "Martha Stewart Living",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "AyaBrackett_MSL_Holiday_4-1-775x468.jpg",
     caption: "Martha Stewart Living",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "PDN-775x542.jpg",
     caption: "Photo District News",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "2016MandyAftelNYT_TS1-1-581x700.jpg",
     caption: "New York Times T Magazine",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "2016MandyAftelNYT_TS2-775x488.jpg",
     caption: "New York Times T Magazine",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "2016MandyAftelNYT_TS3-775x488.jpg",
     caption: "New York Times T Magazine",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "AyaBrackettBHG_1-2-775x522.jpg",
     caption: "Better Homes & Gardens",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "AyaBrackettBHG_2-775x522.jpg",
     caption: "Better Homes & Gardens",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "AyaBrackettBHG_3-775x522.jpg",
     caption: "Better Homes & Gardens",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "AyaBrackettBHG_4-775x522.jpg",
     caption: "Better Homes & Gardens",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "BonAppetit_Sept20151-775x527.jpg",
     caption: "Bon Appetit",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "BonAppetit_Sept2015_2-775x527.jpg",
     caption: "Bon Appetit",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "BonAppetit_Sept2015_3-775x527.jpg",
     caption: "Bon Appetit",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "LuckyPeach1.jpg",
     caption: "Lucky Peach",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "LuckyPeach2.jpg",
     caption: "Lucky Peach",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "LuckyPeach3.jpg",
     caption: "Lucky Peach",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "AnthologyStory1.jpg",
     caption: "Anthology",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "AnthologyStory2.jpg",
     caption: "Anthology",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "AyaBrackettSaveurTear.jpg",
     caption: "Saveur Magazine",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "TearsheetsSunsetPekoPeko1.jpg",
     caption: "Sunset",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "TearsheetsSunsetPekoPeko2.jpg",
     caption: "Sunset",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "TearsheetsSunsetPekoPeko3.jpg",
     caption: "Sunset",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "TearsheetsSunsetDebMadison1.jpg",
     caption: "Sunset",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "TearsheetsSunsetDebMadison3.jpg",
     caption: "Sunset",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "TearsheetsSunsetDebMadison2.jpg",
     caption: "Sunset",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "AyaBrackettFreakyFlora1.jpg",
     caption: "Sunset",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "AyaBrackettFreakyFlora2.jpg",
     caption: "Sunset",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "AyaBrackettStoneFruit1.jpg",
     caption: "Sunset",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "AyaBrackettStoneFruit2.jpg",
     caption: "Sunset",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "AyaBrackettStoneFruit3.jpg",
     caption: "Sunset",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "01_tearsheets_bt.jpg",
     caption: "Budget Travel",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "02_tearsheets_enroute.jpg",
     caption: "EnRoute Air France",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "04_tearsheets_sunset1.jpg",
     caption: "Sunset",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "05_tearsheets_ecocolo1.jpg",
     caption: "Ecocolo",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "06_tearsheets_ecocolo2.jpg",
     caption: "Ecocolo",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "07_tearsheets_ecocolo3.jpg",
     caption: "Ecocolo",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "08_tearsheetswoi.jpg",
     caption: "World Of Interiors",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "09_tearsheets_woi2.jpg",
     caption: "World of Interiors",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "10_tearsheets_rs1.jpg",
     caption: "Real Simple",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "11a_tearsheets_rs3.jpg",
     caption: "Real Simple",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "11b_tearsheets_rs4.jpg",
     caption: "Real Simple",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "2013TelegraphIsabelAllende.jpg",
     caption: "Telegraph Sunday Magazine",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "13_tearsheets_nytmcf.jpg",
     caption: "New York Times Magazine",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "14_tearsheets_nyt2.jpg",
     caption: "New York Times Magazine",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "15_tearsheets_sunset3.jpg",
     caption: "Sunset",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "16_tearsheets_travesias.jpg",
     caption: "Travesias",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "17_tearsheets_oprah1.jpg",
     caption: "Oprah",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "18_tearsheets_oprah2.jpg",
     caption: "Oprah",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "12_Tearsheets_SFMagAnya_.jpg",
     caption: "San Francisco Magazine",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "19_tearsheets_dinersjrnl.jpg",
     caption: "Diners Journal",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "20_tearsheets_ms1.jpg",
     caption: "Martha Stewart Living",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "21_tearsheets_ms3.jpg",
     caption: "Martha Stewart Living",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "22_tearsheets_ms2.jpg",
     caption: "Martha Stewart Living",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "23_tearsheets_gastronomica1.jpg",
     caption: "Gastronomica",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "24_tearsheets_gastronomica2.jpg",
     caption: "Gastronomica",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "25_tearsheets_gastronomica3.jpg",
     caption: "Gastronomica",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "26_tearsheets_anthology1.jpg",
     caption: "Anthology",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "27_tearsheets_anthology2-775x700.jpg",
     caption: "Anthology",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "28_tearsheets_bodysoul.jpg",
     caption: "Body Soul",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "29_tearsheets_more.jpg",
     caption: "More",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "30_tearsheets_more2.jpg",
     caption: "More",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "31_tearsheets_bonappetit1.jpg",
     caption: "Bon Appetit",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "32_tearsheets_bonappetit2.jpg",
     caption: "Bon Appetit",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "33_tearsheets_bonappetit3.jpg",
     caption: "Bon Appetit",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "34_tearsheets_sfmag.jpg",
     caption: "San Francisco Magazine",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "35_tearsheets_afar.jpg",
     caption: "Afar",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "35b_tearsheets_bonappetit4.jpg",
     caption: "Bon Appetit",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "36b_tearsheets_money.jpg",
     caption: "Money",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "37a_tearsheets_cntrylvg.jpg",
     caption: "Country Living",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "37b_tearsheets_cntrylvg2.jpg",
     caption: "Country Living",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "38_tearsheets_sunset2.jpg",
     caption: "Sunset",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "39_tearsheets_ms4.jpg",
     caption: "Martha Stewart Living",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "39b_tearsheets_nytla.jpg",
     caption: "New York Times Magazine",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "40_tearsheets_nytcocktails.jpg",
     caption: "New York Times Magazine",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "43_tearsheets_kunel2.jpg",
     caption: "Ku:nel",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "44_tearsheets_dwell2.jpg",
     caption: "Dwell",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "45_tearsheets_dwell.jpg",
     caption: "Dwell",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "46_tearsheets_dossier.jpg",
     caption: "Dossier",
-    category: "Tearsheets",
-    gallery: "Tear sheets",
+    category: "Magazines",
+    gallery: "Tearsheets",
     searchTags: []
   },
   {
     location: "01covertearsheets_sunset.jpg",
     caption: "Sunset",
-    category: "Tearsheets",
+    category: "Magazines",
     gallery: "Covers",
     searchTags: []
   },
   {
     location: "02covertearsheets_ecocolo.jpg",
     caption: "Ecocolo",
-    category: "Tearsheets",
+    category: "Magazines",
     gallery: "Covers",
     searchTags: []
   },
   {
     location: "03covertearsheets_tl.jpg",
     caption: "Travel + Leisure",
-    category: "Tearsheets",
+    category: "Magazines",
     gallery: "Covers",
     searchTags: []
   },
   {
     location: "04covertearsheets_btdordogne.jpg",
     caption: "Budget Travel",
-    category: "Tearsheets",
+    category: "Magazines",
     gallery: "Covers",
     searchTags: []
   },
   {
     location: "05covertearsheets_sfmagramen.jpg",
     caption: "San Francisco Magazine",
-    category: "Tearsheets",
+    category: "Magazines",
     gallery: "Covers",
     searchTags: []
   },
   {
     location: "06covertearsheets_kunel1-586x700.jpg",
     caption: "Ku:nel",
-    category: "Tearsheets",
+    category: "Magazines",
     gallery: "Covers",
     searchTags: []
   },
   {
     location: "07covertearsheets_btitaly.jpg",
     caption: "Budget Travel",
-    category: "Tearsheets",
+    category: "Magazines",
     gallery: "Covers",
     searchTags: []
   },
@@ -4101,7 +4101,7 @@ let galleries = [
     category: "Advertising"
   },
   {
-    name: "Samin Norsat",
+    name: "Samin Nosrat",
     category: "Advertising"
   },
   {
@@ -4134,39 +4134,45 @@ let galleries = [
   }
 ];
 
-// simpleCreate(db.Photo, photos, "photos");
-// // simpleCreate(db.Gallery, galleries, "galleries");
+simpleCreate(db.Photo, photos, "photos");
+// simpleCreate(db.Gallery, galleries, "galleries");
 
-// function simpleCreate(DB, object_list, name) {
-//   DB.deleteMany({}, (err, objects) => {
-//     DB.create(object_list, (err, objects) => {
-//       if (err) {
-//         return console.log("err", err);
-//       }
-//       console.log("deleted all", name);
-//       console.log("created", objects.length, name);
-//     });
-//   });
-// }
-
-db.Gallery.deleteMany({}, function(err, objects) {
-  console.log("deleted all galleries");
-  galleries.forEach(galleryData => {
-    var gallery = new db.Gallery({
-      name: galleryData.name,
-      category: galleryData.category
-    });
-    db.Photo.find({ gallery: galleryData.name }, function(err, foundGalleries) {
+function simpleCreate(DB, object_list, name) {
+  DB.deleteMany({}, (err, objects) => {
+    DB.create(object_list, (err, objects) => {
       if (err) {
-        console.log(err);
-        return;
+        return console.log("err", err);
       }
-      gallery.photos = foundGalleries;
-      gallery.save((err, savedGallery) => {
+      console.log("deleted all", name);
+      console.log("created", objects.length, name);
+      createGalleries();
+    });
+  });
+}
+
+function createGalleries() {
+  db.Gallery.deleteMany({}, function(err, objects) {
+    console.log("deleted all galleries");
+    galleries.forEach(galleryData => {
+      var gallery = new db.Gallery({
+        name: galleryData.name,
+        category: galleryData.category
+      });
+      db.Photo.find({ gallery: galleryData.name }, function(
+        err,
+        foundGalleries
+      ) {
         if (err) {
           console.log(err);
+          return;
         }
+        gallery.photos = foundGalleries;
+        gallery.save((err, savedGallery) => {
+          if (err) {
+            console.log(err);
+          }
+        });
       });
     });
   });
-});
+}

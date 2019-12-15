@@ -25,6 +25,12 @@
 
 @font-face {
   font-family: "GT America";
-  src: url("fonts/gt-america-regular-webfont.woff2") format("woff2"),
-    url("fonts/gt-america-regular-webfont.woff") format("woff");
+  src: url("fonts/gt-america-extended-regular-webfont.woff2") format("woff2"),
+    url("fonts/gt-america-extended-regular-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "GT America Mono Thin";
+  src: url("fonts/gt-america-mono-thin-webfont.woff2") format("woff2"),
+    url("fonts/gt-america-mono-thin-webfont.woff") format("woff");
 }
