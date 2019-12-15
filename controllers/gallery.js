@@ -1,5 +1,4 @@
 const Gallery = require("../models/Gallery");
-const db = require("../models");
 
 module.exports = {
   index: (req, res) => {

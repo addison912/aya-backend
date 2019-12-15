@@ -1,2 +1,1 @@
-const Photo = require("../models/Photo");
-const db = require("../models");
+const Photo = require("../Models/Photo");
