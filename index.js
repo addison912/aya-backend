@@ -17,9 +17,11 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, "dist")));
 
-const galleryRoutes = require("./routes/gallery");
+// const galleryRoutes = require("./routes/galleryRoutes");
+const routes = require("./routes");
+
 // app.use("/photo", routes.user);
-app.use("/api/gallery", galleryRoutes);
+app.use("/api/gallery", routes.gallery);
 app.use("/uploads", express.static("uploads"));
 app.use("/assets", express.static("assets"));
 

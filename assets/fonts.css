@@ -1,23 +1,4 @@
 @font-face {
-  font-family: "PitchMediumItalic";
-  src: url("fonts/PitchMediumItalic.eot");
-  src: url("fonts/PitchMediumItalic.eot") format("embedded-opentype"),
-    url("fonts/PitchMediumItalic.woff2") format("woff2"),
-    url("fonts/PitchMediumItalic.woff") format("woff"),
-    url("fonts/PitchMediumItalic.ttf") format("truetype"),
-    url("fonts/PitchMediumItalic.svg#PitchMediumItalic") format("svg");
-}
-@font-face {
-  font-family: "PitchMedium";
-  src: url("fonts/PitchMedium.eot");
-  src: url("fonts/PitchMedium.eot") format("embedded-opentype"),
-    url("fonts/PitchMedium.woff2") format("woff2"),
-    url("fonts/PitchMedium.woff") format("woff"),
-    url("fonts/PitchMedium.ttf") format("truetype"),
-    url("fonts/PitchMedium.svg#PitchMedium") format("svg");
-}
-
-@font-face {
   font-family: "GT America Bold";
   src: url("fonts/gt-america-bold.woff2") format("woff2"),
     url("fonts/gt-america-bold.woff") format("woff");
