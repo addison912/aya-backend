@@ -131,4 +131,6 @@ About
 .vscode/
 dist/
 uploads/
-fonts/
+
+package-lock.json
+
