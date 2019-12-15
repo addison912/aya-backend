@@ -31,9 +31,9 @@ app.use("/assets", express.static("assets"));
 //   res.json(verified);
 // });
 
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
-});
+// app.get("/", function(req, res) {
+//   res.sendFile(path.join(__dirname, "build", "index.html"));
+// });
 
 app.get("/api/test", function(req, res) {
   res.json({ message: "Hello World" });
