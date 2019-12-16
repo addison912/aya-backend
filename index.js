@@ -7,6 +7,7 @@ const express = require("express"),
 
 // generate a new express app and call it 'app'
 const app = express();
+app.set("case sensitive routing", false);
 
 // middleware
 app.use(cors());
