@@ -11,11 +11,9 @@ app.set("case sensitive routing", false);
 
 // middleware
 app.use(cors());
-app.use(bodyParser.json());
 // app.use(passport.initialize());
-app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "dist")));
 
 // const galleryRoutes = require("./routes/galleryRoutes");
@@ -23,6 +21,8 @@ const routes = require("./routes");
 
 // app.use("/photo", routes.user);
 app.use("/api/gallery", routes.gallery);
+app.use("/api/photo", routes.photo);
+
 app.use("/uploads", express.static("uploads"));
 app.use("/assets", express.static("assets"));
 
@@ -62,7 +62,7 @@ app.get("/api/test", function(req, res) {
 //   }
 // }
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3001;
 
 // server connection
 app.listen(port, () => console.log(`Listening on port ${port}`));

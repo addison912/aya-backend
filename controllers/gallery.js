@@ -21,7 +21,8 @@ module.exports = {
     });
   },
   byCategory: (req, res) => {
-    Gallery.find({ category: req.params.category }, (err, galleries) => {
+    let category = new RegExp("^" + req.params.category + "$", "i");
+    Gallery.find({ category }, (err, galleries) => {
       if (err) {
         res.status(404).json("unable to get galleries");
         return console.log(err);
