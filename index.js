@@ -3,7 +3,8 @@ const express = require("express"),
   bodyParser = require("body-parser"),
   // passport = require("./config/passport")(),
   // jwt = require("jsonwebtoken"),
-  cors = require("cors");
+  cors = require("cors"),
+  config = require("./config/config");
 
 // generate a new express app and call it 'app'
 const app = express();
@@ -62,7 +63,7 @@ app.get("/api/test", function(req, res) {
 //   }
 // }
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || config.port;
 
 // server connection
 app.listen(port, () => console.log(`Listening on port ${port}`));

@@ -1,6 +1,7 @@
-module.exports = {  
-    jwtSecret: 'JwtS3cr3tK3Y',
-    jwtSession: {
-        session: false
-    }
-}
+module.exports = {
+  jwtSecret: "....",
+  jwtSession: {
+    session: false
+  },
+  port: 3001
+};
