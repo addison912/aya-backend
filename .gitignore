@@ -132,6 +132,6 @@ About
 dist/
 uploads/
 
-# package-lock.json
+package-lock.json
 
 config/config.js
