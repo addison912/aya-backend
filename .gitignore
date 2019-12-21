@@ -134,4 +134,4 @@ uploads/
 
 package-lock.json
 
-config/
+config/config.js
