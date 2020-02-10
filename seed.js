@@ -2021,798 +2021,798 @@ let photos = [
     location: "1__Bittman_HTCE_Cover-1-622x700.jpg",
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
-    gallery: "Books",
+    gallery: "How to Cook Everything",
     searchTags: []
   },
   {
     location: "1_Bittman_HTCE-775x436.jpg",
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
-    gallery: "Books",
+    gallery: "How to Cook Everything",
     searchTags: []
   },
   {
     location: "2_Bittman_HTCE-775x436.jpg",
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
-    gallery: "Books",
+    gallery: "How to Cook Everything",
     searchTags: []
   },
   {
     location: "3_Bittman_HTCE-775x436.jpg",
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
-    gallery: "Books",
+    gallery: "How to Cook Everything",
     searchTags: []
   },
   {
     location: "26_Bittman_HTCE-775x436.jpg",
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
-    gallery: "Books",
+    gallery: "How to Cook Everything",
     searchTags: []
   },
   {
     location: "10_Bittman_HTCE-775x436.jpg",
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
-    gallery: "Books",
+    gallery: "How to Cook Everything",
     searchTags: []
   },
   {
     location: "13_Bittman_HTCE-775x436.jpg",
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
-    gallery: "Books",
+    gallery: "How to Cook Everything",
     searchTags: []
   },
   {
     location: "18_Bittman_HTCE-775x436.jpg",
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
-    gallery: "Books",
+    gallery: "How to Cook Everything",
     searchTags: []
   },
   {
     location: "24_Bittman_HTCE-775x436.jpg",
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
-    gallery: "Books",
+    gallery: "How to Cook Everything",
     searchTags: []
   },
   {
     location: "11_Bittman_HTCE-775x436.jpg",
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
-    gallery: "Books",
+    gallery: "How to Cook Everything",
     searchTags: []
   },
   {
     location: "4_Bittman_HTCE-775x436.jpg",
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
-    gallery: "Books",
+    gallery: "How to Cook Everything",
     searchTags: []
   },
   {
     location: "14_Bittman_HTCE-775x436.jpg",
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
-    gallery: "Books",
+    gallery: "How to Cook Everything",
     searchTags: []
   },
   {
     location: "5_Bittman_HTCE-775x436.jpg",
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
-    gallery: "Books",
+    gallery: "How to Cook Everything",
     searchTags: []
   },
   {
     location: "12_Bittman_HTCE-775x436.jpg",
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
-    gallery: "Books",
+    gallery: "How to Cook Everything",
     searchTags: []
   },
   {
     location: "6_Bittman_HTCE-775x436.jpg",
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
-    gallery: "Books",
+    gallery: "How to Cook Everything",
     searchTags: []
   },
   {
     location: "7_Bittman_HTCE-775x436.jpg",
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
-    gallery: "Books",
+    gallery: "How to Cook Everything",
     searchTags: []
   },
   {
     location: "16_Bittman_HTCE-775x436.jpg",
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
-    gallery: "Books",
+    gallery: "How to Cook Everything",
     searchTags: []
   },
   {
     location: "25_Bittman_HTCE-775x436.jpg",
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
-    gallery: "Books",
+    gallery: "How to Cook Everything",
     searchTags: []
   },
   {
     location: "1_BittmanDFE_Cover-1-598x700.jpg",
     caption: "",
     category: "Books",
-    gallery: "Books",
+    gallery: "Dinner For Everyone",
     searchTags: []
   },
   {
     location: "Bittman_1_Fettucini-775x466.jpg",
     caption: "Dinner For Everyone: Clarkson Potter",
     category: "Books",
-    gallery: "Books",
+    gallery: "Dinner For Everyone",
     searchTags: []
   },
   {
     location: "Bittman_3_frenchtoast-775x461.jpg",
     caption: "Dinner For Everyone: Clarkson Potter",
     category: "Books",
-    gallery: "Books",
+    gallery: "Dinner For Everyone",
     searchTags: []
   },
   {
     location: "Bittman_4_gnocchi-775x467.jpg",
     caption: "Dinner For Everyone: Clarkson Potter",
     category: "Books",
-    gallery: "Books",
+    gallery: "Dinner For Everyone",
     searchTags: []
   },
   {
     location: "Bittman_5_Parmigiana-775x459.jpg",
     caption: "Dinner For Everyone: Clarkson Potter",
     category: "Books",
-    gallery: "Books",
+    gallery: "Dinner For Everyone",
     searchTags: []
   },
   {
     location: "Bittman_6_Trout-775x456.jpg",
     caption: "Dinner For Everyone: Clarkson Potter",
     category: "Books",
-    gallery: "Books",
+    gallery: "Dinner For Everyone",
     searchTags: []
   },
   {
     location: "Bittman_7_Tandoori-775x462.jpg",
     caption: "Dinner For Everyone: Clarkson Potter",
     category: "Books",
-    gallery: "Books",
+    gallery: "Dinner For Everyone",
     searchTags: []
   },
   {
     location: "Bittman_8_Chowder-775x465.jpg",
     caption: "Dinner For Everyone: Clarkson Potter",
     category: "Books",
-    gallery: "Books",
+    gallery: "Dinner For Everyone",
     searchTags: []
   },
   {
     location: "Bittman_10_JerkChicken-775x458.jpg",
     caption: "Dinner For Everyone: Clarkson Potter",
     category: "Books",
-    gallery: "Books",
+    gallery: "Dinner For Everyone",
     searchTags: []
   },
   {
     location: "Bittman_9_risotto-775x465.jpg",
     caption: "Dinner For Everyone: Clarkson Potter",
     category: "Books",
-    gallery: "Books",
+    gallery: "Dinner For Everyone",
     searchTags: []
   },
   {
     location: "Bittman_11_Lomein-775x464.jpg",
     caption: "Dinner For Everyone: Clarkson Potter",
     category: "Books",
-    gallery: "Books",
+    gallery: "Dinner For Everyone",
     searchTags: []
   },
   {
     location: "Bittman_12_Salmon-775x462.jpg",
     caption: "Dinner For Everyone: Clarkson Potter",
     category: "Books",
-    gallery: "Books",
+    gallery: "Dinner For Everyone",
     searchTags: []
   },
   {
     location: "Bittman_13_Eggplant-775x457.jpg",
     caption: "Dinner For Everyone: Clarkson Potter",
     category: "Books",
-    gallery: "Books",
+    gallery: "Dinner For Everyone",
     searchTags: []
   },
   {
     location: "NewlywedTable-508x700.jpg",
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Newlywed Table",
     searchTags: []
   },
   {
     location: "Brackett-2019NewlwedCookbook_1-775x534.jpg",
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Newlywed Table",
     searchTags: []
   },
   {
     location: "Brackett-2019NewlwedCookbook_3-775x534.jpg",
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Newlywed Table",
     searchTags: []
   },
   {
     location: "Brackett-2019NewlwedCookbook_6-775x534.jpg",
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Newlywed Table",
     searchTags: []
   },
   {
     location: "Brackett-2019NewlwedCookbook_7-775x534.jpg",
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Newlywed Table",
     searchTags: []
   },
   {
     location: "Brackett-2019NewlwedCookbook_10-775x534.jpg",
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Newlywed Table",
     searchTags: []
   },
   {
     location: "Brackett-2019NewlwedCookbook_9-775x534.jpg",
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Newlywed Table",
     searchTags: []
   },
   {
     location: "Brackett-2019NewlwedCookbook_13-775x534.jpg",
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Newlywed Table",
     searchTags: []
   },
   {
     location: "Brackett-2019NewlwedCookbook_14-775x534.jpg",
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Newlywed Table",
     searchTags: []
   },
   {
     location: "Brackett-2019NewlwedCookbook_8-775x534.jpg",
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Newlywed Table",
     searchTags: []
   },
   {
     location: "Brackett-2019NewlwedCookbook_11-775x534.jpg",
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Newlywed Table",
     searchTags: []
   },
   {
     location: "Brackett-2019NewlwedCookbook_12-775x534.jpg",
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Newlywed Table",
     searchTags: []
   },
   {
     location: "Brackett-2019NewlwedCookbook_16-775x534.jpg",
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Newlywed Table",
     searchTags: []
   },
   {
     location: "Brackett-2019NewlwedCookbook_17-775x534.jpg",
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Newlywed Table",
     searchTags: []
   },
   {
     location: "AyaBrackett_PaperFlwr_Cover-563x700.jpg",
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "The Fine Art of Paper Flowers",
     searchTags: []
   },
   {
     location: "AyaBrackett_PaperFlwr_2-775x484.jpg",
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "The Fine Art of Paper Flowers",
     searchTags: []
   },
   {
     location: "AyaBrackett_PaperFlwr_1-775x484.jpg",
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "The Fine Art of Paper Flowers",
     searchTags: []
   },
   {
     location: "AyaBrackett_PaperFlwr_8-775x484.jpg",
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "The Fine Art of Paper Flowers",
     searchTags: []
   },
   {
     location: "AyaBrackett_PaperFlwr_3-775x484.jpg",
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "The Fine Art of Paper Flowers",
     searchTags: []
   },
   {
     location: "AyaBrackett_PaperFlwr_4-775x484.jpg",
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "The Fine Art of Paper Flowers",
     searchTags: []
   },
   {
     location: "AyaBrackett_PaperFlwr_5-775x484.jpg",
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "The Fine Art of Paper Flowers",
     searchTags: []
   },
   {
     location: "AyaBrackett_PaperFlwr_9-775x484.jpg",
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "The Fine Art of Paper Flowers",
     searchTags: []
   },
   {
     location: "AyaBrackett_PaperFlwr_6-775x484.jpg",
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "The Fine Art of Paper Flowers",
     searchTags: []
   },
   {
     location: "AyaBrackett_PaperFlwr_12-775x484.jpg",
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "The Fine Art of Paper Flowers",
     searchTags: []
   },
   {
     location: "AyaBrackett_PaperFlwr_7-775x484.jpg",
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "The Fine Art of Paper Flowers",
     searchTags: []
   },
   {
     location: "AyaBrackett_PaperFlwr_13-775x484.jpg",
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "The Fine Art of Paper Flowers",
     searchTags: []
   },
   {
     location: "AyaBrackett_PaperFlwr_11-775x484.jpg",
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "The Fine Art of Paper Flowers",
     searchTags: []
   },
   {
     location: "AyaBrackett_PaperFlwr_10-775x484.jpg",
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "The Fine Art of Paper Flowers",
     searchTags: []
   },
   {
     location: "AyaBrackett_PaperFlwr_14-775x484.jpg",
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "The Fine Art of Paper Flowers",
     searchTags: []
   },
   {
     location: "AyaBrackett_NatColor_1-529x700.jpg",
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "Natural Color",
     searchTags: []
   },
   {
     location: "AyaBrackett_NatColor_2-775x517.jpg",
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "Natural Color",
     searchTags: []
   },
   {
     location: "AyaBrackett_NatColor_3-775x517.jpg",
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "Natural Color",
     searchTags: []
   },
   {
     location: "AyaBrackett_NatColor_4-775x517.jpg",
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "Natural Color",
     searchTags: []
   },
   {
     location: "AyaBrackett_NatColor_5-775x517.jpg",
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "Natural Color",
     searchTags: []
   },
   {
     location: "AyaBrackett_NatColor_6-775x517.jpg",
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "Natural Color",
     searchTags: []
   },
   {
     location: "AyaBrackett_NatColor_7-1-775x517.jpg",
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "Natural Color",
     searchTags: []
   },
   {
     location: "AyaBrackett_NatColor_8-775x517.jpg",
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "Natural Color",
     searchTags: []
   },
   {
     location: "AyaBrackett_NatColor_9-775x517.jpg",
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "Natural Color",
     searchTags: []
   },
   {
     location: "AyaBrackett_NatColor_10-775x517.jpg",
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "Natural Color",
     searchTags: []
   },
   {
     location: "AyaBrackett_NatColor_11-775x517.jpg",
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "Natural Color",
     searchTags: []
   },
   {
     location: "AyaBrackett_NatColor_12-775x517.jpg",
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "Natural Color",
     searchTags: []
   },
   {
     location: "AyaBrackett_NatColor_13-775x517.jpg",
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
-    gallery: "Books",
+    gallery: "Natural Color",
     searchTags: []
   },
   {
     location: "AyaBrackettBitterJBA1-775x700.jpg",
     caption: "Bitter : Ten Speed press",
     category: "Books",
-    gallery: "Books",
+    gallery: "Bitter",
     searchTags: []
   },
   {
     location: "BitterBook_Page_Radicchio.jpg",
     caption: "Bitter : Ten Speed press",
     category: "Books",
-    gallery: "Books",
+    gallery: "Bitter",
     searchTags: []
   },
   {
     location: "BitterBookCitrus.jpg",
     caption: "Bitter : Ten Speed press",
     category: "Books",
-    gallery: "Books",
+    gallery: "Bitter",
     searchTags: []
   },
   {
     location: "BitterBookCrdoon.jpg",
     caption: "Bitter : Ten Speed press",
     category: "Books",
-    gallery: "Books",
+    gallery: "Bitter",
     searchTags: []
   },
   {
     location: "BitterBook_PageCocoa.jpg",
     caption: "Bitter : Ten Speed press",
     category: "Books",
-    gallery: "Books",
+    gallery: "Bitter",
     searchTags: []
   },
   {
     location: "BitterBookQuail.jpg",
     caption: "Bitter : Ten Speed press",
     category: "Books",
-    gallery: "Books",
+    gallery: "Bitter",
     searchTags: []
   },
   {
     location: "BitterBook_Aspara.jpg",
     caption: "Bitter : Ten Speed press",
     category: "Books",
-    gallery: "Books",
+    gallery: "Bitter",
     searchTags: []
   },
   {
     location: "BitterBookDessert.jpg",
     caption: "Bitter : Ten Speed press",
     category: "Books",
-    gallery: "Books",
+    gallery: "Bitter",
     searchTags: []
   },
   {
     location: "SoiledBookWeb1-775x553.jpg",
     caption: "Hand Painted Soiled Series Books",
     category: "Books",
-    gallery: "Books",
+    gallery: "Soiled Book",
     searchTags: []
   },
   {
     location: "SoiledBookWeb2-2-775x553.jpg",
     caption: "Soiled Book",
     category: "Books",
-    gallery: "Books",
+    gallery: "Soiled Book",
     searchTags: []
   },
   {
     location: "SoiledBookWeb6-775x553.jpg",
     caption: "Soiled Book",
     category: "Books",
-    gallery: "Books",
+    gallery: "Soiled Book",
     searchTags: []
   },
   {
     location: "SoiledBookWeb5-775x553.jpg",
     caption: "",
     category: "Books",
-    gallery: "Books",
+    gallery: "Soiled Book",
     searchTags: []
   },
   {
     location: "SoiledBookWeb4-775x553.jpg",
     caption: "Soiled Book",
     category: "Books",
-    gallery: "Books",
+    gallery: "Soiled Book",
     searchTags: []
   },
   {
     location: "SoiledBookWeb3-775x553.jpg",
     caption: "Soiled Book",
     category: "Books",
-    gallery: "Books",
+    gallery: "Soiled Book",
     searchTags: []
   },
   {
     location: "SoiledBookWeb7-775x553.jpg",
     caption: "Soiled Book Signed Edition of 500",
     category: "Books",
-    gallery: "Books",
+    gallery: "Soiled Book",
     searchTags: []
   },
   {
     location: "HandpaintingSoiledBooksWeb-700x700.jpg",
     caption: "Hand Painted Soiled Books with Natural Food Dyes",
     category: "Books",
-    gallery: "Books",
+    gallery: "Soiled Book",
     searchTags: []
   },
   {
     location: "NaturalDyeBookmark-553x700.jpg",
     caption: "Food Dyes Used to Paint Soiled Books",
     category: "Books",
-    gallery: "Books",
+    gallery: "Soiled Book",
     searchTags: []
   },
   {
     location: "01_book_kibo.jpg",
     caption: "Kibo Cookbook: Ten Speed Press",
     category: "Books",
-    gallery: "Books",
+    gallery: "Kibo Cookbook",
     searchTags: []
   },
   {
     location: "02_book_kibo.jpg",
     caption: "Kibo Cookbook: Ten Speed Press",
     category: "Books",
-    gallery: "Books",
+    gallery: "Kibo Cookbook",
     searchTags: []
   },
   {
     location: "03_book_kibo.jpg",
     caption: "Kibo Cookbook: Ten Speed Press",
     category: "Books",
-    gallery: "Books",
+    gallery: "Kibo Cookbook",
     searchTags: []
   },
   {
     location: "04_book_chezpanisse.jpg",
     caption: "Chez Panisse 40th Anniversary Book: Clarkson Potter",
     category: "Books",
-    gallery: "Books",
+    gallery: "Chez Panisse 40th Anniversary",
     searchTags: []
   },
   {
     location: "05_book_chezpanisse.jpg",
     caption: "Chez Panisse 40th Anniversary Book: Clarkson Potter",
     category: "Books",
-    gallery: "Books",
+    gallery: "Chez Panisse 40th Anniversary",
     searchTags: []
   },
   {
     location: "05a_coccobook.jpg",
     caption: "Welcome Cocco: Babjiji Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Welcome Cocco",
     searchTags: []
   },
   {
     location: "05aa_bookcoccomay-775x700.jpg",
     caption: "Welcome Cocco: Babjiji Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Welcome Cocco",
     searchTags: []
   },
   {
     location: "05b_bbookcoccoapril.jpg",
     caption: "Welcome Cocco: Babjiji Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Welcome Cocco",
     searchTags: []
   },
   {
     location: "05c_bbookcoccoaug1-775x700.png",
     caption: "Welcome Cocco: Babjiji Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Welcome Cocco",
     searchTags: []
   },
   {
     location: "05cc_bbookcoccoaug1-775x700.png",
     caption: "Welcome Cocco: Babjiji Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Welcome Cocco",
     searchTags: []
   },
   {
     location: "05d_bbookcoccoaug2-775x700.png",
     caption: "Welcome Cocco: Babjiji Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Welcome Cocco",
     searchTags: []
   },
   {
     location: "05e_bookcoccoaug6-775x700.jpg",
     caption: "Welcome Cocco: Babjiji Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Welcome Cocco",
     searchTags: []
   },
   {
     location: "05ed_bookcoccomay-775x700.png",
     caption: "Welcome Cocco: Babjiji Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Welcome Cocco",
     searchTags: []
   },
   {
     location: "05f_bookcoccoaug-775x700.png",
     caption: "Welcome Cocco: Babjiji Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Welcome Cocco",
     searchTags: []
   },
   {
     location: "05g_bookcoccosep-775x700.png",
     caption: "Welcome Cocco: Babjiji Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Welcome Cocco",
     searchTags: []
   },
   {
     location: "05h_bookcoccojune-775x700.jpg",
     caption: "Welcome Cocco: Babjiji Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Welcome Cocco",
     searchTags: []
   },
   {
     location: "13_book_tl.jpg",
     caption: "Travel + Leisure Trips: American Express Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Travel + Leisure Trips",
     searchTags: []
   },
   {
     location: "14_book_tl-775x700.jpg",
     caption: "Travel + Leisure Trips: American Express Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Travel + Leisure Trips",
     searchTags: []
   },
   {
     location: "Book.jpg",
     caption: "Come to the Table: Rodale Press",
     category: "Books",
-    gallery: "Books",
+    gallery: "Book Covers",
     searchTags: []
   },
   {
     location: "16_book_japbookcover.jpg",
     caption: "Building the Japanese House Today: Harry Abrams Inc.",
     category: "Books",
-    gallery: "Books",
+    gallery: "Building the Japanese House Today",
     searchTags: []
   },
   {
     location: "17_book_japbook.jpg",
     caption: "Building the Japanese House Today: Harry Abrams Inc.",
     category: "Books",
-    gallery: "Books",
+    gallery: "Building the Japanese House Today",
     searchTags: []
   },
   {
     location: "18_book_japbook.jpg",
     caption: "Building the Japanese House Today: Harry Abrams Inc.",
     category: "Books",
-    gallery: "Books",
+    gallery: "Building the Japanese House Today",
     searchTags: []
   },
   {
     location: "19_book_japanesebathbook.jpg",
     caption: "Japanese Bath Book: Gibbs Smith Press",
     category: "Books",
-    gallery: "Books",
+    gallery: "Building the Japanese House Today",
     searchTags: []
   },
   {
     location: "20_book_slowfoodcover.jpg",
     caption: "Slow Food Guide San Francisco: Chelsea Green Publishing",
     category: "Books",
-    gallery: "Books",
+    gallery: "Book Covers",
     searchTags: []
   },
   {
@@ -4036,7 +4036,55 @@ let photos = [
 ];
 let galleries = [
   {
-    name: "Books",
+    name: "How to Cook Everything",
+    category: "Books"
+  },
+  // {
+  //   name: "Dinner for Everyone",
+  //   category: "Books"
+  // },
+  {
+    name: "Newlywed Table",
+    category: "Books"
+  },
+  {
+    name: "The Fine Art of Paper Flowers",
+    category: "Books"
+  },
+  {
+    name: "Natural Color",
+    category: "Books"
+  },
+  {
+    name: "Bitter",
+    category: "Books"
+  },
+  {
+    name: "Soiled Book",
+    category: "Books"
+  },
+  {
+    name: "Kibo Cookbook",
+    category: "Books"
+  },
+  {
+    name: "Chez Panisse 40th Anniversary",
+    category: "Books"
+  },
+  {
+    name: "Welcome Cocco",
+    category: "Books"
+  },
+  {
+    name: "Building the Japanese House Today",
+    category: "Books"
+  },
+  // {
+  //   name: "Travel + Leisure Trips",
+  //   category: "Books"
+  // },
+  {
+    name: "Book Covers",
     category: "Books"
   },
   {
@@ -4135,6 +4183,7 @@ let galleries = [
 ];
 
 simpleCreate(db.Photo, photos, "photos");
+
 // simpleCreate(db.Gallery, galleries, "galleries");
 
 function simpleCreate(DB, object_list, name) {
