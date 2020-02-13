@@ -1,17 +1,23 @@
 @font-face {
   font-family: "GT America Bold";
-  src: url("fonts/gt-america-bold.woff2") format("woff2"),
-    url("fonts/gt-america-bold.woff") format("woff");
+  src: url("fonts/GT-America-Standard-Bold.woff2") format("woff2"),
+    url("fonts/GT-America-Standard-Bold.woff") format("woff"),
+    url("fonts/GT-America-Standard-Bold.eot") format("eot"),
+    url("fonts/GT-America-Standard-Bold.ttf") format("ttf");
 }
 
 @font-face {
   font-family: "GT America";
-  src: url("fonts/gt-america-extended-regular-webfont.woff2") format("woff2"),
-    url("fonts/gt-america-extended-regular-webfont.woff") format("woff");
+  src: url("fonts/GT-America-Extended-Regular.woff2") format("woff2"),
+    url("fonts/GT-America-Extended-Regular.woff") format("woff"),
+    url("fonts/GT-America-Extended-Regular.eot") format("eot"),
+    url("fonts/GT-America-Extended-Regular.ttf") format("ttf");
 }
 
 @font-face {
   font-family: "GT America Mono Thin";
-  src: url("fonts/gt-america-mono-thin-webfont.woff2") format("woff2"),
-    url("fonts/gt-america-mono-thin-webfont.woff") format("woff");
+  src: url("fonts/GT-America-Mono-Thin.woff2") format("woff2"),
+    url("fonts/GT-America-Mono-Thin.woff") format("woff"),
+    url("fonts/GT-America-Mono-Thin.eot") format("eot"),
+    url("fonts/GT-America-Mono-Thin.ttf") format("ttf");
 }
