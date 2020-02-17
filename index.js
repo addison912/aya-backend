@@ -26,6 +26,7 @@ app.use("/api/photo", routes.photo);
 
 app.use("/uploads", express.static("uploads"));
 app.use("/assets", express.static("assets"));
+// app.use("/", express.static("build"));
 
 // app.post("/verify", verifyToken, (req, res) => {
 //   let verified = jwt.verify(req.token, "waffles");
@@ -33,8 +34,12 @@ app.use("/assets", express.static("assets"));
 //   res.json(verified);
 // });
 
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
+});
+
 // app.get("/", function(req, res) {
-//   res.sendFile(path.join(__dirname, "build", "index.html"));
+//   res.sendFile("/index.html");
 // });
 
 app.get("/api/test", function(req, res) {

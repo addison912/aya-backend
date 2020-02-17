@@ -130,7 +130,7 @@ About
 .DS_Store
 .vscode/
 dist/
-uploads/
+
 
 package-lock.json
 
