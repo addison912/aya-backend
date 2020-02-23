@@ -23,6 +23,7 @@ const routes = require("./routes");
 // app.use("/photo", routes.user);
 app.use("/api/gallery", routes.gallery);
 app.use("/api/photo", routes.photo);
+app.use("/api/news", routes.news);
 
 app.use("/uploads", express.static("uploads"));
 app.use("/assets", express.static("assets"));
