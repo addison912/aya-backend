@@ -63,8 +63,7 @@ news = [
       {
         location:
           "http://www.ayabrackett.com/wp-content/uploads/2018/01/APhotoEditorBlogPost.jpg",
-        caption:
-          "http://aphotoeditor.com/2018/01/29/the-daily-promo-aya-brackett/"
+        link: "http://aphotoeditor.com/2018/01/29/the-daily-promo-aya-brackett/"
       }
     ]
   },
@@ -140,7 +139,8 @@ news = [
       {
         location:
           "http://www.ayabrackett.com/wp-content/uploads/2016/12/AyaBrackett_MSL_Holiday_1.jpg",
-        link: "http://new.ayabrackett.com/#/Magazines"
+        link: "http://new.ayabrackett.com/#/Magazines",
+        caption: "Martha Stewart Living"
       }
     ]
   }

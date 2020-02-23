@@ -9,5 +9,6 @@ mongoose
 
 const Photo = require("./Photo");
 const Gallery = require("./Gallery");
+const News = require("./News");
 
-module.exports = { Photo, Gallery };
+module.exports = { Photo, Gallery, News };
