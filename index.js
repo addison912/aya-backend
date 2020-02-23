@@ -15,7 +15,7 @@ app.use(cors());
 // app.use(passport.initialize());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(express.static(path.join(__dirname, "dist")));
+app.use(express.static(path.join(__dirname, "dist")));
 
 // const galleryRoutes = require("./routes/galleryRoutes");
 const routes = require("./routes");
@@ -39,9 +39,9 @@ app.use("/assets", express.static("assets"));
 //   res.sendFile(path.join(__dirname, "dist", "index.html"));
 // });
 
-// app.get("/", function(req, res) {
-//   res.sendFile("/index.html");
-// });
+app.get("/", function(req, res) {
+  res.sendFile("/index.html");
+});
 
 app.get("/api/test", function(req, res) {
   res.json({ message: "Hello World" });
