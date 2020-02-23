@@ -15,7 +15,7 @@ app.use(cors());
 // app.use(passport.initialize());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "dist")));
+// app.use(express.static(path.join(__dirname, "dist")));
 
 // const galleryRoutes = require("./routes/galleryRoutes");
 const routes = require("./routes");
