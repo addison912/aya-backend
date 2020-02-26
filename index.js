@@ -2,7 +2,7 @@ const express = require("express"),
   path = require("path"),
   bodyParser = require("body-parser"),
   // passport = require("./config/passport")(),
-  // jwt = require("jsonwebtoken"),
+  jwt = require("jsonwebtoken"),
   cors = require("cors"),
   config = require("./config/config");
 
@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, "dist")));
 // const galleryRoutes = require("./routes/galleryRoutes");
 const routes = require("./routes");
 
-// app.use("/photo", routes.user);
+// app.use("/user", routes.user);
 app.use("/api/gallery", routes.gallery);
 app.use("/api/photo", routes.photo);
 app.use("/api/news", routes.news);
