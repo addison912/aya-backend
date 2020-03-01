@@ -29,6 +29,11 @@ router.use((req, res, next) => {
 
 router.get("/", controllers.user.show);
 
+router.get("/test", function(req, res) {
+  res.json({ message: "test successful" });
+  console.log("test successful");
+});
+
 router.delete("/", controllers.user.delete);
 
 module.exports = router;

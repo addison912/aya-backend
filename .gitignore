@@ -135,3 +135,6 @@ About
 package-lock.json
 
 config/config.js
+
+seedUser.js
+hashPW.js

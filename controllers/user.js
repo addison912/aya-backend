@@ -1,23 +1,25 @@
 const bcrypt = require("bcrypt"),
-  User = require("../Models/User"),
+  db = require("../Models"),
   jwt = require("jsonwebtoken"),
   config = require("../config/config");
 
 module.exports = {
   signup: (req, res) => {
-    console.log(req.body);
+    console.log(req.body.email);
     // Check to see if email is already in db
-    User.find({ email: req.body.email })
+    db.User.findOne({ email: req.body.email })
       .exec()
       .then(user => {
+        console.log("checking if email exists in DB ...");
         // if a user is found with that email
-        if (user.length >= 1) {
+        if (!!user) {
           // send an error and let the user know that the email already exists
           return res.status(409).json({
             message: "email already exists"
           });
           // if we don't have this user's email in our db, lets get them set up!
         } else {
+          console.log("hashing password ...");
           // lets hash our plaintext password
           bcrypt.hash(req.body.password, 10, (err, hash) => {
             if (err) {
@@ -26,14 +28,16 @@ module.exports = {
               // we now have a successful hashed password
             } else {
               // we are creating a User object with their email address and OUR hashed password
-              User.create(
+              db.User.create(
                 {
                   email: req.body.email,
                   password: hash
                 },
                 (err, newUser) => {
                   console.log("here is the result", newUser);
-                  // if(err){ return res.status(500).json({err})}
+                  if (err) {
+                    return res.status(500).json({ err });
+                  }
                   // we send our new data back to user or whatever you want to do.
                   let user = {
                     email: newUser.email,
@@ -48,6 +52,9 @@ module.exports = {
                       expiresIn: "1h"
                     },
                     (err, signedJwt) => {
+                      if (err) {
+                        return res.status(500).json({ err });
+                      }
                       res.status(200).json({
                         message: "User Created",
                         user,
@@ -71,7 +78,7 @@ module.exports = {
     console.log("LOGIN CALLED");
     // find the user in our user db
     console.log("body", req.body);
-    User.find({ email: req.body.email })
+    db.User.find({ email: req.body.email })
       .select("+password")
       .exec()
       // if we have found a user
@@ -111,11 +118,16 @@ module.exports = {
                 expiresIn: "1h"
               },
               (err, signedJwt) => {
-                res.status(200).json({
-                  message: "Auth successful",
-                  user,
-                  signedJwt
-                });
+                if (err) {
+                  console.log(err);
+                  res.status(403).json({ message: "Auth failed" });
+                } else {
+                  res.status(200).json({
+                    message: "Auth successful",
+                    user,
+                    signedJwt
+                  });
+                }
               }
             );
             // the password provided does not match the password on file.
@@ -134,7 +146,7 @@ module.exports = {
   show: (req, res) => {
     console.log("trigger Show", req.userId);
     if (req.userId) {
-      User.findById(req.userId, (err, foundUser) => {
+      db.User.findById(req.userId, (err, foundUser) => {
         res.json(foundUser);
       });
     } else {
@@ -143,7 +155,7 @@ module.exports = {
   },
   delete: (req, res) => {
     console.log("hitting delete");
-    User.deleteOne({ _id: req.params.userId }, (err, result) => {
+    db.User.deleteOne({ _id: req.params.userId }, (err, result) => {
       if (err) {
         return res.status(500).json({ err });
       }
