@@ -2,7 +2,8 @@ const express = require("express"),
   app = express(),
   router = express.Router(),
   jwt = require("jsonwebtoken"),
-  controllers = require("../controllers");
+  controllers = require("../controllers"),
+  config = require("../config/config");
 
 router.post("/signup", controllers.user.signup);
 
@@ -17,7 +18,7 @@ router.use((req, res, next) => {
     const bearer = bearerHeader.split(" ");
     const bearerToken = bearer[1];
     req.token = bearerToken;
-    let verified = jwt.verify(req.token, "waffles");
+    let verified = jwt.verify(req.token, config.jwtSecret);
     console.log("here is the verified", verified);
     req.userId = verified._id; //set user id for routes to use
     next();
