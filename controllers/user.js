@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt"),
-  db = require("../models"),
+  User = require("../Models/User"),
   jwt = require("jsonwebtoken"),
   config = require("../config/config");
 
@@ -7,7 +7,7 @@ module.exports = {
   signup: (req, res) => {
     console.log(req.body);
     // Check to see if email is already in db
-    db.User.find({ email: req.body.email })
+    User.find({ email: req.body.email })
       .exec()
       .then(user => {
         // if a user is found with that email
@@ -26,7 +26,7 @@ module.exports = {
               // we now have a successful hashed password
             } else {
               // we are creating a User object with their email address and OUR hashed password
-              db.User.create(
+              User.create(
                 {
                   email: req.body.email,
                   password: hash
@@ -71,7 +71,7 @@ module.exports = {
     console.log("LOGIN CALLED");
     // find the user in our user db
     console.log("body", req.body);
-    db.User.find({ email: req.body.email })
+    User.find({ email: req.body.email })
       .select("+password")
       .exec()
       // if we have found a user
@@ -134,7 +134,7 @@ module.exports = {
   show: (req, res) => {
     console.log("trigger Show", req.userId);
     if (req.userId) {
-      db.User.findById(req.userId, (err, foundUser) => {
+      User.findById(req.userId, (err, foundUser) => {
         res.json(foundUser);
       });
     } else {
@@ -143,7 +143,7 @@ module.exports = {
   },
   delete: (req, res) => {
     console.log("hitting delete");
-    db.User.deleteOne({ _id: req.params.userId }, (err, result) => {
+    User.deleteOne({ _id: req.params.userId }, (err, result) => {
       if (err) {
         return res.status(500).json({ err });
       }
