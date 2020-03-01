@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt"),
   db = require("../models"),
-  jwt = require("jsonwebtoken");
+  jwt = require("jsonwebtoken"),
+  config = require("../config/config");
 
 module.exports = {
   signup: (req, res) => {
