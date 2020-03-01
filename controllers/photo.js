@@ -1,5 +1,4 @@
 const Photo = require("../Models/Photo");
-const db = require("../Models");
 
 module.exports = {
   search: (req, res) => {
