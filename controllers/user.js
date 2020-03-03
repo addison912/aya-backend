@@ -1,7 +1,10 @@
 const bcrypt = require("bcrypt"),
   db = require("../Models"),
   jwt = require("jsonwebtoken"),
-  config = require("../config/config");
+  config = require("../config/config"),
+  { OAuth2Client } = require("google-auth-library"),
+  keys = require("../config/keys.js"),
+  passport = require("passport");
 
 module.exports = {
   signup: (req, res) => {
@@ -74,11 +77,14 @@ module.exports = {
         res.status(500).json({ err });
       });
   },
+  googleRedirect: (req, res) => {
+    res.send("you reached the callback URI");
+  },
   login: (req, res) => {
     console.log("LOGIN CALLED");
     // find the user in our user db
-    console.log("body", req.body);
-    db.User.find({ email: req.body.email })
+    let data = JSON.parse(Buffer.from(req.body.data, "base64").toString());
+    db.User.find({ email: data.email })
       .select("+password")
       .exec()
       // if we have found a user
@@ -92,9 +98,8 @@ module.exports = {
         }
         // we have an email in our db that matches what they gave us
         // now we have to compare their hashed password to what we have in our db
-        console.log("body", req.body);
         console.log("hash", users[0].password);
-        bcrypt.compare(req.body.password, users[0].password, (err, match) => {
+        bcrypt.compare(data.password, users[0].password, (err, match) => {
           console.log(match);
           // If the compare function breaks, let them know
           if (err) {

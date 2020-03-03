@@ -134,7 +134,8 @@ About
 
 package-lock.json
 
-config/config.js
-
+keys.js
+keys.json
+config.js
 seedUser.js
 hashPW.js

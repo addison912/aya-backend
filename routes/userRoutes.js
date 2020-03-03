@@ -3,11 +3,20 @@ const express = require("express"),
   router = express.Router(),
   jwt = require("jsonwebtoken"),
   controllers = require("../controllers"),
-  config = require("../config/config");
+  config = require("../config/config"),
+  keys = require("../config/keys.js"),
+  passport = require("passport");
 
 router.post("/signup", controllers.user.signup);
 
 router.post("/login", controllers.user.login);
+
+router.get(
+  "/login/google",
+  passport.authenticate("google", { scope: ["profile"] })
+);
+
+router.get("/google/redirect");
 
 router.use((req, res, next) => {
   console.log("activated");
