@@ -4305,87 +4305,108 @@ let galleries = [
   { name: "Home", category: "Home" },
   {
     name: "Nest",
-    category: "Advertising"
+    category: "Advertising",
+    order: 1
   },
   {
     name: "Quince Restaurant",
-    category: "Advertising"
+    category: "Advertising",
+    order: 7
   },
   {
     name: "Sightglass Coffee",
-    category: "Advertising"
+    category: "Advertising",
+    order: 2
   },
   {
     name: "Nanit",
-    category: "Advertising"
+    category: "Advertising",
+    order: 4
   },
   {
     name: "Purple Carrot",
-    category: "Advertising"
+    category: "Advertising",
+    order: 5
   },
   {
     name: "Orange Chef",
-    category: "Advertising"
+    category: "Advertising",
+    order: 11
   },
   {
     name: "Pop Slate",
-    category: "Advertising"
+    category: "Advertising",
+    order: 12
   },
   {
     name: "Equal Exchange",
-    category: "Advertising"
+    category: "Advertising",
+    order: 6
   },
   {
     name: "Chin Jukan",
-    category: "Advertising"
+    category: "Advertising",
+    order: 3
   },
   {
     name: "Urban Research Clothing",
-    category: "Advertising"
+    category: "Advertising",
+    order: 14
   },
   {
     name: "Susan/ Grocery",
-    category: "Advertising"
+    category: "Advertising",
+    order: 13
   },
   {
     name: "Peko Peko",
-    category: "Advertising"
+    category: "Advertising",
+    order: 8
   },
   {
     name: "Slanted Door",
-    category: "Advertising"
+    category: "Advertising",
+    order: 10
   },
   {
     name: "Samin Nosrat",
-    category: "Advertising"
+    category: "Advertising",
+    order: 9
   },
   {
     name: "Between Meals",
-    category: "Still Life"
+    category: "Still Life",
+    order: 2
   },
   {
     name: "General",
-    category: "Still Life"
+    category: "Still Life",
+    order: 1
   },
   {
     name: "Paper Flowers",
-    category: "Still Life"
+    category: "Still Life",
+    order: 4
   },
   {
     name: "Slow Food",
-    category: "Still Life"
+    category: "Still Life",
+    order: 3
   },
   {
     name: "Soiled",
-    category: "Still Life"
+    category: "Still Life",
+    order: 4
   },
   {
     name: "Covers",
-    category: "Magazines"
+    category: "Magazines",
+    order: 2
   },
   {
     name: "Tearsheets",
-    category: "Magazines"
+    category: "Magazines",
+    order: 1
   }
 ];
 
