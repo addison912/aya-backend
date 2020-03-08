@@ -3,6 +3,7 @@ const db = require("./Models");
 let photos = [
   {
     location: "Scribe-500x700.jpg",
+    order: 1,
     caption: "Scribe",
     category: "Portraits",
     gallery: "Portraits",
@@ -10,6 +11,7 @@ let photos = [
   },
   {
     location: "AyaBrackettTTurner-500x700.jpg",
+    order: 2,
     caption: "Tiffanie Turner",
     category: "Portraits",
     gallery: "Portraits",
@@ -17,6 +19,7 @@ let photos = [
   },
   {
     location: "Quince-775x554.jpg",
+    order: 3,
     caption: "Quince Restaurant Team",
     category: "Portraits",
     gallery: "Portraits",
@@ -24,6 +27,7 @@ let photos = [
   },
   {
     location: "06Portrait_AliceWaters.jpg",
+    order: 4,
     caption: "Alice Waters",
     category: "Portraits",
     gallery: "Portraits",
@@ -31,6 +35,7 @@ let photos = [
   },
   {
     location: "BrackettChabonWaldman.jpg",
+    order: 5,
     caption: "Michael Chabon & Ayelet Waldman",
     category: "Portraits",
     gallery: "Portraits",
@@ -38,6 +43,7 @@ let photos = [
   },
   {
     location: "AyaBrackettAmyTan.jpg",
+    order: 6,
     caption: "Amy Tan",
     category: "Portraits",
     gallery: "Portraits",
@@ -45,6 +51,7 @@ let photos = [
   },
   {
     location: "DeborahMadison.jpg",
+    order: 7,
     caption: "Deborah Madison",
     category: "Portraits",
     gallery: "Portraits",
@@ -52,6 +59,7 @@ let photos = [
   },
   {
     location: "ThomasMacnaughton1.jpg",
+    order: 8,
     caption: "Thomas McNaughton and Kona",
     category: "Portraits",
     gallery: "Portraits",
@@ -59,6 +67,7 @@ let photos = [
   },
   {
     location: "01portrait_alexis.jpg",
+    order: 9,
     caption: "Alexis",
     category: "Portraits",
     gallery: "Portraits",
@@ -66,6 +75,7 @@ let photos = [
   },
   {
     location: "02portrait_amy.jpg",
+    order: 10,
     caption: "Amy",
     category: "Portraits",
     gallery: "Portraits",
@@ -73,6 +83,7 @@ let photos = [
   },
   {
     location: "03portrait_yuriko.jpg",
+    order: 11,
     caption: "Yuriko",
     category: "Portraits",
     gallery: "Portraits",
@@ -80,6 +91,7 @@ let photos = [
   },
   {
     location: "James.jpg",
+    order: 12,
     caption: "James",
     category: "Portraits",
     gallery: "Portraits",
@@ -87,6 +99,7 @@ let photos = [
   },
   {
     location: "04portrait_charlesphan.jpg",
+    order: 13,
     caption: "Charles Phan",
     category: "Portraits",
     gallery: "Portraits",
@@ -94,6 +107,7 @@ let photos = [
   },
   {
     location: "05Portrait_AnnHamilton.jpg",
+    order: 14,
     caption: "Ann Hamilton",
     category: "Portraits",
     gallery: "Portraits",
@@ -101,6 +115,7 @@ let photos = [
   },
   {
     location: "07portrait_anyafernald.jpg",
+    order: 15,
     caption: "Anya Fernald",
     category: "Portraits",
     gallery: "Portraits",
@@ -108,6 +123,7 @@ let photos = [
   },
   {
     location: "10Portrait_Isabel-509x700.jpg",
+    order: 16,
     caption: "Isabel Allende",
     category: "Portraits",
     gallery: "Portraits",
@@ -115,6 +131,7 @@ let photos = [
   },
   {
     location: "08portrait_armisteadmaupin.jpg",
+    order: 17,
     caption: "Armistead Maupin",
     category: "Portraits",
     gallery: "Portraits",
@@ -122,6 +139,7 @@ let photos = [
   },
   {
     location: "09Portrait_Lauren.jpg",
+    order: 18,
     caption: "Lauren",
     category: "Portraits",
     gallery: "Portraits",
@@ -129,6 +147,7 @@ let photos = [
   },
   {
     location: "11portrait_paris.jpg",
+    order: 19,
     caption: "Paris",
     category: "Portraits",
     gallery: "Portraits",
@@ -136,6 +155,7 @@ let photos = [
   },
   {
     location: "12Portrait_JoannaNewsom.jpg",
+    order: 20,
     caption: "Joanna Newsom",
     category: "Portraits",
     gallery: "Portraits",
@@ -143,6 +163,7 @@ let photos = [
   },
   {
     location: "13Portrait_IsabelAllende.jpg",
+    order: 21,
     caption: "Isabel Allende and Willie Gordon",
     category: "Portraits",
     gallery: "Portraits",
@@ -150,6 +171,7 @@ let photos = [
   },
   {
     location: "KaruizawaSpring.jpg",
+    order: 22,
     caption: "Karuizawa",
     category: "Portraits",
     gallery: "Portraits",
@@ -157,6 +179,7 @@ let photos = [
   },
   {
     location: "15portrait_denna.jpg",
+    order: 23,
     caption: "Denna",
     category: "Portraits",
     gallery: "Portraits",
@@ -164,6 +187,7 @@ let photos = [
   },
   {
     location: "16portrait_floragrubb.jpg",
+    order: 24,
     caption: "Flora Grubb",
     category: "Portraits",
     gallery: "Portraits",
@@ -171,6 +195,7 @@ let photos = [
   },
   {
     location: "18portrait_andadamayi.jpg",
+    order: 25,
     caption: "Anandamayi",
     category: "Portraits",
     gallery: "Portraits",
@@ -178,6 +203,7 @@ let photos = [
   },
   {
     location: "19portrait_melissa.jpg",
+    order: 26,
     caption: "Melissa",
     category: "Portraits",
     gallery: "Portraits",
@@ -185,6 +211,7 @@ let photos = [
   },
   {
     location: "20portrait_christine.jpg",
+    order: 27,
     caption: "Christine",
     category: "Portraits",
     gallery: "Portraits",
@@ -192,6 +219,7 @@ let photos = [
   },
   {
     location: "21portrait_len.jpg",
+    order: 28,
     caption: "Len",
     category: "Portraits",
     gallery: "Portraits",
@@ -199,6 +227,7 @@ let photos = [
   },
   {
     location: "22Portrait_Obachan.jpg",
+    order: 29,
     caption: "Obachan",
     category: "Portraits",
     gallery: "Portraits",
@@ -206,6 +235,7 @@ let photos = [
   },
   {
     location: "23portrait_sylviaweinstock.jpg",
+    order: 30,
     caption: "Sylvia Weinstock",
     category: "Portraits",
     gallery: "Portraits",
@@ -213,6 +243,7 @@ let photos = [
   },
   {
     location: "24portrait_patderby.jpg",
+    order: 31,
     caption: "Pat Derby",
     category: "Portraits",
     gallery: "Portraits",
@@ -2019,6 +2050,7 @@ let photos = [
   },
   {
     location: "1__Bittman_HTCE_Cover-1-622x700.jpg",
+    order: 1,
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
     gallery: "How to Cook Everything",
@@ -2026,6 +2058,7 @@ let photos = [
   },
   {
     location: "1_Bittman_HTCE-775x436.jpg",
+    order: 2,
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
     gallery: "How to Cook Everything",
@@ -2033,6 +2066,7 @@ let photos = [
   },
   {
     location: "2_Bittman_HTCE-775x436.jpg",
+    order: 3,
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
     gallery: "How to Cook Everything",
@@ -2040,6 +2074,7 @@ let photos = [
   },
   {
     location: "3_Bittman_HTCE-775x436.jpg",
+    order: 4,
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
     gallery: "How to Cook Everything",
@@ -2047,6 +2082,7 @@ let photos = [
   },
   {
     location: "26_Bittman_HTCE-775x436.jpg",
+    order: 18,
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
     gallery: "How to Cook Everything",
@@ -2054,6 +2090,7 @@ let photos = [
   },
   {
     location: "10_Bittman_HTCE-775x436.jpg",
+    order: 9,
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
     gallery: "How to Cook Everything",
@@ -2061,6 +2098,7 @@ let photos = [
   },
   {
     location: "13_Bittman_HTCE-775x436.jpg",
+    order: 12,
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
     gallery: "How to Cook Everything",
@@ -2068,6 +2106,7 @@ let photos = [
   },
   {
     location: "18_Bittman_HTCE-775x436.jpg",
+    order: 15,
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
     gallery: "How to Cook Everything",
@@ -2075,6 +2114,7 @@ let photos = [
   },
   {
     location: "24_Bittman_HTCE-775x436.jpg",
+    order: 16,
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
     gallery: "How to Cook Everything",
@@ -2082,6 +2122,7 @@ let photos = [
   },
   {
     location: "11_Bittman_HTCE-775x436.jpg",
+    order: 10,
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
     gallery: "How to Cook Everything",
@@ -2089,6 +2130,7 @@ let photos = [
   },
   {
     location: "4_Bittman_HTCE-775x436.jpg",
+    order: 5,
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
     gallery: "How to Cook Everything",
@@ -2096,6 +2138,7 @@ let photos = [
   },
   {
     location: "14_Bittman_HTCE-775x436.jpg",
+    order: 13,
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
     gallery: "How to Cook Everything",
@@ -2103,6 +2146,7 @@ let photos = [
   },
   {
     location: "5_Bittman_HTCE-775x436.jpg",
+    order: 6,
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
     gallery: "How to Cook Everything",
@@ -2110,6 +2154,7 @@ let photos = [
   },
   {
     location: "12_Bittman_HTCE-775x436.jpg",
+    order: 11,
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
     gallery: "How to Cook Everything",
@@ -2117,6 +2162,7 @@ let photos = [
   },
   {
     location: "6_Bittman_HTCE-775x436.jpg",
+    order: 7,
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
     gallery: "How to Cook Everything",
@@ -2124,6 +2170,7 @@ let photos = [
   },
   {
     location: "7_Bittman_HTCE-775x436.jpg",
+    order: 8,
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
     gallery: "How to Cook Everything",
@@ -2131,6 +2178,7 @@ let photos = [
   },
   {
     location: "16_Bittman_HTCE-775x436.jpg",
+    order: 14,
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
     gallery: "How to Cook Everything",
@@ -2138,6 +2186,7 @@ let photos = [
   },
   {
     location: "25_Bittman_HTCE-775x436.jpg",
+    order: 17,
     caption: "How to Cook Everything: Houghton Mifflin Harcourt",
     category: "Books",
     gallery: "How to Cook Everything",
@@ -2145,6 +2194,7 @@ let photos = [
   },
   {
     location: "1_BittmanDFE_Cover-1-598x700.jpg",
+    order: 1,
     caption: "",
     category: "Books",
     gallery: "Dinner For Everyone",
@@ -2152,6 +2202,7 @@ let photos = [
   },
   {
     location: "Bittman_1_Fettucini-775x466.jpg",
+    order: 2,
     caption: "Dinner For Everyone: Clarkson Potter",
     category: "Books",
     gallery: "Dinner For Everyone",
@@ -2159,6 +2210,7 @@ let photos = [
   },
   {
     location: "Bittman_3_frenchtoast-775x461.jpg",
+    order: 3,
     caption: "Dinner For Everyone: Clarkson Potter",
     category: "Books",
     gallery: "Dinner For Everyone",
@@ -2166,6 +2218,7 @@ let photos = [
   },
   {
     location: "Bittman_4_gnocchi-775x467.jpg",
+    order: 4,
     caption: "Dinner For Everyone: Clarkson Potter",
     category: "Books",
     gallery: "Dinner For Everyone",
@@ -2173,6 +2226,7 @@ let photos = [
   },
   {
     location: "Bittman_5_Parmigiana-775x459.jpg",
+    order: 5,
     caption: "Dinner For Everyone: Clarkson Potter",
     category: "Books",
     gallery: "Dinner For Everyone",
@@ -2180,6 +2234,7 @@ let photos = [
   },
   {
     location: "Bittman_6_Trout-775x456.jpg",
+    order: 6,
     caption: "Dinner For Everyone: Clarkson Potter",
     category: "Books",
     gallery: "Dinner For Everyone",
@@ -2187,6 +2242,7 @@ let photos = [
   },
   {
     location: "Bittman_7_Tandoori-775x462.jpg",
+    order: 7,
     caption: "Dinner For Everyone: Clarkson Potter",
     category: "Books",
     gallery: "Dinner For Everyone",
@@ -2194,6 +2250,7 @@ let photos = [
   },
   {
     location: "Bittman_8_Chowder-775x465.jpg",
+    order: 8,
     caption: "Dinner For Everyone: Clarkson Potter",
     category: "Books",
     gallery: "Dinner For Everyone",
@@ -2201,6 +2258,7 @@ let photos = [
   },
   {
     location: "Bittman_10_JerkChicken-775x458.jpg",
+    order: 10,
     caption: "Dinner For Everyone: Clarkson Potter",
     category: "Books",
     gallery: "Dinner For Everyone",
@@ -2208,6 +2266,7 @@ let photos = [
   },
   {
     location: "Bittman_9_risotto-775x465.jpg",
+    order: 9,
     caption: "Dinner For Everyone: Clarkson Potter",
     category: "Books",
     gallery: "Dinner For Everyone",
@@ -2215,6 +2274,7 @@ let photos = [
   },
   {
     location: "Bittman_11_Lomein-775x464.jpg",
+    order: 11,
     caption: "Dinner For Everyone: Clarkson Potter",
     category: "Books",
     gallery: "Dinner For Everyone",
@@ -2222,6 +2282,7 @@ let photos = [
   },
   {
     location: "Bittman_12_Salmon-775x462.jpg",
+    order: 12,
     caption: "Dinner For Everyone: Clarkson Potter",
     category: "Books",
     gallery: "Dinner For Everyone",
@@ -2229,6 +2290,7 @@ let photos = [
   },
   {
     location: "Bittman_13_Eggplant-775x457.jpg",
+    order: 13,
     caption: "Dinner For Everyone: Clarkson Potter",
     category: "Books",
     gallery: "Dinner For Everyone",
@@ -2236,6 +2298,7 @@ let photos = [
   },
   {
     location: "NewlywedTable-508x700.jpg",
+    order: 1,
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
     gallery: "Newlywed Table",
@@ -2243,6 +2306,7 @@ let photos = [
   },
   {
     location: "Brackett-2019NewlwedCookbook_1-775x534.jpg",
+    order: 2,
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
     gallery: "Newlywed Table",
@@ -2250,6 +2314,7 @@ let photos = [
   },
   {
     location: "Brackett-2019NewlwedCookbook_3-775x534.jpg",
+    order: 3,
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
     gallery: "Newlywed Table",
@@ -2257,6 +2322,7 @@ let photos = [
   },
   {
     location: "Brackett-2019NewlwedCookbook_6-775x534.jpg",
+    order: 4,
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
     gallery: "Newlywed Table",
@@ -2264,6 +2330,7 @@ let photos = [
   },
   {
     location: "Brackett-2019NewlwedCookbook_7-775x534.jpg",
+    order: 5,
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
     gallery: "Newlywed Table",
@@ -2271,6 +2338,7 @@ let photos = [
   },
   {
     location: "Brackett-2019NewlwedCookbook_10-775x534.jpg",
+    order: 8,
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
     gallery: "Newlywed Table",
@@ -2278,6 +2346,7 @@ let photos = [
   },
   {
     location: "Brackett-2019NewlwedCookbook_9-775x534.jpg",
+    order: 7,
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
     gallery: "Newlywed Table",
@@ -2285,6 +2354,7 @@ let photos = [
   },
   {
     location: "Brackett-2019NewlwedCookbook_13-775x534.jpg",
+    order: 11,
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
     gallery: "Newlywed Table",
@@ -2292,6 +2362,7 @@ let photos = [
   },
   {
     location: "Brackett-2019NewlwedCookbook_14-775x534.jpg",
+    order: 12,
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
     gallery: "Newlywed Table",
@@ -2299,6 +2370,7 @@ let photos = [
   },
   {
     location: "Brackett-2019NewlwedCookbook_8-775x534.jpg",
+    order: 6,
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
     gallery: "Newlywed Table",
@@ -2306,6 +2378,7 @@ let photos = [
   },
   {
     location: "Brackett-2019NewlwedCookbook_11-775x534.jpg",
+    order: 9,
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
     gallery: "Newlywed Table",
@@ -2313,6 +2386,7 @@ let photos = [
   },
   {
     location: "Brackett-2019NewlwedCookbook_12-775x534.jpg",
+    order: 10,
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
     gallery: "Newlywed Table",
@@ -2320,6 +2394,7 @@ let photos = [
   },
   {
     location: "Brackett-2019NewlwedCookbook_16-775x534.jpg",
+    order: 13,
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
     gallery: "Newlywed Table",
@@ -2327,6 +2402,7 @@ let photos = [
   },
   {
     location: "Brackett-2019NewlwedCookbook_17-775x534.jpg",
+    order: 14,
     caption: "Newlywed Table : Artisan Publishing",
     category: "Books",
     gallery: "Newlywed Table",
@@ -2334,6 +2410,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_PaperFlwr_Cover-563x700.jpg",
+    order: 1,
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
     gallery: "The Fine Art of Paper Flowers",
@@ -2341,6 +2418,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_PaperFlwr_2-775x484.jpg",
+    order: 3,
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
     gallery: "The Fine Art of Paper Flowers",
@@ -2348,6 +2426,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_PaperFlwr_1-775x484.jpg",
+    order: 2,
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
     gallery: "The Fine Art of Paper Flowers",
@@ -2355,6 +2434,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_PaperFlwr_8-775x484.jpg",
+    order: 9,
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
     gallery: "The Fine Art of Paper Flowers",
@@ -2362,6 +2442,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_PaperFlwr_3-775x484.jpg",
+    order: 4,
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
     gallery: "The Fine Art of Paper Flowers",
@@ -2369,6 +2450,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_PaperFlwr_4-775x484.jpg",
+    order: 5,
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
     gallery: "The Fine Art of Paper Flowers",
@@ -2376,6 +2458,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_PaperFlwr_5-775x484.jpg",
+    order: 6,
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
     gallery: "The Fine Art of Paper Flowers",
@@ -2383,6 +2466,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_PaperFlwr_9-775x484.jpg",
+    order: 10,
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
     gallery: "The Fine Art of Paper Flowers",
@@ -2390,6 +2474,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_PaperFlwr_6-775x484.jpg",
+    order: 7,
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
     gallery: "The Fine Art of Paper Flowers",
@@ -2397,6 +2482,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_PaperFlwr_12-775x484.jpg",
+    order: 13,
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
     gallery: "The Fine Art of Paper Flowers",
@@ -2404,6 +2490,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_PaperFlwr_7-775x484.jpg",
+    order: 8,
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
     gallery: "The Fine Art of Paper Flowers",
@@ -2411,6 +2498,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_PaperFlwr_13-775x484.jpg",
+    order: 14,
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
     gallery: "The Fine Art of Paper Flowers",
@@ -2418,6 +2506,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_PaperFlwr_11-775x484.jpg",
+    order: 12,
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
     gallery: "The Fine Art of Paper Flowers",
@@ -2425,6 +2514,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_PaperFlwr_10-775x484.jpg",
+    order: 11,
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
     gallery: "The Fine Art of Paper Flowers",
@@ -2432,6 +2522,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_PaperFlwr_14-775x484.jpg",
+    order: 15,
     caption: "The Fine Art of Paper Flowers: Ten Speed/Watson Guptill",
     category: "Books",
     gallery: "The Fine Art of Paper Flowers",
@@ -2439,6 +2530,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_NatColor_1-529x700.jpg",
+    order: 1,
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
     gallery: "Natural Color",
@@ -2446,6 +2538,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_NatColor_2-775x517.jpg",
+    order: 2,
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
     gallery: "Natural Color",
@@ -2453,6 +2546,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_NatColor_3-775x517.jpg",
+    order: 3,
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
     gallery: "Natural Color",
@@ -2460,6 +2554,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_NatColor_4-775x517.jpg",
+    order: 4,
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
     gallery: "Natural Color",
@@ -2467,6 +2562,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_NatColor_5-775x517.jpg",
+    order: 5,
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
     gallery: "Natural Color",
@@ -2474,6 +2570,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_NatColor_6-775x517.jpg",
+    order: 6,
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
     gallery: "Natural Color",
@@ -2481,6 +2578,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_NatColor_7-1-775x517.jpg",
+    order: 7,
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
     gallery: "Natural Color",
@@ -2488,6 +2586,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_NatColor_8-775x517.jpg",
+    order: 8,
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
     gallery: "Natural Color",
@@ -2495,6 +2594,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_NatColor_9-775x517.jpg",
+    order: 9,
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
     gallery: "Natural Color",
@@ -2502,6 +2602,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_NatColor_10-775x517.jpg",
+    order: 10,
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
     gallery: "Natural Color",
@@ -2509,6 +2610,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_NatColor_11-775x517.jpg",
+    order: 11,
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
     gallery: "Natural Color",
@@ -2516,6 +2618,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_NatColor_12-775x517.jpg",
+    order: 12,
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
     gallery: "Natural Color",
@@ -2523,6 +2626,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_NatColor_13-775x517.jpg",
+    order: 13,
     caption: "Natural Color : Ten Speed Press/ WatsonGuptill",
     category: "Books",
     gallery: "Natural Color",
@@ -2530,6 +2634,7 @@ let photos = [
   },
   {
     location: "AyaBrackettBitterJBA1-775x700.jpg",
+    order: 1,
     caption: "Bitter : Ten Speed press",
     category: "Books",
     gallery: "Bitter",
@@ -2537,6 +2642,7 @@ let photos = [
   },
   {
     location: "BitterBook_Page_Radicchio.jpg",
+    order: 2,
     caption: "Bitter : Ten Speed press",
     category: "Books",
     gallery: "Bitter",
@@ -2544,6 +2650,7 @@ let photos = [
   },
   {
     location: "BitterBookCitrus.jpg",
+    order: 3,
     caption: "Bitter : Ten Speed press",
     category: "Books",
     gallery: "Bitter",
@@ -2551,6 +2658,7 @@ let photos = [
   },
   {
     location: "BitterBookCrdoon.jpg",
+    order: 4,
     caption: "Bitter : Ten Speed press",
     category: "Books",
     gallery: "Bitter",
@@ -2558,6 +2666,7 @@ let photos = [
   },
   {
     location: "BitterBook_PageCocoa.jpg",
+    order: 5,
     caption: "Bitter : Ten Speed press",
     category: "Books",
     gallery: "Bitter",
@@ -2565,6 +2674,7 @@ let photos = [
   },
   {
     location: "BitterBookQuail.jpg",
+    order: 6,
     caption: "Bitter : Ten Speed press",
     category: "Books",
     gallery: "Bitter",
@@ -2572,6 +2682,7 @@ let photos = [
   },
   {
     location: "BitterBook_Aspara.jpg",
+    order: 7,
     caption: "Bitter : Ten Speed press",
     category: "Books",
     gallery: "Bitter",
@@ -2579,6 +2690,7 @@ let photos = [
   },
   {
     location: "BitterBookDessert.jpg",
+    order: 8,
     caption: "Bitter : Ten Speed press",
     category: "Books",
     gallery: "Bitter",
@@ -2586,6 +2698,7 @@ let photos = [
   },
   {
     location: "SoiledBookWeb1-775x553.jpg",
+    order: 1,
     caption: "Hand Painted Soiled Series Books",
     category: "Books",
     gallery: "Soiled Book",
@@ -2593,6 +2706,7 @@ let photos = [
   },
   {
     location: "SoiledBookWeb2-2-775x553.jpg",
+    order: 2,
     caption: "Soiled Book",
     category: "Books",
     gallery: "Soiled Book",
@@ -2600,6 +2714,7 @@ let photos = [
   },
   {
     location: "SoiledBookWeb6-775x553.jpg",
+    order: 3,
     caption: "Soiled Book",
     category: "Books",
     gallery: "Soiled Book",
@@ -2607,6 +2722,7 @@ let photos = [
   },
   {
     location: "SoiledBookWeb5-775x553.jpg",
+    order: 4,
     caption: "",
     category: "Books",
     gallery: "Soiled Book",
@@ -2614,6 +2730,7 @@ let photos = [
   },
   {
     location: "SoiledBookWeb4-775x553.jpg",
+    order: 5,
     caption: "Soiled Book",
     category: "Books",
     gallery: "Soiled Book",
@@ -2621,6 +2738,7 @@ let photos = [
   },
   {
     location: "SoiledBookWeb3-775x553.jpg",
+    order: 6,
     caption: "Soiled Book",
     category: "Books",
     gallery: "Soiled Book",
@@ -2628,6 +2746,7 @@ let photos = [
   },
   {
     location: "SoiledBookWeb7-775x553.jpg",
+    order: 7,
     caption: "Soiled Book Signed Edition of 500",
     category: "Books",
     gallery: "Soiled Book",
@@ -2635,6 +2754,7 @@ let photos = [
   },
   {
     location: "HandpaintingSoiledBooksWeb-700x700.jpg",
+    order: 8,
     caption: "Hand Painted Soiled Books with Natural Food Dyes",
     category: "Books",
     gallery: "Soiled Book",
@@ -2642,6 +2762,7 @@ let photos = [
   },
   {
     location: "NaturalDyeBookmark-553x700.jpg",
+    order: 9,
     caption: "Food Dyes Used to Paint Soiled Books",
     category: "Books",
     gallery: "Soiled Book",
@@ -2649,6 +2770,7 @@ let photos = [
   },
   {
     location: "01_book_kibo.jpg",
+    order: 1,
     caption: "Kibo Cookbook: Ten Speed Press",
     category: "Books",
     gallery: "Kibo Cookbook",
@@ -2656,6 +2778,7 @@ let photos = [
   },
   {
     location: "02_book_kibo.jpg",
+    order: 2,
     caption: "Kibo Cookbook: Ten Speed Press",
     category: "Books",
     gallery: "Kibo Cookbook",
@@ -2663,6 +2786,7 @@ let photos = [
   },
   {
     location: "03_book_kibo.jpg",
+    order: 3,
     caption: "Kibo Cookbook: Ten Speed Press",
     category: "Books",
     gallery: "Kibo Cookbook",
@@ -2670,6 +2794,7 @@ let photos = [
   },
   {
     location: "04_book_chezpanisse.jpg",
+    order: 1,
     caption: "Chez Panisse 40th Anniversary Book: Clarkson Potter",
     category: "Books",
     gallery: "Chez Panisse 40th Anniversary",
@@ -2677,6 +2802,7 @@ let photos = [
   },
   {
     location: "05_book_chezpanisse.jpg",
+    order: 2,
     caption: "Chez Panisse 40th Anniversary Book: Clarkson Potter",
     category: "Books",
     gallery: "Chez Panisse 40th Anniversary",
@@ -2684,6 +2810,7 @@ let photos = [
   },
   {
     location: "05a_coccobook.jpg",
+    order: 1,
     caption: "Welcome Cocco: Babjiji Publishing",
     category: "Books",
     gallery: "Welcome Cocco",
@@ -2691,6 +2818,7 @@ let photos = [
   },
   {
     location: "05aa_bookcoccomay-775x700.jpg",
+    order: 2,
     caption: "Welcome Cocco: Babjiji Publishing",
     category: "Books",
     gallery: "Welcome Cocco",
@@ -2698,6 +2826,7 @@ let photos = [
   },
   {
     location: "05b_bbookcoccoapril.jpg",
+    order: 3,
     caption: "Welcome Cocco: Babjiji Publishing",
     category: "Books",
     gallery: "Welcome Cocco",
@@ -2705,6 +2834,7 @@ let photos = [
   },
   {
     location: "05c_bbookcoccoaug1-775x700.png",
+    order: 4,
     caption: "Welcome Cocco: Babjiji Publishing",
     category: "Books",
     gallery: "Welcome Cocco",
@@ -2712,6 +2842,7 @@ let photos = [
   },
   {
     location: "05cc_bbookcoccoaug1-775x700.png",
+    order: 5,
     caption: "Welcome Cocco: Babjiji Publishing",
     category: "Books",
     gallery: "Welcome Cocco",
@@ -2719,6 +2850,7 @@ let photos = [
   },
   {
     location: "05d_bbookcoccoaug2-775x700.png",
+    order: 6,
     caption: "Welcome Cocco: Babjiji Publishing",
     category: "Books",
     gallery: "Welcome Cocco",
@@ -2726,6 +2858,7 @@ let photos = [
   },
   {
     location: "05e_bookcoccoaug6-775x700.jpg",
+    order: 7,
     caption: "Welcome Cocco: Babjiji Publishing",
     category: "Books",
     gallery: "Welcome Cocco",
@@ -2733,6 +2866,7 @@ let photos = [
   },
   {
     location: "05ed_bookcoccomay-775x700.png",
+    order: 8,
     caption: "Welcome Cocco: Babjiji Publishing",
     category: "Books",
     gallery: "Welcome Cocco",
@@ -2740,6 +2874,7 @@ let photos = [
   },
   {
     location: "05f_bookcoccoaug-775x700.png",
+    order: 9,
     caption: "Welcome Cocco: Babjiji Publishing",
     category: "Books",
     gallery: "Welcome Cocco",
@@ -2747,6 +2882,7 @@ let photos = [
   },
   {
     location: "05g_bookcoccosep-775x700.png",
+    order: 10,
     caption: "Welcome Cocco: Babjiji Publishing",
     category: "Books",
     gallery: "Welcome Cocco",
@@ -2754,6 +2890,7 @@ let photos = [
   },
   {
     location: "05h_bookcoccojune-775x700.jpg",
+    order: 11,
     caption: "Welcome Cocco: Babjiji Publishing",
     category: "Books",
     gallery: "Welcome Cocco",
@@ -2761,6 +2898,7 @@ let photos = [
   },
   {
     location: "13_book_tl.jpg",
+    order: 1,
     caption: "Travel + Leisure Trips: American Express Publishing",
     category: "Books",
     gallery: "Travel + Leisure Trips",
@@ -2768,6 +2906,7 @@ let photos = [
   },
   {
     location: "14_book_tl-775x700.jpg",
+    order: 2,
     caption: "Travel + Leisure Trips: American Express Publishing",
     category: "Books",
     gallery: "Travel + Leisure Trips",
@@ -2775,13 +2914,15 @@ let photos = [
   },
   {
     location: "Book.jpg",
+    order: 1,
     caption: "Come to the Table: Rodale Press",
     category: "Books",
-    gallery: "Book Covers",
+    gallery: "Come to the Table",
     searchTags: []
   },
   {
     location: "16_book_japbookcover.jpg",
+    order: 1,
     caption: "Building the Japanese House Today: Harry Abrams Inc.",
     category: "Books",
     gallery: "Building the Japanese House Today",
@@ -2789,6 +2930,7 @@ let photos = [
   },
   {
     location: "17_book_japbook.jpg",
+    order: 2,
     caption: "Building the Japanese House Today: Harry Abrams Inc.",
     category: "Books",
     gallery: "Building the Japanese House Today",
@@ -2796,6 +2938,7 @@ let photos = [
   },
   {
     location: "18_book_japbook.jpg",
+    order: 3,
     caption: "Building the Japanese House Today: Harry Abrams Inc.",
     category: "Books",
     gallery: "Building the Japanese House Today",
@@ -2803,16 +2946,18 @@ let photos = [
   },
   {
     location: "19_book_japanesebathbook.jpg",
+    order: 1,
     caption: "Japanese Bath Book: Gibbs Smith Press",
     category: "Books",
-    gallery: "Building the Japanese House Today",
+    gallery: "Japanese Bath Book",
     searchTags: []
   },
   {
     location: "20_book_slowfoodcover.jpg",
+    order: 1,
     caption: "Slow Food Guide San Francisco: Chelsea Green Publishing",
     category: "Books",
-    gallery: "Book Covers",
+    gallery: "Slow Food Guide San Francisco",
     searchTags: []
   },
   {
@@ -3741,6 +3886,7 @@ let photos = [
   },
   {
     location: "07opener_albuquerqueballoons.jpg",
+    order: 41,
     caption: "Albuquerque",
     category: "Home",
     gallery: "Home",
@@ -3748,6 +3894,7 @@ let photos = [
   },
   {
     location: "20190206_LizPrueitt17899_RT-500x700.jpg",
+    order: 14,
     caption: "Liz Prueitt",
     category: "Home",
     gallery: "Home",
@@ -3755,6 +3902,7 @@ let photos = [
   },
   {
     location: "AliceBed.jpg",
+    order: 29,
     caption: "Wood and Fruit",
     category: "Home",
     gallery: "Home",
@@ -3762,6 +3910,7 @@ let photos = [
   },
   {
     location: "17opener_notopeninsula.jpg",
+    order: 19,
     caption: "Noto Peninsula",
     category: "Home",
     gallery: "Home",
@@ -3769,6 +3918,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_VincentMontreuil-1-560x700.jpg",
+    order: 13,
     caption: "Comfort Food: Vincent, Montreuil",
     category: "Home",
     gallery: "Home",
@@ -3776,6 +3926,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_DelphineMontreuil-1-560x700.jpg",
+    order: 33,
     caption: "Comfort Food: Delphine, Montreuil",
     category: "Home",
     gallery: "Home",
@@ -3783,6 +3934,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_Caitlin-775x554.jpg",
+    order: 21,
     caption: "Comfort Food: Caitlin, Brooklyn",
     category: "Home",
     gallery: "Home",
@@ -3790,6 +3942,7 @@ let photos = [
   },
   {
     location: "TartineCake76321.jpg",
+    order: 15,
     caption: "Tartine Ice Cream Cake",
     category: "Home",
     gallery: "Home",
@@ -3797,6 +3950,7 @@ let photos = [
   },
   {
     location: "Radicchio.jpg",
+    order: 6,
     caption: "Radicchio",
     category: "Home",
     gallery: "Home",
@@ -3804,6 +3958,7 @@ let photos = [
   },
   {
     location: "Quince_Caviar-775x564.jpg",
+    order: 40,
     caption: "Quince Caviar",
     category: "Home",
     gallery: "Home",
@@ -3811,6 +3966,7 @@ let photos = [
   },
   {
     location: "WhiteAsparagus.jpg",
+    order: 28,
     caption: "White Asparagus",
     category: "Home",
     gallery: "Home",
@@ -3818,6 +3974,7 @@ let photos = [
   },
   {
     location: "04opener_dannybowien.jpg",
+    order: 27,
     caption: "Danny Bowien",
     category: "Home",
     gallery: "Home",
@@ -3825,6 +3982,7 @@ let photos = [
   },
   {
     location: "15Opener_Hannah.jpg",
+    order: 32,
     caption: "Hannah",
     category: "Home",
     gallery: "Home",
@@ -3832,6 +3990,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_DMontreuil-775x554.jpg",
+    order: 35,
     caption: "Comfort Food: Delphine, Montreuil",
     category: "Home",
     gallery: "Home",
@@ -3839,6 +3998,7 @@ let photos = [
   },
   {
     location: "BelizeJungelSky.jpg",
+    order: 10,
     caption: "Belize",
     category: "Home",
     gallery: "Home",
@@ -3846,6 +4006,7 @@ let photos = [
   },
   {
     location: "01opener_peachesash.jpg",
+    order: 16,
     caption: "Peaches & Ash",
     category: "Home",
     gallery: "Home",
@@ -3853,6 +4014,7 @@ let photos = [
   },
   {
     location: "11opener_saigon.jpg",
+    order: 9,
     caption: "Saigon",
     category: "Home",
     gallery: "Home",
@@ -3860,6 +4022,7 @@ let photos = [
   },
   {
     location: "BeechandTulips-1-560x700.jpg",
+    order: 22,
     caption: "Beech and Tulips",
     category: "Home",
     gallery: "Home",
@@ -3867,6 +4030,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_Prawns-560x700.jpg",
+    order: 25,
     caption: "Salt Prawns",
     category: "Home",
     gallery: "Home",
@@ -3874,6 +4038,7 @@ let photos = [
   },
   {
     location: "Cardoon.jpg",
+    order: 2,
     caption: "Cardoon",
     category: "Home",
     gallery: "Home",
@@ -3881,6 +4046,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_PaperDahlias-500x700.jpg",
+    order: 11,
     caption: "Paper Dahlias",
     category: "Home",
     gallery: "Home",
@@ -3888,6 +4054,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_PaperHeadpiece-500x700.jpg",
+    order: 7,
     caption: "Kaitlin",
     category: "Home",
     gallery: "Home",
@@ -3895,6 +4062,7 @@ let photos = [
   },
   {
     location: "MSLPopsicles.jpg",
+    order: 8,
     caption: "Popsicles",
     category: "Home",
     gallery: "Home",
@@ -3902,6 +4070,7 @@ let photos = [
   },
   {
     location: "QuinceTortellini-775x564.jpg",
+    order: 37,
     caption: "Quince",
     category: "Home",
     gallery: "Home",
@@ -3909,6 +4078,7 @@ let photos = [
   },
   {
     location: "10opener_stvincent.jpg",
+    order: 36,
     caption: "St. Vincent",
     category: "Home",
     gallery: "Home",
@@ -3916,6 +4086,7 @@ let photos = [
   },
   {
     location: "BlackBeansDye-500x700.jpg",
+    order: 24,
     caption: "Black Bean Dye",
     category: "Home",
     gallery: "Home",
@@ -3923,6 +4094,7 @@ let photos = [
   },
   {
     location: "09opener_ume.jpg",
+    order: 38,
     caption: "Ume",
     category: "Home",
     gallery: "Home",
@@ -3930,6 +4102,7 @@ let photos = [
   },
   {
     location: "ParisPastries.jpg",
+    order: 30,
     caption: "Paris Apartment",
     category: "Home",
     gallery: "Home",
@@ -3937,6 +4110,7 @@ let photos = [
   },
   {
     location: "RoseDye-775x554.jpg",
+    order: 23,
     caption: "Rose Leaf Dye",
     category: "Home",
     gallery: "Home",
@@ -3944,6 +4118,7 @@ let photos = [
   },
   {
     location: "Beerworks.jpg",
+    order: 20,
     caption: "A Chef's Kitchen",
     category: "Home",
     gallery: "Home",
@@ -3951,6 +4126,7 @@ let photos = [
   },
   {
     location: "03opener_popevalleycake.jpg",
+    order: 4,
     caption: "Pope Valley Cake",
     category: "Home",
     gallery: "Home",
@@ -3958,6 +4134,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_Roast-560x700.jpg",
+    order: 18,
     caption: "Crown Roast",
     category: "Home",
     gallery: "Home",
@@ -3965,6 +4142,7 @@ let photos = [
   },
   {
     location: "Citrus.jpg",
+    order: 17,
     caption: "Citrus",
     category: "Home",
     gallery: "Home",
@@ -3972,6 +4150,7 @@ let photos = [
   },
   {
     location: "CitrusPeels.jpg",
+    order: 34,
     caption: "Peels",
     category: "Home",
     gallery: "Home",
@@ -3979,6 +4158,7 @@ let photos = [
   },
   {
     location: "PerfumeIngredients_1-500x700.jpg",
+    order: 1,
     caption: "Perfume Ingredients",
     category: "Home",
     gallery: "Home",
@@ -3986,6 +4166,7 @@ let photos = [
   },
   {
     location: "18opener_tuscany.jpg",
+    order: 39,
     caption: "Tuscany",
     category: "Home",
     gallery: "Home",
@@ -3993,6 +4174,7 @@ let photos = [
   },
   {
     location: "AyaBrackett_tart-579x700.jpg",
+    order: 42,
     caption: "Tart",
     category: "Home",
     gallery: "Home",
@@ -4000,6 +4182,7 @@ let photos = [
   },
   {
     location: "13Opener_DriesVanNotenCake.jpg",
+    order: 12,
     caption: "Dries Van Noten Slice",
     category: "Home",
     gallery: "Home",
@@ -4007,6 +4190,7 @@ let photos = [
   },
   {
     location: "12opener_bigislandtea.jpg",
+    order: 5,
     caption: "Big Island Tea",
     category: "Home",
     gallery: "Home",
@@ -4014,6 +4198,7 @@ let photos = [
   },
   {
     location: "Quince-500x700.jpg",
+    order: 26,
     caption: "Quince",
     category: "Home",
     gallery: "Home",
@@ -4021,6 +4206,7 @@ let photos = [
   },
   {
     location: "02opener_chinjukanpottery.jpg",
+    order: 3,
     caption: "Chinjukan Pottery",
     category: "Home",
     gallery: "Home",
@@ -4028,6 +4214,7 @@ let photos = [
   },
   {
     location: "PassionFruitDye-775x554.jpg",
+    order: 31,
     caption: "Passion Fruit Dye",
     category: "Home",
     gallery: "Home",
@@ -4037,55 +4224,75 @@ let photos = [
 let galleries = [
   {
     name: "How to Cook Everything",
-    category: "Books"
+    category: "Books",
+    order: 1
   },
-  // {
-  //   name: "Dinner for Everyone",
-  //   category: "Books"
-  // },
+  {
+    name: "Dinner For Everyone",
+    category: "Books",
+    order: 3
+  },
   {
     name: "Newlywed Table",
-    category: "Books"
+    category: "Books",
+    order: 4
   },
   {
     name: "The Fine Art of Paper Flowers",
-    category: "Books"
+    category: "Books",
+    order: 5
   },
   {
     name: "Natural Color",
-    category: "Books"
+    category: "Books",
+    order: 6
   },
   {
     name: "Bitter",
-    category: "Books"
+    category: "Books",
+    order: 2
   },
   {
     name: "Soiled Book",
-    category: "Books"
+    category: "Books",
+    order: 7
   },
   {
     name: "Kibo Cookbook",
-    category: "Books"
+    category: "Books",
+    order: 9
   },
   {
     name: "Chez Panisse 40th Anniversary",
-    category: "Books"
+    category: "Books",
+    order: 8
   },
   {
     name: "Welcome Cocco",
-    category: "Books"
+    category: "Books",
+    order: 12
   },
   {
     name: "Building the Japanese House Today",
+    category: "Books",
+    order: 11
+  },
+  {
+    name: "Travel + Leisure Trips",
     category: "Books"
   },
-  // {
-  //   name: "Travel + Leisure Trips",
-  //   category: "Books"
-  // },
   {
-    name: "Book Covers",
+    name: "Slow Food Guide San Francisco",
     category: "Books"
+  },
+  {
+    name: "Japanese Bath Book",
+    category: "Books"
+  },
+  {
+    name: "Come to the Table",
+    category: "Books",
+    order: 10
   },
   {
     name: "Travel",
@@ -4205,7 +4412,8 @@ function createGalleries() {
     galleries.forEach(galleryData => {
       var gallery = new db.Gallery({
         name: galleryData.name,
-        category: galleryData.category
+        category: galleryData.category,
+        order: galleryData.order
       });
       db.Photo.find({ gallery: galleryData.name }, function(
         err,
