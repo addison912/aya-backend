@@ -1,6 +1,6 @@
 const db = require("./Models");
 
-news = [
+let news = [
   {
     title: `New Revised Edition of How To Cook Everything by Mark Bittman`,
     date: `September 26, 2019`,
