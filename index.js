@@ -49,6 +49,7 @@ app.use("/api/gallery", routes.gallery);
 app.use("/api/photo", routes.photo);
 app.use("/api/news", routes.news);
 app.use("/api/about", routes.about);
+app.use("/api/shop", routes.shop);
 
 //static file routes
 app.use("/uploads", express.static("uploads"));
@@ -86,11 +87,11 @@ function verifyToken(req, res, next) {
   }
 }
 
-app.get("/api/test", function(req, res) {
+app.get("/api/test", function (req, res) {
   res.json({ message: "Hello World" });
 });
 
-app.get("/api/fail", function(req, res) {
+app.get("/api/fail", function (req, res) {
   console.log("no response");
 });
 

@@ -3,5 +3,6 @@ module.exports = {
   gallery: require("./galleryRoutes"),
   photo: require("./photoRoutes"),
   news: require("./newsRoutes"),
-  about: require("./aboutRoutes")
+  about: require("./aboutRoutes"),
+  shop: require("./shopRoutes"),
 };
