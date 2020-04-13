@@ -4,29 +4,11 @@ let shop_items = [
   {
     name: "Limited Edition Prints",
     photos: [
-      "http://funky.haus/uploads/photos/Still_Life/Soiled/HandpaintingSoiledBooksWeb-700x700.jpg",
+      "http://funky.haus/uploads/photos/Still_Life/Soiled/AyaBrackettPreservesOven.jpg",
     ],
     description:
       "Limited edition archival prints available for selected website images. Email aya@ayabrackett.com for more information",
     availability: "0",
-  },
-  {
-    name: "Limited Edition Prints",
-    photos: [
-      "http://funky.haus/uploads/photos/Still_Life/Soiled/HandpaintingSoiledBooksWeb-700x700.jpg",
-    ],
-    description:
-      "Limited edition archival prints available for selected website images. Email aya@ayabrackett.com for more information",
-    availability: "sold out",
-  },
-  {
-    name: "Limited Edition Prints",
-    photos: [
-      "http://funky.haus/uploads/photos/Still_Life/Soiled/HandpaintingSoiledBooksWeb-700x700.jpg",
-    ],
-    description:
-      "Limited edition archival prints available for selected website images. Email aya@ayabrackett.com for more information",
-    availability: "sold out",
   },
 ];
 
