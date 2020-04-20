@@ -12,13 +12,13 @@ module.exports = {
     // Check to see if email is already in db
     db.User.findOne({ email: req.body.email })
       .exec()
-      .then(user => {
+      .then((user) => {
         console.log("checking if email exists in DB ...");
         // if a user is found with that email
         if (!!user) {
           // send an error and let the user know that the email already exists
           return res.status(409).json({
-            message: "email already exists"
+            message: "email already exists",
           });
           // if we don't have this user's email in our db, lets get them set up!
         } else {
@@ -34,7 +34,7 @@ module.exports = {
               db.User.create(
                 {
                   email: req.body.email,
-                  password: hash
+                  password: hash,
                 },
                 (err, newUser) => {
                   console.log("here is the result", newUser);
@@ -44,7 +44,7 @@ module.exports = {
                   // we send our new data back to user or whatever you want to do.
                   let user = {
                     email: newUser.email,
-                    _id: newUser._id
+                    _id: newUser._id,
                   };
 
                   jwt.sign(
@@ -52,7 +52,7 @@ module.exports = {
                     config.jwtSecret,
                     {
                       // its good practice to have an expiration amount for jwt tokens.
-                      expiresIn: "1h"
+                      expiresIn: "1h",
                     },
                     (err, signedJwt) => {
                       if (err) {
@@ -61,7 +61,7 @@ module.exports = {
                       res.status(200).json({
                         message: "User Created",
                         user,
-                        signedJwt
+                        signedJwt,
                       });
                     }
                   );
@@ -72,7 +72,7 @@ module.exports = {
           });
         }
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
         res.status(500).json({ err });
       });
@@ -89,12 +89,12 @@ module.exports = {
       .select("+password")
       .exec()
       // if we have found a user
-      .then(users => {
+      .then((users) => {
         // if there is not email in our db
         console.log("USERS: ", users);
         if (users.length < 1) {
           return res.status(401).json({
-            message: "Email/Password incorrect"
+            message: "Email/Password incorrect",
           });
         }
         // we have an email in our db that matches what they gave us
@@ -114,14 +114,14 @@ module.exports = {
 
             let user = {
               email: users[0].email,
-              _id: users[0]._id
+              _id: users[0]._id,
             };
             jwt.sign(
               user,
               config.jwtSecret,
               {
                 // its good practice to have an expiration amount for jwt tokens.
-                expiresIn: "1h"
+                expiresIn: "1h",
               },
               (err, signedJwt) => {
                 if (err) {
@@ -131,7 +131,7 @@ module.exports = {
                   res.status(200).json({
                     message: "Auth successful",
                     user,
-                    signedJwt
+                    signedJwt,
                   });
                 }
               }
@@ -143,7 +143,7 @@ module.exports = {
           }
         });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log("OUTSIDE ERROR_");
         console.log(err);
         res.status(500).json({ err });
@@ -167,5 +167,5 @@ module.exports = {
       }
       res.status(200).json({ result });
     });
-  }
+  },
 };
