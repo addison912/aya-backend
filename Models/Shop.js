@@ -7,6 +7,7 @@ const ShopSchema = new Schema({
   description: String,
   price: Number,
   availability: String,
+  order: Number,
 });
 
 const Shop = mongoose.model("Shop", ShopSchema);

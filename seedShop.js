@@ -2,13 +2,23 @@ const db = require("./Models");
 
 let shop_items = [
   {
+    name: "Soiled Zine",
+    photos: [
+      "http://funky.haus/uploads/photos/Books/Soiled_Book/HandpaintingSoiledBooksWeb-700x700.jpg",
+    ],
+    description:
+      "Soiled is a series which uses food and dirty surfaces to explore the tension between edibility, beauty and disgust.",
+    availability: "0",
+    order: 1,
+  },
+  {
     name: "Limited Edition Prints",
     photos: [
-      "http://funky.haus/uploads/photos/Still_Life/Soiled/AyaBrackettPreservesOven.jpg",
+      "http://funky.haus/uploads/photos/Travel/Travel/27travel_kilauea.jpg",
     ],
     description:
       "Limited edition archival prints available for selected website images. Email aya@ayabrackett.com for more information",
-    availability: "0",
+    order: 2,
   },
 ];
 
