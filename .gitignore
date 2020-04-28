@@ -139,3 +139,5 @@ keys.json
 config.js
 seedUser.js
 hashPW.js
+cert.pem
+key.pem

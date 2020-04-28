@@ -8,29 +8,23 @@ let news = [
     photos: [
       {
         location: `1_Bittman_HTCE-775x436.jpg`,
-        link: "http://new.ayabrackett.com/#/Books"
       },
       {
         location: `2_Bittman_HTCE-775x436.jpg`,
-        link: "http://new.ayabrackett.com/#/Books"
       },
       {
         location: `3_Bittman_HTCE_Cover-1-622x700.jpg`,
-        link: "http://new.ayabrackett.com/#/Books"
       },
       {
         location: `4_Bittman_HTCE-775x436.jpg`,
-        link: "http://new.ayabrackett.com/#/Books"
       },
       {
         location: `5_Bittman_HTCE-775x436.jpg`,
-        link: "http://new.ayabrackett.com/#/Books"
       },
       {
         location: `6_Bittman_HTCE-775x436.jpg`,
-        link: "http://new.ayabrackett.com/#/Books"
-      }
-    ]
+      },
+    ],
   },
   {
     title: `Dinner for Everyone by Mark Bittman – out in stores now!`,
@@ -39,29 +33,23 @@ let news = [
     photos: [
       {
         location: "1-Bittman_3_frenchtoast-775x461.jpg",
-        link: "http://new.ayabrackett.com/#/Books"
       },
       {
         location: "2-Bittman_1_Fettucini-775x466.jpg",
-        link: "http://new.ayabrackett.com/#/Books"
       },
       {
         location: "3-BittmanDFE_Cover-1-598x700.jpg",
-        link: "http://new.ayabrackett.com/#/Books"
       },
       {
         location: "4-Bittman_4_gnocchi-775x467.jpg",
-        link: "http://new.ayabrackett.com/#/Books"
       },
       {
         location: "5-Bittman_5_Parmigiana-775x459.jpg",
-        link: "http://new.ayabrackett.com/#/Books"
       },
       {
         location: "6-Bittman_6_Trout-775x456.jpg",
-        link: "http://new.ayabrackett.com/#/Books"
-      }
-    ]
+      },
+    ],
   },
   {
     title: `Newlywed Table cookbook – Available now!`,
@@ -70,29 +58,23 @@ let news = [
     photos: [
       {
         location: "1-Brackett-2019NewlwedCookbook_12-775x534.jpg",
-        link: "http://new.ayabrackett.com/#/Books"
       },
       {
         location: "2-newlywed-table-bts-1.jpg",
-        link: "http://new.ayabrackett.com/#/Books"
       },
       {
         location: "3-NewlywedTable-508x700.jpg",
-        link: "http://new.ayabrackett.com/#/Books"
       },
       {
         location: "4-Brackett-2019NewlwedCookbook_10-775x534.jpg",
-        link: "http://new.ayabrackett.com/#/Books"
       },
       {
         location: "5-newlywed-table-bts-3.jpg",
-        link: "http://new.ayabrackett.com/#/Books"
       },
       {
         location: "6-newlywed-table-bts-2.jpg",
-        link: "http://new.ayabrackett.com/#/Books"
-      }
-    ]
+      },
+    ],
   },
   {
     title: `A Photo Editor Blog Interview`,
@@ -101,17 +83,14 @@ let news = [
     photos: [
       {
         location: "1-ape-booklet-1.jpg",
-        link: "http://aphotoeditor.com/2018/01/29/the-daily-promo-aya-brackett/"
       },
       {
         location: "2-ape-booklet-2.jpg",
-        link: "http://aphotoeditor.com/2018/01/29/the-daily-promo-aya-brackett/"
       },
       {
         location: "3-ape-booklet-3.jpg",
-        link: "http://aphotoeditor.com/2018/01/29/the-daily-promo-aya-brackett/"
-      }
-    ]
+      },
+    ],
   },
   {
     title: `Wrapped Mark Bittman Cookbook shoot – Whew!`,
@@ -119,15 +98,15 @@ let news = [
     text: `We wrapped a 3 week cookbook shoot for Mark Bittman (Clarkson&nbsp;Potter, 2018) – a marathon of cooking, shooting and eating (like prepping for Thanksgiving every day for 16 days). With over 300 recipes, it will&nbsp;be an essential reference and inspiration to cooks. Below is our shoot board, props and things grillin'. Look for it next year!`,
     photos: [
       {
-        location: "1-AyaBrackettBittmanBook.jpg"
+        location: "1-AyaBrackettBittmanBook.jpg",
       },
       {
-        location: "2-AyaBrackettBittmanBook.jpg"
+        location: "2-AyaBrackettBittmanBook.jpg",
       },
       {
-        location: "3-AyaBrackettBittmanBook2-1.jpg"
-      }
-    ]
+        location: "3-AyaBrackettBittmanBook2-1.jpg",
+      },
+    ],
   },
   {
     title: `New Quince Restaurant Website Launch`,
@@ -136,17 +115,14 @@ let news = [
     photos: [
       {
         location: "1-QuinceFarmChefs-775x485.jpg",
-        link: "http://www.ayabrackett.com/advertising/quince-restaurant/"
       },
       {
         location: "2-QuinceOyster-775x484.jpg",
-        link: "http://www.ayabrackett.com/advertising/quince-restaurant/"
       },
       {
         location: "3-QuinceCaviar-775x484.jpg",
-        link: "http://www.ayabrackett.com/advertising/quince-restaurant/"
-      }
-    ]
+      },
+    ],
   },
   {
     title: `Pre-order “The Fine Art of Paper Flowers Book”!!`,
@@ -155,17 +131,14 @@ let news = [
     photos: [
       {
         location: "1-AyaBrackett_PaperFlwr_6-775x484.jpg",
-        link: "http://new.ayabrackett.com/#/Books"
       },
       {
         location: "2-AyaBrackett_PaperFlwr_12-775x484.jpg",
-        link: "http://new.ayabrackett.com/#/Books"
       },
       {
         location: "3-AyaBrackettPaperFlwrs.jpg",
-        link: "http://new.ayabrackett.com/#/Books"
-      }
-    ]
+      },
+    ],
   },
   {
     title: `Paper Flower Book with Tiffanie Turner`,
@@ -174,17 +147,14 @@ let news = [
     photos: [
       {
         location: "1-AyaBrackett_PaperFlwr_4-775x484.jpg",
-        link: "http://new.ayabrackett.com/#/Books"
       },
       {
         location: "2-AyaBrackett_PaperFlwr_9-775x484.jpg",
-        link: "http://new.ayabrackett.com/#/Books"
       },
       {
         location: "3-AyaBrackett_PaperFlwr_Cover-563x700.jpg",
-        link: "http://new.ayabrackett.com/#/Books"
-      }
-    ]
+      },
+    ],
   },
   {
     title: `Photo District News Story about Forward Thinking Photographers`,
@@ -193,20 +163,14 @@ let news = [
     photos: [
       {
         location: "1-PDNStory.jpg",
-        link:
-          "http://www.pdnonline.com/business-marketing/marketing/aya-brackett-bringing-art-culture-food-photography/"
       },
       {
         location: "2-PDNStory.jpg",
-        link:
-          "http://www.pdnonline.com/business-marketing/marketing/aya-brackett-bringing-art-culture-food-photography/"
       },
       {
         location: "3-PDNStory.jpg",
-        link:
-          "http://www.pdnonline.com/business-marketing/marketing/aya-brackett-bringing-art-culture-food-photography/"
-      }
-    ]
+      },
+    ],
   },
   {
     title: `Holiday Story for Martha Stewart Living`,
@@ -215,16 +179,14 @@ let news = [
     photos: [
       {
         location: "1-AyaBrackett_MSL_Holiday_1.jpg",
-        link: "http://new.ayabrackett.com/#/Magazines",
-        caption: "Martha Stewart Living"
+        caption: "Martha Stewart Living",
       },
       {
         location: "2-AyaBrackett_MSL_Holiday_1.jpg",
-        link: "http://new.ayabrackett.com/#/Magazines",
-        caption: "Martha Stewart Living"
-      }
-    ]
-  }
+        caption: "Martha Stewart Living",
+      },
+    ],
+  },
 ];
 
 simpleCreate(db.News, news, "news");

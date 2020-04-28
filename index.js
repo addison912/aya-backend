@@ -5,7 +5,9 @@ const express = require("express"),
   jwt = require("jsonwebtoken"),
   cors = require("cors"),
   config = require("./config/config"),
-  passportConfig = require("./config/passport");
+  passportConfig = require("./config/passport"),
+  https = require("https"),
+  fs = require("fs");
 
 // generate a new express app and call it 'app'
 const app = express();
@@ -118,5 +120,13 @@ app.get("/api/fail", function (req, res) {
 // }
 
 const port = process.env.PORT || config.port;
-
+// https
+//   .createServer(
+//     {
+//       key: fs.readFileSync("./key.pem"),
+//       cert: fs.readFileSync("./cert.pem"),
+//       passphrase: config.jwtSecret,
+//     },
+//     app
+//   )
 app.listen(port, () => console.log(`Listening on port ${port}`));
