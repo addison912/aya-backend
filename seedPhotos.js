@@ -2081,8 +2081,52 @@ let photos = [
     location: "01covertearsheets_sunset.jpg",
     caption: "Sunset",
     category: "Magazines",
+    gallery: "Tearsheets",
+    order: 26,
+    searchTags: [],
+    //*
+  },
+  {
+    location: "02covertearsheets_ecocolo.jpg",
+    caption: "Ecocolo",
+    category: "Magazines",
+    gallery: "Tearsheets",
+    order: 2,
+    searchTags: [],
+    //*
+  },
+  {
+    location: "04covertearsheets_btdordogne.jpg",
+    caption: "Budget Travel",
+    category: "Magazines",
+    gallery: "Tearsheets",
+    order: 4,
+    searchTags: [],
+    //*
+  },
+  {
+    location: "05covertearsheets_sfmagramen.jpg",
+    caption: "San Francisco Magazine",
+    category: "Magazines",
+    gallery: "Tearsheets",
+    order: 3,
+    searchTags: [],
+    //*
+  },
+  {
+    location: "07covertearsheets_btitaly.jpg",
+    caption: "Budget Travel",
+    category: "Magazines",
+    gallery: "Tearsheets",
+    order: 6,
+    searchTags: [],
+    //*
+  },
+  {
+    location: "01covertearsheets_sunset.jpg",
+    caption: "Sunset",
+    category: "Magazines",
     gallery: "Covers",
-    // order: 26,
     searchTags: [],
   },
   {
@@ -2090,7 +2134,6 @@ let photos = [
     caption: "Ecocolo",
     category: "Magazines",
     gallery: "Covers",
-    // order: 2,
     searchTags: [],
   },
   {
@@ -2105,7 +2148,6 @@ let photos = [
     caption: "Budget Travel",
     category: "Magazines",
     gallery: "Covers",
-    // order: 4,
     searchTags: [],
   },
   {
@@ -2113,7 +2155,6 @@ let photos = [
     caption: "San Francisco Magazine",
     category: "Magazines",
     gallery: "Covers",
-    // order: 3,
     searchTags: [],
   },
   {
@@ -2128,7 +2169,6 @@ let photos = [
     caption: "Budget Travel",
     category: "Magazines",
     gallery: "Covers",
-    // order: 6,
     searchTags: [],
   },
   {
