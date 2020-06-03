@@ -78,7 +78,8 @@ module.exports = {
       });
   },
   googleRedirect: (req, res) => {
-    res.send("you reached the callback URI");
+    // res.send("you reached the callback URI");
+    res.redirect(config.domain);
   },
   login: (req, res) => {
     console.log("LOGIN CALLED");

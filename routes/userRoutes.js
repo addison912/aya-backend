@@ -16,9 +16,15 @@ router.get(
   passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
-router.get("/google/redirect", passport.authenticate("google"), (req, res) => {
-  res.redirect("http://localhost:1234");
-});
+router.get(
+  "/google/redirect",
+  passport.authenticate("google"),
+  //   (req, res) => {
+  //   res.header("id", "test");
+  //   res.redirect(config.domain);
+  // }
+  controllers.user.googleRedirect
+);
 
 // router.use((req, res, next) => {
 //   console.log("activated");
@@ -40,7 +46,7 @@ router.get("/google/redirect", passport.authenticate("google"), (req, res) => {
 
 // router.get("/", controllers.user.show);
 
-router.get("/test", function(req, res) {
+router.get("/test", function (req, res) {
   res.json({ message: "test successful" });
   console.log("test successful");
 });
