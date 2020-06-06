@@ -7,6 +7,27 @@ const bcrypt = require("bcrypt"),
   passport = require("passport");
 
 module.exports = {
+  verify: (req, res) => {
+    try {
+      console.log("verifying");
+      const bearerHeader = req.headers["authorization"];
+      console.log("triggered token check", bearerHeader);
+
+      if (typeof bearerHeader !== "undefined") {
+        const bearer = bearerHeader.split(" ");
+        const bearerToken = bearer[1];
+        req.token = bearerToken;
+        let verified = jwt.verify(req.token, config.jwtSecret);
+        console.log("here is the verified", verified);
+        res.json({ token: req.token });
+      } else {
+        res.sendStatus(403);
+      }
+    } catch (err) {
+      console.log(err);
+      res.sendStatus(403);
+    }
+  },
   signup: (req, res) => {
     console.log(req.body.email);
     // Check to see if email is already in db
@@ -82,73 +103,77 @@ module.exports = {
     res.redirect(config.domain);
   },
   login: (req, res) => {
-    console.log("LOGIN CALLED");
-    // find the user in our user db
-    let data = JSON.parse(Buffer.from(req.body.data, "base64").toString());
-    console.log(data);
-    db.User.find({ email: data.email })
-      .select("+password")
-      .exec()
-      // if we have found a user
-      .then((users) => {
-        // if there is not email in our db
-        console.log("USERS: ", users);
-        if (users.length < 1) {
-          return res.status(401).json({
-            message: "Email/Password incorrect",
-          });
-        }
-        // we have an email in our db that matches what they gave us
-        // now we have to compare their hashed password to what we have in our db
-        console.log("hash", users[0].password);
-        bcrypt.compare(data.password, users[0].password, (err, match) => {
-          console.log(match);
-          // If the compare function breaks, let them know
-          if (err) {
-            console.log(err);
-            return res.status(500).json({ err });
+    try {
+      console.log("LOGIN CALLED");
+      // find the user in our user db
+      let data = JSON.parse(Buffer.from(req.body.data, "base64").toString());
+      console.log(data);
+      db.User.find({ email: data.email })
+        .select("+password")
+        .exec()
+        // if we have found a user
+        .then((users) => {
+          // if there is not email in our db
+          console.log("USERS: ", users);
+          if (users.length < 1) {
+            return res.status(401).json({
+              message: "Email/Password incorrect",
+            });
           }
-          // If match is true (their password matches our db password)
-          if (match) {
-            console.log("MATCH: ", match);
-            // create a json web token
+          // we have an email in our db that matches what they gave us
+          // now we have to compare their hashed password to what we have in our db
+          console.log("hash", users[0].password);
+          bcrypt.compare(data.password, users[0].password, (err, match) => {
+            console.log(match);
+            // If the compare function breaks, let them know
+            if (err) {
+              console.log(err);
+              return res.status(500).json({ err });
+            }
+            // If match is true (their password matches our db password)
+            if (match) {
+              console.log("MATCH: ", match);
+              // create a json web token
 
-            let user = {
-              email: users[0].email,
-              _id: users[0]._id,
-            };
-            jwt.sign(
-              user,
-              config.jwtSecret,
-              {
-                // its good practice to have an expiration amount for jwt tokens.
-                expiresIn: "1h",
-              },
-              (err, signedJwt) => {
-                if (err) {
-                  console.log(err);
-                  res.status(403).json({ message: "Auth failed" });
-                } else {
-                  res.status(200).json({
-                    message: "Auth successful",
-                    user,
-                    signedJwt,
-                  });
+              let user = {
+                email: users[0].email,
+                _id: users[0]._id,
+              };
+              jwt.sign(
+                user,
+                config.jwtSecret,
+                {
+                  // its good practice to have an expiration amount for jwt tokens.
+                  expiresIn: "1h",
+                },
+                (err, signedJwt) => {
+                  if (err) {
+                    console.log(err);
+                    res.status(403).json({ message: "Auth failed" });
+                  } else {
+                    res.status(200).json({
+                      message: "Auth successful",
+                      user,
+                      signedJwt,
+                    });
+                  }
                 }
-              }
-            );
-            // the password provided does not match the password on file.
-          } else {
-            console.log("NOT A MATCH");
-            res.status(401).json({ message: "Email/Password incorrect" });
-          }
+              );
+              // the password provided does not match the password on file.
+            } else {
+              console.log("NOT A MATCH");
+              res.status(401).json({ message: "Email/Password incorrect" });
+            }
+          });
+        })
+        .catch((err) => {
+          console.log("OUTSIDE ERROR_");
+          console.log(err);
+          res.status(500).json({ err });
         });
-      })
-      .catch((err) => {
-        console.log("OUTSIDE ERROR_");
-        console.log(err);
-        res.status(500).json({ err });
-      });
+    } catch (err) {
+      res.status(500).json({ err });
+    }
   },
   show: (req, res) => {
     console.log("trigger Show", req.userId);
