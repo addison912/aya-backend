@@ -197,9 +197,6 @@ module.exports = {
   },
   edit: (req, res) => {
     try {
-      // console.log(req.body);
-      // console.log(req.params.id);
-
       db.Gallery.updateOne(
         {
           "photos._id": mongodb.ObjectId(req.params.id),
