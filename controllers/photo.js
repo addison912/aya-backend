@@ -197,31 +197,75 @@ module.exports = {
   },
   edit: (req, res) => {
     try {
-      console.log(req.body);
-      console.log(req.params.id);
+      // console.log(req.body);
+      // console.log(req.params.id);
 
-      db.Gallery.findOne(
-        { "photos._id": mongodb.ObjectId(req.params.id) },
-        (err, gallery) => {
+      db.Gallery.updateOne(
+        {
+          "photos._id": mongodb.ObjectId(req.params.id),
+        },
+
+        {
+          $set: {
+            "photos.$.caption": req.body.newPhoto.caption,
+            "photos.$.order": req.body.newPhoto.order,
+            "photos.$.searchTags": req.body.newPhoto.searchTags,
+          },
+        },
+
+        (err, gal) => {
           if (err) {
             console.log(err);
-            return res.status(500).json({ err });
+            return res.status(500).json(err);
           } else {
-            console.log("gallery: " + gallery);
-            db.Gallery.updateOne(
-              {
-                "photos._id": mongodb.ObjectId(req.params.id),
-              },
-
-              { $set: { "photos.$": req.body } },
-
-              (err, gal) => {
+            db.Gallery.findOne(
+              { name: req.body.newPhoto.gallery },
+              (err, gallery) => {
                 if (err) {
                   console.log(err);
-                  return res.status(500).json(err);
+                  return res.status(500).json({ err });
                 } else {
-                  console.log(gal);
-                  res.status(200).json(gal);
+                  if (req.body.reordered.photos) {
+                    console.log(req.body.reordered);
+                    let photos = req.body.reordered.photos;
+                    for (i = 0; i < photos.length; i++) {
+                      if (photos[i]._id && photos[i].order) {
+                        db.Gallery.updateOne(
+                          {
+                            "photos._id": mongodb.ObjectId(photos[i]._id),
+                          },
+
+                          {
+                            $set: {
+                              "photos.$.order": photos[i].order,
+                            },
+                          },
+                          (err, result) => {
+                            if (err) {
+                              console.log(err);
+                              return res.status(500).json(err);
+                            } else if (photos.length == photos.length - 1) {
+                              db.Gallery.findOne(
+                                { name: req.body.newPhoto.gallery },
+                                (err, gallery) => {
+                                  if (err) {
+                                    console.log(err);
+                                    return res.status(500).json({ err });
+                                  } else {
+                                    console.log(gal);
+                                    res.status(200).json(gallery);
+                                  }
+                                }
+                              );
+                            }
+                          }
+                        );
+                      }
+                    }
+                  } else {
+                    console.log(gal);
+                    res.status(200).json(gallery);
+                  }
                 }
               }
             );
