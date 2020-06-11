@@ -7,6 +7,7 @@ const express = require("express"),
   config = require("./config/config"),
   passportConfig = require("./config/passport"),
   https = require("https"),
+  fileUpload = require("express-fileupload"),
   fs = require("fs");
 
 // generate a new express app and call it 'app'
@@ -18,6 +19,7 @@ app.use(cors());
 app.use(passport.initialize());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(fileUpload());
 
 // app.use(
 //   "/",

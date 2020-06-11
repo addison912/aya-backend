@@ -8,12 +8,13 @@ module.exports = router
   .post("/search", controllers.photo.search)
   // .get("/c/:category", controllers.photo.byCategory)
   // .get("/:name", controllers.photo.byName)
-  .delete("/:id", verifyToken, controllers.photo.delete)
+  .delete("/id/:id/location/:location", verifyToken, controllers.photo.delete)
   .get("/test/:id", verifyToken, function (req, res) {
     console.log(req.params.id);
     res.json(req.params);
     console.log("test successful");
-  });
+  })
+  .post("/add/:id", verifyToken, controllers.photo.addPhoto);
 
 function verifyToken(req, res, next) {
   const bearerHeader = req.headers["authorization"];
