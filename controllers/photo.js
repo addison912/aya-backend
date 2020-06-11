@@ -79,7 +79,7 @@ module.exports = {
           return res.status(500).json({ err });
         } else {
           //
-
+          console.log(gallery);
           if (gallery && location) {
             try {
               fs.unlinkSync(
@@ -194,5 +194,43 @@ module.exports = {
         );
       }
     );
+  },
+  edit: (req, res) => {
+    try {
+      console.log(req.body);
+      console.log(req.params.id);
+
+      db.Gallery.findOne(
+        { "photos._id": mongodb.ObjectId(req.params.id) },
+        (err, gallery) => {
+          if (err) {
+            console.log(err);
+            return res.status(500).json({ err });
+          } else {
+            console.log("gallery: " + gallery);
+            db.Gallery.updateOne(
+              {
+                "photos._id": mongodb.ObjectId(req.params.id),
+              },
+
+              { $set: { "photos.$": req.body } },
+
+              (err, gal) => {
+                if (err) {
+                  console.log(err);
+                  return res.status(500).json(err);
+                } else {
+                  console.log(gal);
+                  res.status(200).json(gal);
+                }
+              }
+            );
+          }
+        }
+      );
+    } catch (err) {
+      console.log(err);
+      res.status(500).json({ err });
+    }
   },
 };

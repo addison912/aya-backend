@@ -9,6 +9,7 @@ module.exports = router
   // .get("/c/:category", controllers.photo.byCategory)
   // .get("/:name", controllers.photo.byName)
   .delete("/id/:id/location/:location", verifyToken, controllers.photo.delete)
+  .post("/edit/:id", verifyToken, controllers.photo.edit)
   .get("/test/:id", verifyToken, function (req, res) {
     console.log(req.params.id);
     res.json(req.params);
