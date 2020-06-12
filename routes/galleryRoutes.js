@@ -13,6 +13,7 @@ module.exports = router
     console.log("test successful");
   })
   .post("/rename/:id", verifyToken, controllers.gallery.rename)
+  .post("/create", verifyToken, controllers.gallery.create)
   .delete("/delete/:id", verifyToken, controllers.gallery.delete);
 // .get("/:id", controllers.gallery.byid)
 //   .post("/", controllers.gallery.create);

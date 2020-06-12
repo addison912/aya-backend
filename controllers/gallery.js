@@ -1,7 +1,7 @@
 const Gallery = require("../Models/Gallery"),
   mongodb = require("mongodb"),
   fs = require("fs"),
-  multer = require("multer"),
+  Jimp = require("jimp"),
   path = require("path");
 
 module.exports = {
@@ -142,6 +142,118 @@ module.exports = {
             }
           }
         );
+      }
+    } catch (err) {
+      res.status(500).json("server error");
+    }
+  },
+  create: (req, res) => {
+    console.log(req.body);
+    let file;
+
+    try {
+      let gallery = {
+        name: req.body.name,
+        order: req.body.order,
+        category: req.body.category,
+        photos: [],
+        published: false,
+        _id: mongodb.ObjectId(),
+      };
+      if (req.files && req.files.thumb) {
+        file = req.files.thumb;
+        file.mv(`${__dirname}/../uploads/tmp/${file.name}`, (err) => {
+          if (err) {
+            console.error(err);
+            return res.status(500).send(err);
+          }
+          Jimp.read(
+            `${__dirname}/../uploads/tmp/${file.name}`,
+            (err, thumbnail) => {
+              if (err) {
+                console.log(err);
+                return res.status(500).json(err);
+              }
+              thumbnail
+                .resize(480, Jimp.AUTO) // resize
+                .write("thumb.jpg"); // save
+              console.log(file);
+              createNewGallery();
+            }
+          );
+        });
+      }
+
+      function createNewGallery() {
+        Gallery.create(gallery, (err, newGallery) => {
+          if (err) {
+            console.log(err);
+            return res.status(500).json(err);
+          } else {
+            if (file) {
+              let galleryPath = `${__dirname}/../uploads/photos/${
+                gallery.category.toLowerCase() == "advertising"
+                  ? "Client-Work"
+                  : gallery.category.replace(/\/?\s+/g, "_")
+              }/${gallery.name
+                .replace(/\/?\s+/g, "_")
+                .replace(/[^\w\s]/gi, "")}`;
+              if (fs.existsSync(galleryPath)) {
+                if (fs.existsSync(`${galleryPath}/thumbs`)) {
+                  file.mv(`${galleryPath}/thumb.jpg`, (err) => {
+                    if (err) {
+                      console.error(err);
+                      return res.status(500).send(err);
+                    }
+                    res.status(200).json(newGallery);
+                    console.log("gallery created");
+                  });
+                } else {
+                  fs.mkdir(`${galleryPath}/thumbs`, (err) => {
+                    if (err) {
+                      console.error(err);
+                      return res.status(500).send(err);
+                    }
+                    file.mv(`${galleryPath}/thumb.jpg`, (err) => {
+                      if (err) {
+                        console.error(err);
+                        return res.status(500).send(err);
+                      }
+                      res.status(200).json(newGallery);
+                      console.log("gallery created");
+                    });
+                  });
+                }
+              } else {
+                fs.mkdir(galleryPath, (err) => {
+                  if (err) {
+                    console.error(err);
+                    return res.status(500).send(err);
+                  }
+                  fs.mkdir(`${galleryPath}/thumbs`, (err) => {
+                    if (err) {
+                      console.error(err);
+                      return res.status(500).send(err);
+                    }
+                    file.mv(`${galleryPath}/thumb.jpg`, (err) => {
+                      if (err) {
+                        console.error(err);
+                        return res.status(500).send(err);
+                      }
+                      res.status(200).json(newGallery);
+                      console.log("gallery created");
+                    });
+                  });
+                });
+              }
+            } else {
+              res.status(200).json(newGallery);
+              console.log("gallery created");
+            }
+            // res.status(200).json(newGallery);
+            // console.log("gallery created");
+          }
+        });
       }
     } catch (err) {
       res.status(500).json("server error");

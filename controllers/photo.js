@@ -1,27 +1,7 @@
 const db = require("../Models"),
   mongodb = require("mongodb"),
   path = require("path"),
-  multer = require("multer"),
   fs = require("fs");
-
-const storage = multer.diskStorage({
-  destination: "../test/",
-  filename: function (req, file, cb) {
-    cb(
-      null,
-      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
-    );
-  },
-});
-
-// Init Upload
-const upload = multer({
-  storage: storage,
-  limits: { fileSize: 1000000 },
-  fileFilter: function (req, file, cb) {
-    checkFileType(file, cb);
-  },
-}).single("myImage");
 
 // Check File Type
 function checkFileType(file, cb) {

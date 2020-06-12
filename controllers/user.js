@@ -73,7 +73,7 @@ module.exports = {
                     config.jwtSecret,
                     {
                       // its good practice to have an expiration amount for jwt tokens.
-                      expiresIn: "1h",
+                      expiresIn: "2h",
                     },
                     (err, signedJwt) => {
                       if (err) {
