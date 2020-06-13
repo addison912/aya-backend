@@ -107,7 +107,7 @@ module.exports = {
       console.log("LOGIN CALLED");
       // find the user in our user db
       let data = JSON.parse(Buffer.from(req.body.data, "base64").toString());
-      console.log(data);
+      console.log(data.email);
       db.User.find({ email: data.email })
         .select("+password")
         .exec()
