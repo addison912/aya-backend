@@ -7,7 +7,7 @@ const express = require("express"),
   keys = require("../config/keys.js"),
   passport = require("passport");
 
-// router.post("/signup", controllers.user.signup);
+router.post("/signup", controllers.user.signup);
 
 router.post("/login", controllers.user.login);
 

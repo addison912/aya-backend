@@ -44,6 +44,7 @@ module.exports = {
           // if we don't have this user's email in our db, lets get them set up!
         } else {
           console.log("hashing password ...");
+          console.log(req.body);
           // lets hash our plaintext password
           bcrypt.hash(req.body.password, 10, (err, hash) => {
             if (err) {
@@ -52,6 +53,7 @@ module.exports = {
               // we now have a successful hashed password
             } else {
               // we are creating a User object with their email address and OUR hashed password
+              console.log(hash);
               db.User.create(
                 {
                   email: req.body.email,
@@ -106,7 +108,8 @@ module.exports = {
     try {
       console.log("LOGIN CALLED");
       // find the user in our user db
-      let data = JSON.parse(Buffer.from(req.body.data, "base64").toString());
+      // let data = JSON.parse(Buffer.from(req.body.data, "base64").toString());
+      let data = req.body;
       console.log(data.email);
       db.User.find({ email: data.email })
         .select("+password")
