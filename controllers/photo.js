@@ -203,10 +203,12 @@ module.exports = {
                   return res.status(500).json({ err });
                 } else {
                   if (req.body.reordered.photos) {
-                    console.log(req.body.reordered);
+                    // console.log(req.body.reordered);
                     let photos = req.body.reordered.photos;
+                    console.log("updating photos");
                     for (i = 0; i < photos.length; i++) {
                       if (photos[i]._id && photos[i].order) {
+                        let final = i == photos.length - 1;
                         db.Gallery.updateOne(
                           {
                             "photos._id": mongodb.ObjectId(photos[i]._id),
@@ -221,7 +223,8 @@ module.exports = {
                             if (err) {
                               console.log(err);
                               return res.status(500).json(err);
-                            } else if (photos.length == photos.length - 1) {
+                            } else if (final) {
+                              console.log("getting updated gallery");
                               db.Gallery.findOne(
                                 { name: req.body.newPhoto.gallery },
                                 (err, gallery) => {
@@ -229,11 +232,25 @@ module.exports = {
                                     console.log(err);
                                     return res.status(500).json({ err });
                                   } else {
-                                    console.log(gal);
+                                    console.log("sending response");
                                     res.status(200).json(gallery);
                                   }
                                 }
                               );
+                            }
+                          }
+                        );
+                      } else if (i == photos.length - 1) {
+                        console.log("getting updated gallery");
+                        db.Gallery.findOne(
+                          { name: req.body.newPhoto.gallery },
+                          (err, gallery) => {
+                            if (err) {
+                              console.log(err);
+                              return res.status(500).json({ err });
+                            } else {
+                              console.log("sending response");
+                              res.status(200).json(gallery);
                             }
                           }
                         );

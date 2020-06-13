@@ -3,10 +3,10 @@ Schema = mongoose.Schema;
 
 const AboutSchema = new Schema({
   bio: String,
-  press: Array,
-  contact: Array,
+  press: String,
+  contact: String,
   profilePic: String,
-  clients: Object
+  clients: Object,
 });
 
 const About = mongoose.model("About", AboutSchema);
