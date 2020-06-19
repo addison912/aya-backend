@@ -1,29 +1,32 @@
 const express = require("express"),
   router = express.Router(),
+  jwt = require("jsonwebtoken"),
+  config = require("../config/config"),
   controllers = require("../controllers");
 
 module.exports = router
   .get("/all", controllers.news.index)
-  .get("/test", verifyToken, function(req, res) {
+  // .post("/post", verifyToken, controllers.news.post)
+  .get("/test", verifyToken, function (req, res) {
     res.json({ message: "news test successful" });
     console.log("test successful");
   });
 // Verify Token
 function verifyToken(req, res, next) {
-  // Get auth header value
   const bearerHeader = req.headers["authorization"];
-  // Check if bearer is undefined
+  console.log("triggered token check", bearerHeader);
+
   if (typeof bearerHeader !== "undefined") {
-    // Split at the space
+    console.log("checking token");
     const bearer = bearerHeader.split(" ");
-    // Get token from array
     const bearerToken = bearer[1];
-    // Set the token
     req.token = bearerToken;
-    // Next middleware
+    let verified = jwt.verify(req.token, config.jwtSecret);
+    console.log("here is the verified", verified);
+    req.userId = verified._id; //set user id for routes to use
     next();
   } else {
-    // Forbidden
+    console.log("token check failed");
     res.sendStatus(403);
   }
 }
