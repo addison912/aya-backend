@@ -14,6 +14,7 @@ module.exports = router
   })
   .post("/rename/:id", verifyToken, controllers.gallery.rename)
   .post("/create", verifyToken, controllers.gallery.create)
+  .post("/reorder", verifyToken, controllers.gallery.reorder)
   .delete("/delete/:id", verifyToken, controllers.gallery.delete);
 // .get("/:id", controllers.gallery.byid)
 //   .post("/", controllers.gallery.create);

@@ -259,4 +259,29 @@ module.exports = {
       res.status(500).json("server error");
     }
   },
+  reorder: (req, res) => {
+    console.log("updating gallery order");
+    try {
+      if (req.body) {
+        for (let i = 0; i < req.body.length; i++) {
+          Gallery.updateOne(
+            { _id: mongodb.ObjectId(req.body[i]._id) },
+            { order: req.body[i].order },
+            (err, gallery) => {
+              if (err) {
+                console.error(err);
+                return res.status(500).send(err);
+              }
+              if (i == req.body.length - 1) {
+                res.json("successfully updated all galleries");
+              }
+            }
+          );
+        }
+      }
+    } catch (err) {
+      console.log(err);
+      res.status(500).json("server error");
+    }
+  },
 };

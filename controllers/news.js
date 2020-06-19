@@ -9,5 +9,9 @@ module.exports = {
       }
       res.status(200).json(news);
     });
-  }
+  },
+  post: (req, res) => {
+    console.log(req);
+    res.status(200).json("post received");
+  },
 };
