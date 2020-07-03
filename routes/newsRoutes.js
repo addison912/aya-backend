@@ -6,7 +6,8 @@ const express = require("express"),
 
 module.exports = router
   .get("/all", controllers.news.index)
-  // .post("/post", verifyToken, controllers.news.post)
+  .post("/post", verifyToken, controllers.news.post)
+  .delete("/:id", verifyToken, controllers.news.delete)
   .get("/test", verifyToken, function (req, res) {
     res.json({ message: "news test successful" });
     console.log("test successful");
