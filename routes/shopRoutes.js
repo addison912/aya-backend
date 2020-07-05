@@ -4,6 +4,7 @@ const express = require("express"),
 
 module.exports = router
   .get("/all", controllers.shop.index)
+  // .post("/update", controllers.shop.update)
   .get("/test", verifyToken, function (req, res) {
     res.json({ message: "shop test successful" });
     console.log("test successful");

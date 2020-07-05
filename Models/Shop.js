@@ -8,6 +8,7 @@ const ShopSchema = new Schema({
   price: Number,
   availability: String,
   order: Number,
+  checkoutId: String,
 });
 
 const Shop = mongoose.model("Shop", ShopSchema);
