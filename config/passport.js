@@ -25,12 +25,12 @@ passport.use(
       db.User.findOne({ email: profile._json.email }).then((currentUser) => {
         if (currentUser) {
           // already have this user
-          console.log("user is: ", currentUser);
+          // console.log("user is: ", currentUser);
           done(null, currentUser);
         } else {
           done(null);
         }
-        console.log(profile);
+        // console.log(profile);
       });
     }
   )

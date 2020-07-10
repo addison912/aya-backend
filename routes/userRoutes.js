@@ -21,9 +21,10 @@ router.get("/verify", controllers.user.verify);
 router.get(
   "/google/redirect",
   passport.authenticate("google"),
-  //   (req, res) => {
-  //   res.header("id", "test");
-  //   res.redirect(config.domain);
+  // (req, res) => {
+  // console.log(req);
+  // res.header("id", "test");
+  // res.redirect(config.domain);
   // }
   controllers.user.googleRedirect
 );

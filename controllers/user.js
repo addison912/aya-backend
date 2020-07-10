@@ -75,7 +75,7 @@ module.exports = {
                     config.jwtSecret,
                     {
                       // its good practice to have an expiration amount for jwt tokens.
-                      expiresIn: "2h",
+                      expiresIn: "24h",
                     },
                     (err, signedJwt) => {
                       if (err) {
@@ -101,8 +101,35 @@ module.exports = {
       });
   },
   googleRedirect: (req, res) => {
+    console.log("google login");
+    // console.log(req.user);
+    try {
+      db.User.findOne({ email: req.user.email }, (err, user) => {
+        // console.log(user);
+        let verifiedUser = {
+          email: user.email,
+          _id: user._id,
+        };
+        jwt.sign(
+          verifiedUser,
+          config.jwtSecret,
+          {
+            // its good practice to have an expiration amount for jwt tokens.
+            expiresIn: "24h",
+          },
+          (err, signedJwt) => {
+            if (err) {
+              console.log(err);
+              res.status(403).json({ message: "Auth failed" });
+            } else {
+              // res.redirect(`${config.domain}/google-redirect/${signedJwt}`);
+              res.redirect(`/#/google-redirect/${signedJwt}`);
+            }
+          }
+        );
+      });
+    } catch (err) {}
     // res.send("you reached the callback URI");
-    res.redirect(config.domain);
   },
   login: (req, res) => {
     try {
@@ -147,7 +174,7 @@ module.exports = {
                 config.jwtSecret,
                 {
                   // its good practice to have an expiration amount for jwt tokens.
-                  expiresIn: "1h",
+                  expiresIn: "24h",
                 },
                 (err, signedJwt) => {
                   if (err) {
