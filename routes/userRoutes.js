@@ -12,14 +12,14 @@ const express = require("express"),
 router.post("/login", controllers.user.login);
 
 router.get(
-  "/login/google",
+  `/login/google`,
   passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
 router.get("/verify", controllers.user.verify);
 
 router.get(
-  "/google/redirect",
+  `/google/redirect`,
   passport.authenticate("google"),
   // (req, res) => {
   // console.log(req);
