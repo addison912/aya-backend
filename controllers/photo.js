@@ -27,24 +27,33 @@ module.exports = {
     } else {
       let search = new RegExp(req.body.query, "i");
       //   console.log(search);
-      db.Gallery.find({ "photos.caption": search }, (err, galleries) => {
-        if (err) {
-          res.status(404).json("unable to get photos");
-          return console.log(err);
-        }
-        let response = [];
-        galleries.forEach((gallery) => {
-          if (gallery.photos) {
-            gallery.photos.forEach((photo) => {
-              if (photo.caption.match(search)) {
-                response.push(photo);
-              }
-            });
+      db.Gallery.find(
+        {
+          $or: [{ "photos.caption": search }, { "photos.searchTags": search }],
+        },
+        (err, galleries) => {
+          // db.Gallery.find({ "photos.caption": search }, (err, galleries) => {
+          if (err) {
+            res.status(404).json("unable to get photos");
+            return console.log(err);
           }
-        });
-        console.log(response);
-        res.status(200).json(response);
-      });
+          let response = [];
+          galleries.forEach((gallery) => {
+            if (gallery.photos) {
+              gallery.photos.forEach((photo) => {
+                if (
+                  photo.caption.match(search) ||
+                  photo.searchTags.match(search)
+                ) {
+                  response.push(photo);
+                }
+              });
+            }
+          });
+          console.log(response);
+          res.status(200).json(response);
+        }
+      );
     }
   },
 

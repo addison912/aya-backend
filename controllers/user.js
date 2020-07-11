@@ -122,8 +122,9 @@ module.exports = {
               console.log(err);
               res.status(403).json({ message: "Auth failed" });
             } else {
-              res.redirect(`${config.domain}/#/google-redirect/${signedJwt}`);
-              // res.redirect(`/#/google-redirect/${signedJwt}`);
+              // res.redirect(`${config.domain}/#/google-redirect/${signedJwt}`);
+              res.redirect(`/#/google-redirect/${signedJwt}`);
+              // res.redirect(`billiken.ddns.net`);
             }
           }
         );
