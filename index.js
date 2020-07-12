@@ -1,11 +1,9 @@
 const express = require("express"),
   path = require("path"),
   bodyParser = require("body-parser"),
-  passport = require("passport"),
   jwt = require("jsonwebtoken"),
   cors = require("cors"),
   config = require("./config/config"),
-  passportConfig = require("./config/passport"),
   https = require("https"),
   fileUpload = require("express-fileupload"),
   fs = require("fs");
@@ -16,7 +14,6 @@ app.set("case sensitive routing", false);
 
 // middleware
 app.use(cors());
-app.use(passport.initialize());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(fileUpload());

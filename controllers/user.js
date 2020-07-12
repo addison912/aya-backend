@@ -3,8 +3,7 @@ const bcrypt = require("bcrypt"),
   jwt = require("jsonwebtoken"),
   config = require("../config/config"),
   { OAuth2Client } = require("google-auth-library"),
-  keys = require("../config/keys.js"),
-  passport = require("passport");
+  keys = require("../config/keys.js");
 
 module.exports = {
   verify: (req, res) => {
@@ -100,38 +99,7 @@ module.exports = {
         res.status(500).json({ err });
       });
   },
-  googleRedirect: (req, res) => {
-    console.log("google login");
-    // console.log(req.user);
-    try {
-      db.User.findOne({ email: req.user.email }, (err, user) => {
-        // console.log(user);
-        let verifiedUser = {
-          email: user.email,
-          _id: user._id,
-        };
-        jwt.sign(
-          verifiedUser,
-          config.jwtSecret,
-          {
-            // its good practice to have an expiration amount for jwt tokens.
-            expiresIn: "24h",
-          },
-          (err, signedJwt) => {
-            if (err) {
-              console.log(err);
-              res.status(403).json({ message: "Auth failed" });
-            } else {
-              // res.redirect(`${config.domain}/#/google-redirect/${signedJwt}`);
-              res.redirect(`/#/google-redirect/${signedJwt}`);
-              // res.redirect(`billiken.ddns.net`);
-            }
-          }
-        );
-      });
-    } catch (err) {}
-    // res.send("you reached the callback URI");
-  },
+
   login: (req, res) => {
     try {
       console.log("LOGIN CALLED");
