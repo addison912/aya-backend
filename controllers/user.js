@@ -206,16 +206,70 @@ module.exports = {
       res.status(500).json({ err });
     }
   },
-  show: (req, res) => {
-    console.log("trigger Show", req.userId);
-    if (req.userId) {
-      db.User.findById(req.userId, (err, foundUser) => {
-        res.json(foundUser);
+  googleLogin: (req, res) => {
+    let token = req.body.token;
+    const { OAuth2Client } = require("google-auth-library");
+    const client = new OAuth2Client(config.google.clientID);
+    async function verify() {
+      const ticket = await client.verifyIdToken({
+        idToken: token,
+        audience: config.google.clientID,
       });
-    } else {
-      res.json("No user Id provided");
+      const payload = ticket.getPayload();
+      const userid = payload["sub"];
+      return payload;
     }
+    verify()
+      .then((payload) => {
+        console.log(payload);
+        try {
+          db.User.findOne({ email: payload.email }, (err, user) => {
+            // console.log(user);
+            if (user) {
+              let verifiedUser = {
+                email: user.email,
+                _id: user._id,
+              };
+              jwt.sign(
+                verifiedUser,
+                config.jwtSecret,
+                {
+                  // its good practice to have an expiration amount for jwt tokens.
+                  expiresIn: "24h",
+                },
+                (err, signedJwt) => {
+                  if (err) {
+                    console.log(err);
+                    res.status(403).json({ message: "Auth failed" });
+                  } else {
+                    res.status(200).json({
+                      message: "Auth successful",
+                      user,
+                      signedJwt,
+                    });
+                  }
+                }
+              );
+            } else {
+              res.status(401).json({ message: "Not an authorized user" });
+            }
+          });
+        } catch (err) {}
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   },
+  // show: (req, res) => {
+  //   console.log("trigger Show", req.userId);
+  //   if (req.userId) {
+  //     db.User.findById(req.userId, (err, foundUser) => {
+  //       res.json(foundUser);
+  //     });
+  //   } else {
+  //     res.json("No user Id provided");
+  //   }
+  // },
   delete: (req, res) => {
     console.log("hitting delete");
     db.User.deleteOne({ _id: req.params.userId }, (err, result) => {

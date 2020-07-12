@@ -16,6 +16,8 @@ router.get(
   passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
+router.post(`/login/google`, controllers.user.googleLogin);
+
 router.get("/verify", controllers.user.verify);
 
 router.get(
