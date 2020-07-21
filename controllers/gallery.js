@@ -160,6 +160,11 @@ module.exports = {
         published: false,
         _id: mongodb.ObjectId(),
       };
+      let galleryPath = `${__dirname}/../uploads/photos/${
+        gallery.category.toLowerCase() == "advertising"
+          ? "Client-Work"
+          : gallery.category.replace(/\/?\s+/g, "_")
+      }/${gallery.name.replace(/\/?\s+/g, "_").replace(/[^\w\s]/gi, "")}`;
       if (req.files && req.files.thumb) {
         file = req.files.thumb;
         file.mv(`${__dirname}/../uploads/tmp/${file.name}`, (err) => {
@@ -183,6 +188,16 @@ module.exports = {
           );
         });
       }
+      function finish(newGallery) {
+        file.mv(`${galleryPath}/thumb.jpg`, (err) => {
+          if (err) {
+            console.error(err);
+            return res.status(500).send(err);
+          }
+          res.status(200).json(newGallery);
+          console.log("gallery created");
+        });
+      }
 
       function createNewGallery() {
         Gallery.create(gallery, (err, newGallery) => {
@@ -191,37 +206,16 @@ module.exports = {
             return res.status(500).json(err);
           } else {
             if (file) {
-              let galleryPath = `${__dirname}/../uploads/photos/${
-                gallery.category.toLowerCase() == "advertising"
-                  ? "Client-Work"
-                  : gallery.category.replace(/\/?\s+/g, "_")
-              }/${gallery.name
-                .replace(/\/?\s+/g, "_")
-                .replace(/[^\w\s]/gi, "")}`;
               if (fs.existsSync(galleryPath)) {
                 if (fs.existsSync(`${galleryPath}/thumbs`)) {
-                  file.mv(`${galleryPath}/thumb.jpg`, (err) => {
-                    if (err) {
-                      console.error(err);
-                      return res.status(500).send(err);
-                    }
-                    res.status(200).json(newGallery);
-                    console.log("gallery created");
-                  });
+                  finish(newGallery);
                 } else {
                   fs.mkdir(`${galleryPath}/thumbs`, (err) => {
                     if (err) {
                       console.error(err);
                       return res.status(500).send(err);
                     }
-                    file.mv(`${galleryPath}/thumb.jpg`, (err) => {
-                      if (err) {
-                        console.error(err);
-                        return res.status(500).send(err);
-                      }
-                      res.status(200).json(newGallery);
-                      console.log("gallery created");
-                    });
+                    finish(newGallery);
                   });
                 }
               } else {
@@ -235,14 +229,7 @@ module.exports = {
                       console.error(err);
                       return res.status(500).send(err);
                     }
-                    file.mv(`${galleryPath}/thumb.jpg`, (err) => {
-                      if (err) {
-                        console.error(err);
-                        return res.status(500).send(err);
-                      }
-                      res.status(200).json(newGallery);
-                      console.log("gallery created");
-                    });
+                    finish(newGallery);
                   });
                 });
               }
@@ -283,5 +270,30 @@ module.exports = {
       console.log(err);
       res.status(500).json("server error");
     }
+  },
+  editThumb: (req, res) => {
+    try {
+      let thumb = req.body;
+      let galleryPath = `${__dirname}/../uploads/photos/${
+        thumb.category.toLowerCase() == "advertising"
+          ? "Client-Work"
+          : thumb.category.replace(/\/?\s+/g, "_")
+      }/${thumb.gallery.replace(/\/?\s+/g, "_").replace(/[^\w\s]/gi, "")}`;
+      Jimp.read(`${galleryPath}/${thumb.location}`, (err, thumbnail) => {
+        if (err) {
+          console.log(err);
+          return res.status(500).json(err);
+        }
+        thumbnail
+          .resize(480, Jimp.AUTO) // resize
+          .write(`${galleryPath}/thumb.jpg`); // save
+        res.json(thumbnail);
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json("server error");
+    }
+    // console.log(req.body);
+    // res.json(req.body);
   },
 };

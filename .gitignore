@@ -142,3 +142,5 @@ hashPW.js
 cert.pem
 key.pem
 sureapp.json
+
+uploads/
