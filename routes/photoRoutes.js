@@ -15,7 +15,8 @@ module.exports = router
     res.json(req.params);
     console.log("test successful");
   })
-  .post("/add/:id", verifyToken, controllers.photo.addPhoto);
+  .post("/add/:id", verifyToken, controllers.photo.addPhoto)
+  .post("/copy", verifyToken, controllers.photo.copy);
 
 function verifyToken(req, res, next) {
   const bearerHeader = req.headers["authorization"];

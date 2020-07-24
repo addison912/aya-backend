@@ -3,6 +3,7 @@ const Gallery = require("../Models/Gallery"),
   fs = require("fs"),
   Jimp = require("jimp"),
   path = require("path");
+const { gallery } = require(".");
 
 module.exports = {
   index: (req, res) => {
@@ -11,7 +12,22 @@ module.exports = {
         res.status(404).json("unable to get galleries");
         return console.log(err);
       }
-      res.status(200).json(galleries);
+      galleryList = {};
+      categories = [];
+      galleries.forEach((gallery) => {
+        if (!galleryList[gallery.category]) {
+          galleryList[gallery.category] = [];
+          categories.push(gallery.category);
+        }
+        galleryList[gallery.category].push({
+          name: gallery.name,
+          id: gallery._id,
+        });
+      });
+      categories.forEach((category) => {
+        galleryList[category].sort((a, b) => a.name.localeCompare(b.name));
+      });
+      res.status(200).json(galleryList);
     });
   },
   byName: (req, res) => {

@@ -1,6 +1,7 @@
 const db = require("../Models"),
   mongodb = require("mongodb"),
   path = require("path"),
+  Jimp = require("jimp"),
   fs = require("fs");
 
 // Check File Type
@@ -67,7 +68,6 @@ module.exports = {
           console.log(err);
           return res.status(500).json({ err });
         } else {
-          //
           console.log(gallery);
           if (gallery && location) {
             try {
@@ -147,7 +147,7 @@ module.exports = {
               console.error(err);
               return res.status(500).send(err);
             }
-            //
+
             let newPhoto = req.body;
             newPhoto.location = file.name;
             newPhoto._id = mongodb.ObjectID();
@@ -183,6 +183,104 @@ module.exports = {
         );
       }
     );
+  },
+  copy: (req, res) => {
+    let photo = req.body.photo;
+    let destinationGallery = req.body.destinationGallery;
+    try {
+      db.Gallery.findOne(
+        { "photos._id": mongodb.ObjectId(photo._id) },
+        (err, gallery) => {
+          if (err) {
+            console.log(err);
+            return res.status(500).json({ err });
+          } else {
+            newPhoto = gallery.photos.find((item) => {
+              return photo._id == item._id;
+            });
+            newPhoto._id = mongodb.ObjectID();
+            newPhoto.order = 0;
+            db.Gallery.findOne(
+              { _id: mongodb.ObjectId(destinationGallery) },
+              (err, destGallery) => {
+                if (err) {
+                  console.log(err);
+                  return res.status(500).json({ err });
+                } else {
+                  newPhoto.category = destGallery.category;
+                  newPhoto.gallery = destGallery.name;
+                  copyFile(photo, newPhoto);
+                }
+              }
+            );
+          }
+        }
+      );
+    } catch (err) {
+      if (err) {
+        console.log(err);
+        return res.status(500).json({ err });
+      }
+    }
+
+    function copyFile(source, dest) {
+      let destPath = `${__dirname}/../uploads/photos/${
+        dest.category.toLowerCase() == "advertising"
+          ? "Client-Work"
+          : dest.category.replace(/\/?\s+/g, "_")
+      }/${dest.gallery.replace(/\/?\s+/g, "_").replace(/[^\w\s]/gi, "")}`;
+      let sourcePath = `${__dirname}/../uploads/photos/${
+        source.category.toLowerCase() == "advertising"
+          ? "Client-Work"
+          : source.category.replace(/\/?\s+/g, "_")
+      }/${source.gallery.replace(/\/?\s+/g, "_").replace(/[^\w\s]/gi, "")}`;
+      if (fs.existsSync(destPath)) {
+        dest.location = `${Math.random().toString(36).substring(2, 8)}-${
+          dest.location
+        }`;
+      }
+
+      fs.copyFile(
+        `${sourcePath}/${source.location}`,
+        `${destPath}/${dest.location}`,
+        (err) => {
+          if (err) {
+            console.log(err);
+            return res.status(500).json({ err });
+          } else {
+            fs.copyFile(
+              `${sourcePath}/thumbs/${source.location}`,
+              `${destPath}/thumbs/${dest.location}`,
+              (err) => {
+                if (err) {
+                  console.log(err);
+                  return res.status(500).json({ err });
+                } else {
+                  addPhotoData(dest, destinationGallery);
+                }
+              }
+            );
+          }
+        }
+      );
+    }
+
+    function addPhotoData(photo, galleryID) {
+      db.Gallery.updateOne(
+        { _id: mongodb.ObjectId(galleryID) },
+        {
+          $push: { photos: photo },
+        },
+        (err, copiedPhoto) => {
+          if (err) {
+            console.log(err);
+            return res.status(500).json({ err });
+          } else {
+            res.json(copiedPhoto);
+          }
+        }
+      );
+    }
   },
   edit: (req, res) => {
     try {
