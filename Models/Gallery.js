@@ -6,7 +6,7 @@ const GallerySchema = new Schema({
   category: String,
   order: Number,
   photos: Array,
-  published: Boolean,
+  hideGallery: Boolean,
 });
 
 const Gallery = mongoose.model("Gallery", GallerySchema);

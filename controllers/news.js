@@ -77,6 +77,7 @@ module.exports = {
           text: req.body.text,
           date: req.body.date,
           hideDate: req.body.hideDate,
+          hidePost: req.body.hidePost,
         },
         (err, post) => {
           if (err)
@@ -158,6 +159,8 @@ module.exports = {
       title: req.body.title,
       text: req.body.text,
       date: req.body.date,
+      hidePost: req.body.hidePost,
+      hideDate: req.body.hideDate,
       photos,
     };
 

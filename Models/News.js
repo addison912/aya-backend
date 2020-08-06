@@ -6,6 +6,7 @@ const NewsSchema = new Schema({
   date: String,
   timestamp: Number,
   hideDate: Boolean,
+  hidePost: Boolean,
   text: String,
   photos: [
     {

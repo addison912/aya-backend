@@ -49,6 +49,40 @@ module.exports = {
       res.status(200).json(galleries);
     });
   },
+
+  hide: (req, res) => {
+    try {
+      if (req.params.id && typeof req.body.bool == "boolean") {
+        Gallery.updateOne(
+          { _id: mongodb.ObjectId(req.params.id) },
+          { hideGallery: req.body.bool },
+          (err, gallery) => {
+            console.log(gallery);
+            if (err) {
+              console.log(err);
+              return res.status(500).json(err);
+            } else {
+              Gallery.findOne(
+                { _id: mongodb.ObjectId(req.params.id) },
+                (err, updated) => {
+                  if (err) {
+                    console.log(err);
+                    return res.status(500).json(err);
+                  } else {
+                    res.json(updated);
+                  }
+                }
+              );
+            }
+          }
+        );
+        console.log(req.body.name);
+      }
+    } catch (err) {
+      res.status(500).json("server error");
+    }
+  },
+
   rename: (req, res) => {
     try {
       if (req.params.id && req.body.name) {
@@ -173,7 +207,7 @@ module.exports = {
         order: req.body.order,
         category: req.body.category,
         photos: [],
-        published: false,
+        hideGallery: req.body.hideGallery,
         _id: mongodb.ObjectId(),
       };
       let galleryPath = `${__dirname}/../uploads/photos/${
