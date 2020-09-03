@@ -15,15 +15,23 @@ module.exports = {
   },
 
   edit: (req, res) => {
-    console.log(req.body.deletePhotos);
+    console.log(req.body);
     let deletePhotos =
       !!req.body.deletePhotos && req.body.deletePhotos != "undefined"
         ? JSON.parse(req.body.deletePhotos)
         : null;
+    let editPhotos =
+      !!req.body.editPhotos && req.body.editPhotos != "undefined"
+        ? JSON.parse(req.body.editPhotos)
+        : null;
 
     if (deletePhotos && deletePhotos.length > 0) {
       deletePostPhotos();
-    } else if (req.files) {
+    }
+    if (editPhotos && editPhotos.length > 0) {
+      editPostPhotos();
+    }
+    if (req.files) {
       addPhoto();
     } else {
       updatePost();
@@ -50,11 +58,39 @@ module.exports = {
             deletePhotoFile(photo);
             if (i == deletePhotos.length - 1) {
               console.log(result);
-              if (req.files) {
-                addPhoto();
-              } else {
-                updatePost();
-              }
+              // if (req.files) {
+              //   addPhoto();
+              // } else {
+              //   updatePost();
+              // }
+            }
+          }
+        );
+      }
+    }
+
+    function editPostPhotos() {
+      console.log("updating edited photos:");
+      for (let i = 0; i < editPhotos.length; i++) {
+        let photo = editPhotos[i];
+        News.updateOne(
+          {
+            "photos._id": mongodb.ObjectId(photo._id),
+          },
+
+          {
+            $set: {
+              "photos.$.caption": photo.caption,
+              "photos.$.order": photo.order,
+            },
+          },
+          (err, result) => {
+            if (err) {
+              console.log(err);
+              return res.status(500).json(err);
+            }
+            if (i == editPhotos.length - 1) {
+              console.log(result);
             }
           }
         );
@@ -253,7 +289,6 @@ module.exports = {
 };
 
 /* 
-
   check if photos
   if no photos
     add post to db
