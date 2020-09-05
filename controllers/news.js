@@ -58,11 +58,6 @@ module.exports = {
             deletePhotoFile(photo);
             if (i == deletePhotos.length - 1) {
               console.log(result);
-              // if (req.files) {
-              //   addPhoto();
-              // } else {
-              //   updatePost();
-              // }
             }
           }
         );
