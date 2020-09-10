@@ -149,14 +149,6 @@ module.exports = {
                                     return res.status(500).json(err);
                                   } else {
                                     res.status(200).json(updated);
-                                    // res.redirect(
-                                    //   `/#/${updated.category
-                                    //     .toLowerCase()
-                                    //     .replace(/\/?\s+/g, "-")}`
-                                    // );
-                                    console.log(
-                                      "Directory created successfully!"
-                                    );
                                   }
                                 }
                               );

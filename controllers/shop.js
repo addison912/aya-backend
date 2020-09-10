@@ -6,15 +6,6 @@ const Shop = require("../Models/Shop"),
   config = require("../config/config");
 
 module.exports = {
-  // index: (req, res) => {
-  //   Shop.find({}, (err, shop) => {
-  //     if (err) {
-  //       res.status(404).json("unable to get shop items");
-  //       return console.log(err);
-  //     }
-  //     res.status(200).json(shop);
-  //   });
-  // },
   index: (req, res) => {
     console.log("updating inventory");
     axios
@@ -38,15 +29,6 @@ module.exports = {
             let images = updatedCatalog.data.objects.filter(
               (image) => image.type == "IMAGE" && image.is_deleted == false
             );
-
-            // items.forEach((item) => {
-            //   let newItem = {};
-            //   newItem.name = item.item_data.name;
-            //   newItem.description = item.item_data.description;
-            //   newItem.checkoutID = item.id;
-            //   newItem.price = item.item_data.price;
-
-            // });
             items.forEach((item) => (item.photos = []));
             images.forEach((image) => {
               if (
@@ -68,15 +50,16 @@ module.exports = {
           } else {
             if (err) {
               res.status(500).json("unable to get shop items from Square");
-              return console.log(err);
+              return;
             }
           }
         } catch (err) {
           res.status(500).json("unable to get shop items from Square");
-          return console.log(err);
+          return;
         }
       })
       .catch((err) => {
+        res.status(500).json(err);
         console.log(err);
       });
   },

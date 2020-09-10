@@ -13,36 +13,43 @@ function errCheck(err) {
 
 module.exports = {
   search: (req, res) => {
-    if (!req.body || !req.body.query) {
-      res.status(404).json("Invalid: Missing query string");
-    } else {
-      let search = new RegExp(req.body.query, "i");
-      db.Gallery.find(
-        {
-          $or: [{ "photos.caption": search }, { "photos.searchTags": search }],
-        },
-        (err, galleries) => {
-          if (err) {
-            res.status(404).json("unable to get photos");
-            return console.log(err);
-          }
-          let response = [];
-          galleries.forEach((gallery) => {
-            if (gallery.photos) {
-              gallery.photos.forEach((photo) => {
-                if (
-                  photo.caption.match(search) ||
-                  photo.searchTags.match(search)
-                ) {
-                  response.push(photo);
-                }
-              });
+    try {
+      if (!req.body || !req.body.query) {
+        res.status(404).json("Invalid: Missing query string");
+      } else {
+        let search = new RegExp(req.body.query, "i");
+        db.Gallery.find(
+          {
+            $or: [
+              { "photos.caption": search },
+              { "photos.searchTags": search },
+            ],
+          },
+          (err, galleries) => {
+            if (err) {
+              res.status(404).json("unable to get photos");
+              return console.log(err);
             }
-          });
-          console.log(response);
-          res.status(200).json(response);
-        }
-      );
+            let response = [];
+            galleries.forEach((gallery) => {
+              if (gallery.photos) {
+                gallery.photos.forEach((photo) => {
+                  if (
+                    photo.caption.match(search) ||
+                    photo.searchTags.match(search)
+                  ) {
+                    response.push(photo);
+                  }
+                });
+              }
+            });
+            console.log(response);
+            res.status(200).json(response);
+          }
+        );
+      }
+    } catch (err) {
+      errCheck(err);
     }
   },
 
@@ -73,7 +80,7 @@ module.exports = {
                 .replace(/[^\w\s]/gi, "")}/thumbs/${location}`
             );
           } catch (err) {
-            console.log(err);
+            errCheck(err);
           }
           db.Gallery.updateOne(
             { name: gallery.name, category: gallery.category },

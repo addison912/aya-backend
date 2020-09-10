@@ -18,30 +18,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(fileUpload());
 
-// app.use(
-//   "/",
-//   function(req, res, next) {
-//     console.log("Request URL:", req.url);
-//     next();
-//   },
-//   express.static(path.join(__dirname, "admin"))
-// );
-// app.use(express.static(path.join(__dirname, "public")));
-// app.use(
-//   "/",
-//   function(req, res, next) {
-//     console.log("Request URL:", req.originalUrl);
-//     next();
-//   },
-//   express.static(path.join(__dirname, "admin"))
-// );
 app.use("/", express.static(path.join(__dirname, "dist")));
-
-// router.get(['/app', '/app/*'], function(req, res, next) {
-//   res.sendFile(path.join(__dirname, '../public', 'app.html'));
-//  });
-
-// const galleryRoutes = require("./routes/galleryRoutes");
 
 //api routes
 const routes = require("./routes");
@@ -92,40 +69,6 @@ app.get("/api/test", function (req, res) {
   res.json({ message: "Hello World" });
 });
 
-app.get("/api/fail", function (req, res) {
-  console.log("no response");
-});
-
-// // Verify Tokenj
-// function verifyToken(req, res, next) {
-//   console.log("in verify...");
-//   // Get auth header value
-//   // when we send our token, we want to send it in our header
-//   const bearerHeader = req.headers["authorization"];
-//   console.log(bearerHeader);
-//   // Check if bearer is undefined
-//   if (typeof bearerHeader !== "undefined") {
-//     const bearer = bearerHeader.split(" ");
-//     // Get token from array
-//     const bearerToken = bearer[1];
-//     // Set the token
-//     req.token = bearerToken;
-//     // Next middleware
-//     next();
-//   } else {
-//     // Forbidden
-//     res.sendStatus(403);
-//   }
-// }
-
 const port = process.env.PORT || config.port;
-// https
-//   .createServer(
-//     {
-//       key: fs.readFileSync("./key.pem"),
-//       cert: fs.readFileSync("./cert.pem"),
-//       passphrase: config.jwtSecret,
-//     },
-//     app
-//   )
+
 app.listen(port, () => console.log(`Listening on port ${port}`));

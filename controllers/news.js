@@ -282,16 +282,3 @@ module.exports = {
     }
   },
 };
-
-/* 
-  check if photos
-  if no photos
-    add post to db
-  else
-    for each photo file
-      create unique name
-      add new name do post photo data 
-      move photo to news file
-      after last photo
-        add post to db
-*/
