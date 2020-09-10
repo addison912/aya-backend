@@ -5,13 +5,17 @@ const Gallery = require("../Models/Gallery"),
   path = require("path");
 const { gallery } = require(".");
 
+function errCheck(err) {
+  if (err) {
+    console.log(err);
+    return res.status(500).json({ err });
+  }
+}
+
 module.exports = {
   index: (req, res) => {
     Gallery.find({}, (err, galleries) => {
-      if (err) {
-        res.status(404).json("unable to get galleries");
-        return console.log(err);
-      }
+      errCheck(err);
       galleryList = {};
       categories = [];
       galleries.forEach((gallery) => {
@@ -30,22 +34,17 @@ module.exports = {
       res.status(200).json(galleryList);
     });
   },
+
   byName: (req, res) => {
     Gallery.find({ name: req.params.name }, (err, galleries) => {
-      if (err) {
-        res.status(404).json("unable to get galleries");
-        return console.log(err);
-      }
+      errCheck(err);
       res.status(200).json(galleries);
     });
   },
   byCategory: (req, res) => {
     let category = new RegExp("^" + req.params.category + "$", "i");
     Gallery.find({ category }, (err, galleries) => {
-      if (err) {
-        res.status(404).json("unable to get galleries");
-        return console.log(err);
-      }
+      errCheck(err);
       res.status(200).json(galleries);
     });
   },
@@ -65,12 +64,8 @@ module.exports = {
               Gallery.findOne(
                 { _id: mongodb.ObjectId(req.params.id) },
                 (err, updated) => {
-                  if (err) {
-                    console.log(err);
-                    return res.status(500).json(err);
-                  } else {
-                    res.json(updated);
-                  }
+                  errCheck(err);
+                  res.json(updated);
                 }
               );
             }
@@ -79,89 +74,74 @@ module.exports = {
         console.log(req.body.name);
       }
     } catch (err) {
-      res.status(500).json("server error");
+      errCheck(err);
     }
   },
 
   rename: (req, res) => {
     try {
       if (req.params.id && req.body.name) {
+        //find gallery to rename
         Gallery.findOne(
           { _id: mongodb.ObjectId(req.params.id) },
           (err, updated) => {
-            if (err) {
-              console.log(err);
-              return res.status(500).json(err);
-            } else {
-              Gallery.updateOne(
-                { _id: mongodb.ObjectId(req.params.id) },
-                { name: req.body.name },
-                (err, gallery) => {
-                  console.log(gallery);
-                  // console.log(`replacing ${gallery.name} with ${req.body.new}`);
-                  if (err) {
-                    console.log(err);
-                    return res.status(500).json(err);
-                  } else {
-                    Gallery.update(
-                      {
-                        _id: mongodb.ObjectId(req.params.id),
-                      },
-                      { $set: { "photos.$[].gallery": req.body.name } },
-                      { upsert: true },
-                      (err, gal) => {
-                        if (err) {
-                          console.log(err);
-                          return res.status(500).json(err);
-                        } else {
-                          fs.rename(
-                            path.join(
-                              __dirname,
-                              //directory to rename
-                              `../uploads/photos/${
-                                updated.category.toLowerCase() == "advertising"
-                                  ? "Client-Work"
-                                  : updated.category.replace(/\/?\s+/g, "_")
-                              }/${updated.name
-                                .replace(/\/?\s+/g, "_")
-                                .replace(/[^\w\s]/gi, "")}`
-                            ),
-                            path.join(
-                              __dirname,
-                              //new diretory name
-                              `../uploads/photos/${
-                                updated.category.toLowerCase() == "advertising"
-                                  ? "Client-Work"
-                                  : updated.category.replace(/\/?\s+/g, "_")
-                              }/${req.body.name
-                                .replace(/\/?\s+/g, "_")
-                                .replace(/[^\w\s]/gi, "")}`
-                            ),
-                            (err) => {
-                              if (err) {
-                                return console.error(err);
-                              }
-                              Gallery.findOne(
-                                { _id: mongodb.ObjectId(req.params.id) },
-                                (err, updated) => {
-                                  if (err) {
-                                    console.log(err);
-                                    return res.status(500).json(err);
-                                  } else {
-                                    res.status(200).json(updated);
-                                  }
-                                }
-                              );
-                            }
-                          );
-                        }
+            errCheck(err);
+            //update gallery name
+            Gallery.updateOne(
+              { _id: mongodb.ObjectId(req.params.id) },
+              { name: req.body.name },
+              (err, gallery) => {
+                console.log(gallery);
+                // console.log(`replacing ${gallery.name} with ${req.body.new}`);
+                errCheck(err);
+                //update gallery name for gallery photos
+                Gallery.update(
+                  {
+                    _id: mongodb.ObjectId(req.params.id),
+                  },
+                  { $set: { "photos.$[].gallery": req.body.name } },
+                  { upsert: true },
+                  (err, gal) => {
+                    errCheck(err);
+                    //rename directories
+                    fs.rename(
+                      path.join(
+                        __dirname,
+                        //directory to rename
+                        `../uploads/photos/${
+                          updated.category.toLowerCase() == "advertising"
+                            ? "Client-Work"
+                            : updated.category.replace(/\/?\s+/g, "_")
+                        }/${updated.name
+                          .replace(/\/?\s+/g, "_")
+                          .replace(/[^\w\s]/gi, "")}`
+                      ),
+                      path.join(
+                        __dirname,
+                        //new diretory name
+                        `../uploads/photos/${
+                          updated.category.toLowerCase() == "advertising"
+                            ? "Client-Work"
+                            : updated.category.replace(/\/?\s+/g, "_")
+                        }/${req.body.name
+                          .replace(/\/?\s+/g, "_")
+                          .replace(/[^\w\s]/gi, "")}`
+                      ),
+                      (err) => {
+                        errCheck(err);
+                        Gallery.findOne(
+                          { _id: mongodb.ObjectId(req.params.id) },
+                          (err, updated) => {
+                            errCheck(err);
+                            res.status(200).json(updated);
+                          }
+                        );
                       }
                     );
                   }
-                }
-              );
-              console.log(req.body.name);
-            }
+                );
+              }
+            );
           }
         );
       }
@@ -170,29 +150,23 @@ module.exports = {
     }
   },
   delete: (req, res) => {
+    //delete gallery
     try {
       if (req.params.id) {
         Gallery.deleteOne(
           { _id: mongodb.ObjectId(req.params.id) },
           (err, deleted) => {
-            if (err) {
-              console.log(err);
-              return res.status(500).json(err);
-            } else {
-              res.status(200).json(deleted);
-              console.log("gallery deleted");
-            }
+            errCheck(err);
+            res.status(200).json(deleted);
           }
         );
       }
     } catch (err) {
-      res.status(500).json("server error");
+      errCheck(err);
     }
   },
   create: (req, res) => {
-    console.log(req.body);
     let file;
-
     try {
       let gallery = {
         name: req.body.name,
@@ -214,13 +188,11 @@ module.exports = {
             console.error(err);
             return res.status(500).send(err);
           }
+          //resize thumbnail
           Jimp.read(
             `${__dirname}/../uploads/tmp/${file.name}`,
             (err, thumbnail) => {
-              if (err) {
-                console.log(err);
-                return res.status(500).json(err);
-              }
+              errCheck(err);
               thumbnail
                 .resize(480, Jimp.AUTO) // resize
                 .write("thumb.jpg"); // save
@@ -232,10 +204,7 @@ module.exports = {
       }
       function finish(newGallery) {
         file.mv(`${galleryPath}/thumb.jpg`, (err) => {
-          if (err) {
-            console.error(err);
-            return res.status(500).send(err);
-          }
+          errCheck(err);
           res.status(200).json(newGallery);
           console.log("gallery created");
         });
@@ -243,53 +212,36 @@ module.exports = {
 
       function createNewGallery() {
         Gallery.create(gallery, (err, newGallery) => {
-          if (err) {
-            console.log(err);
-            return res.status(500).json(err);
-          } else {
-            if (file) {
-              if (fs.existsSync(galleryPath)) {
-                if (fs.existsSync(`${galleryPath}/thumbs`)) {
-                  finish(newGallery);
-                } else {
-                  fs.mkdir(`${galleryPath}/thumbs`, (err) => {
-                    if (err) {
-                      console.error(err);
-                      return res.status(500).send(err);
-                    }
-                    finish(newGallery);
-                  });
-                }
+          errCheck(err);
+          if (file) {
+            if (fs.existsSync(galleryPath)) {
+              if (fs.existsSync(`${galleryPath}/thumbs`)) {
+                finish(newGallery);
               } else {
-                fs.mkdir(galleryPath, (err) => {
-                  if (err) {
-                    console.error(err);
-                    return res.status(500).send(err);
-                  }
-                  fs.mkdir(`${galleryPath}/thumbs`, (err) => {
-                    if (err) {
-                      console.error(err);
-                      return res.status(500).send(err);
-                    }
-                    finish(newGallery);
-                  });
+                fs.mkdir(`${galleryPath}/thumbs`, (err) => {
+                  errCheck(err);
+                  finish(newGallery);
                 });
               }
             } else {
-              res.status(200).json(newGallery);
-              console.log("gallery created");
+              fs.mkdir(galleryPath, (err) => {
+                errCheck(err);
+                fs.mkdir(`${galleryPath}/thumbs`, (err) => {
+                  errCheck(err);
+                  finish(newGallery);
+                });
+              });
             }
-            // res.status(200).json(newGallery);
-            // console.log("gallery created");
+          } else {
+            res.status(200).json(newGallery);
           }
         });
       }
     } catch (err) {
-      res.status(500).json("server error");
+      errCheck(err);
     }
   },
   reorder: (req, res) => {
-    console.log("updating gallery order");
     try {
       if (req.body) {
         for (let i = 0; i < req.body.length; i++) {
@@ -297,10 +249,7 @@ module.exports = {
             { _id: mongodb.ObjectId(req.body[i]._id) },
             { order: req.body[i].order },
             (err, gallery) => {
-              if (err) {
-                console.error(err);
-                return res.status(500).send(err);
-              }
+              errCheck(err);
               if (i == req.body.length - 1) {
                 res.json("successfully updated all galleries");
               }
@@ -309,8 +258,7 @@ module.exports = {
         }
       }
     } catch (err) {
-      console.log(err);
-      res.status(500).json("server error");
+      errCheck(err);
     }
   },
   editThumb: (req, res) => {
@@ -322,20 +270,14 @@ module.exports = {
           : thumb.category.replace(/\/?\s+/g, "_")
       }/${thumb.gallery.replace(/\/?\s+/g, "_").replace(/[^\w\s]/gi, "")}`;
       Jimp.read(`${galleryPath}/${thumb.location}`, (err, thumbnail) => {
-        if (err) {
-          console.log(err);
-          return res.status(500).json(err);
-        }
+        errCheck(err);
         thumbnail
           .resize(480, Jimp.AUTO) // resize
           .write(`${galleryPath}/thumb.jpg`); // save
         res.json(thumbnail);
       });
     } catch (err) {
-      console.log(err);
-      res.status(500).json("server error");
+      errCheck(err);
     }
-    // console.log(req.body);
-    // res.json(req.body);
   },
 };

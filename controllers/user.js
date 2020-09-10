@@ -5,6 +5,13 @@ const bcrypt = require("bcrypt"),
   { OAuth2Client } = require("google-auth-library"),
   keys = require("../config/keys.js");
 
+function errCheck(err) {
+  if (err) {
+    console.log(err);
+    return res.status(500).json({ err });
+  }
+}
+
 module.exports = {
   verify: (req, res) => {
     try {
@@ -27,6 +34,7 @@ module.exports = {
       res.sendStatus(403);
     }
   },
+  //signup route is disabled
   signup: (req, res) => {
     console.log(req.body.email);
     // Check to see if email is already in db
@@ -95,8 +103,7 @@ module.exports = {
         }
       })
       .catch((err) => {
-        console.log(err);
-        res.status(500).json({ err });
+        errCheck(err);
       });
   },
 
@@ -125,10 +132,7 @@ module.exports = {
           bcrypt.compare(data.password, users[0].password, (err, match) => {
             console.log(match);
             // If the compare function breaks, let them know
-            if (err) {
-              console.log(err);
-              return res.status(500).json({ err });
-            }
+            errCheck(err);
             // If match is true (their password matches our db password)
             if (match) {
               console.log("MATCH: ", match);
@@ -166,84 +170,77 @@ module.exports = {
           });
         })
         .catch((err) => {
-          console.log("OUTSIDE ERROR_");
-          console.log(err);
-          res.status(500).json({ err });
+          errCheck(err);
         });
     } catch (err) {
-      res.status(500).json({ err });
+      errCheck(err);
     }
   },
   googleLogin: (req, res) => {
-    let token = req.body.token;
-    const { OAuth2Client } = require("google-auth-library");
-    const client = new OAuth2Client(config.google.clientID);
-    async function verify() {
-      const ticket = await client.verifyIdToken({
-        idToken: token,
-        audience: config.google.clientID,
-      });
-      const payload = ticket.getPayload();
-      const userid = payload["sub"];
-      return payload;
-    }
-    verify()
-      .then((payload) => {
-        console.log(payload);
-        try {
-          db.User.findOne({ email: payload.email }, (err, user) => {
-            // console.log(user);
-            if (user) {
-              let verifiedUser = {
-                email: user.email,
-                _id: user._id,
-              };
-              jwt.sign(
-                verifiedUser,
-                config.jwtSecret,
-                {
-                  // its good practice to have an expiration amount for jwt tokens.
-                  expiresIn: "24h",
-                },
-                (err, signedJwt) => {
-                  if (err) {
-                    console.log(err);
-                    res.status(403).json({ message: "Auth failed" });
-                  } else {
-                    res.status(200).json({
-                      message: "Auth successful",
-                      user,
-                      signedJwt,
-                    });
+    try {
+      let token = req.body.token;
+      const { OAuth2Client } = require("google-auth-library");
+      const client = new OAuth2Client(config.google.clientID);
+      async function verify() {
+        const ticket = await client.verifyIdToken({
+          idToken: token,
+          audience: config.google.clientID,
+        });
+        const payload = ticket.getPayload();
+        const userid = payload["sub"];
+        return payload;
+      }
+      verify()
+        .then((payload) => {
+          console.log(payload);
+          try {
+            db.User.findOne({ email: payload.email }, (err, user) => {
+              // console.log(user);
+              if (user) {
+                let verifiedUser = {
+                  email: user.email,
+                  _id: user._id,
+                };
+                jwt.sign(
+                  verifiedUser,
+                  config.jwtSecret,
+                  {
+                    // its good practice to have an expiration amount for jwt tokens.
+                    expiresIn: "24h",
+                  },
+                  (err, signedJwt) => {
+                    if (err) {
+                      console.log(err);
+                      res.status(403).json({ message: "Auth failed" });
+                    } else {
+                      res.status(200).json({
+                        message: "Auth successful",
+                        user,
+                        signedJwt,
+                      });
+                    }
                   }
-                }
-              );
-            } else {
-              res.status(401).json({ message: "Not an authorized user" });
-            }
-          });
-        } catch (err) {}
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+                );
+              } else {
+                res.status(401).json({ message: "Not an authorized user" });
+              }
+            });
+          } catch (err) {
+            errCheck(err);
+          }
+        })
+        .catch((err) => {
+          errCheck(err);
+        });
+    } catch (err) {
+      errCheck(err);
+    }
   },
-  // show: (req, res) => {
-  //   console.log("trigger Show", req.userId);
-  //   if (req.userId) {
-  //     db.User.findById(req.userId, (err, foundUser) => {
-  //       res.json(foundUser);
-  //     });
-  //   } else {
-  //     res.json("No user Id provided");
-  //   }
-  // },
+
   delete: (req, res) => {
     console.log("hitting delete");
     db.User.deleteOne({ _id: req.params.userId }, (err, result) => {
-      if (err) {
-        return res.status(500).json({ err });
-      }
+      errCheck(err);
       res.status(200).json({ result });
     });
   },

@@ -3,76 +3,87 @@ const About = require("../Models/About"),
   Jimp = require("jimp"),
   path = require("path");
 
+function errCheck(err) {
+  if (err) {
+    console.log(err);
+    return res.status(500).json({ err });
+  }
+}
+
 module.exports = {
+  //return all about page fields
   all: (req, res) => {
-    About.findOne({}, (err, about) => {
-      if (err) {
-        res.status(404).json("unable to get about page content");
-        return console.log(err);
-      }
-      res.status(200).json(about);
-    });
-  },
-  update: (req, res) => {
-    console.log(req.body);
-    About.updateOne({}, req.body, (err, about) => {
-      if (err) {
-        res.status(404).json("unable to update about page");
-        return console.log(err);
-      }
+    try {
       About.findOne({}, (err, about) => {
         if (err) {
-          res.status(404).json("unable to get about page content");
-          return console.log(err);
+          res.status(500).json("unable to get about page content");
+          return;
         }
         res.status(200).json(about);
       });
-    });
+    } catch (err) {
+      errCheck(err);
+    }
   },
-  profilePic: (req, res) => {
-    console.log("profile pic update request received");
 
-    if (req.files === null) {
-      return res.status(400).json({ msg: "No file uploaded" });
-    }
-    const file = req.files.file;
-    function checkAndDelete(filePath) {
-      if (fs.existsSync(filePath)) {
-        fs.unlinkSync(filePath);
-      }
-    }
+  update: (req, res) => {
     try {
-      file.mv(`${__dirname}/../uploads/tmp/${file.name}`, (err) => {
+      About.updateOne({}, req.body, (err, about) => {
         if (err) {
-          console.error(err);
-          return res.status(500).send(err);
+          res.status(404).json("unable to update about page");
+          return console.log(err);
         }
-        Jimp.read(
-          `${__dirname}/../uploads/tmp/${file.name}`,
-          (err, resized) => {
-            if (err) {
-              console.log(err);
-              return res.status(500).json(err);
-            }
-            resized
-              .resize(480, Jimp.AUTO) // resize
-              .write(`${file.name}.jpg`); // save
-            console.log(file);
-            checkAndDelete(`${__dirname}/../uploads/about/profile-pic.jpg`);
-            file.mv(`${__dirname}/../uploads/about/profile-pic.jpg`, (err) => {
-              if (err) {
-                console.error(err);
-                return res.status(500).send(err);
-              }
-              checkAndDelete(`${__dirname}/../uploads/tmp/${file.name}`);
-              res.status(200).json("profile-pic-uploaded");
-            });
+        About.findOne({}, (err, about) => {
+          if (err) {
+            res.status(404).json("unable to get about page content");
+            return console.log(err);
           }
-        );
+          res.status(200).json(about);
+        });
       });
     } catch (err) {
-      console.log(err);
-      return res.status(500).json(err);
+      errCheck(err);
+    }
+  },
+  profilePic: (req, res) => {
+    try {
+      if (req.files === null) {
+        return res.status(400).json({ msg: "No file uploaded" });
+      }
+      const file = req.files.file;
+      function checkAndDelete(filePath) {
+        if (fs.existsSync(filePath)) {
+          fs.unlinkSync(filePath);
+        }
+      }
+      try {
+        file.mv(`${__dirname}/../uploads/tmp/${file.name}`, (err) => {
+          errCheck(err);
+          Jimp.read(
+            `${__dirname}/../uploads/tmp/${file.name}`,
+            (err, resized) => {
+              errCheck(err);
+              resized
+                .resize(480, Jimp.AUTO) // resize
+                .write(`${file.name}.jpg`); // save
+              console.log(file);
+              checkAndDelete(`${__dirname}/../uploads/about/profile-pic.jpg`);
+              file.mv(
+                `${__dirname}/../uploads/about/profile-pic.jpg`,
+                (err) => {
+                  errCheck(err);
+                  checkAndDelete(`${__dirname}/../uploads/tmp/${file.name}`);
+                  res.status(200).json("profile-pic-uploaded");
+                }
+              );
+            }
+          );
+        });
+      } catch (err) {
+        errCheck(err);
+      }
+    } catch (err) {
+      errCheck(err);
     }
   },
 };

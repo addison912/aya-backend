@@ -54,93 +54,100 @@ module.exports = {
   },
 
   delete: (req, res) => {
-    console.log(`deleting photo: ${req.params.id}`);
-    location = req.params.location;
-    db.Gallery.findOne(
-      { "photos._id": mongodb.ObjectId(req.params.id) },
-      (err, gallery) => {
-        errCheck(err);
-        console.log(gallery);
-        if (gallery && location) {
-          try {
-            fs.unlinkSync(
-              `${__dirname}/../uploads/photos/${
-                gallery.category.toLowerCase() == "advertising"
-                  ? "Client-Work"
-                  : gallery.category.replace(/\/?\s+/g, "_")
-              }/${gallery.name.replace(/\/?\s+/g, "-")}/${location}`
-            );
-            fs.unlinkSync(
-              `${__dirname}/../uploads/photos/${
-                gallery.category.toLowerCase() == "advertising"
-                  ? "Client-Work"
-                  : gallery.category.replace(/\/?\s+/g, "_")
-              }/${gallery.name
-                .replace(/\/?\s+/g, "_")
-                .replace(/[^\w\s]/gi, "")}/thumbs/${location}`
-            );
-          } catch (err) {
-            errCheck(err);
-          }
-          db.Gallery.updateOne(
-            { name: gallery.name, category: gallery.category },
-            {
-              $pull: { photos: { _id: mongodb.ObjectId(req.params.id) } },
-            },
-            (err, photo) => {
+    try {
+      location = req.params.location;
+      db.Gallery.findOne(
+        { "photos._id": mongodb.ObjectId(req.params.id) },
+        (err, gallery) => {
+          errCheck(err);
+          console.log(gallery);
+          if (gallery && location) {
+            try {
+              fs.unlinkSync(
+                `${__dirname}/../uploads/photos/${
+                  gallery.category.toLowerCase() == "advertising"
+                    ? "Client-Work"
+                    : gallery.category.replace(/\/?\s+/g, "_")
+                }/${gallery.name.replace(/\/?\s+/g, "-")}/${location}`
+              );
+              fs.unlinkSync(
+                `${__dirname}/../uploads/photos/${
+                  gallery.category.toLowerCase() == "advertising"
+                    ? "Client-Work"
+                    : gallery.category.replace(/\/?\s+/g, "_")
+                }/${gallery.name
+                  .replace(/\/?\s+/g, "_")
+                  .replace(/[^\w\s]/gi, "")}/thumbs/${location}`
+              );
+            } catch (err) {
               errCheck(err);
-              res.status(200).json({ message: "Photo successfully deleted" });
             }
-          );
-        }
-      }
-    );
-  },
-  addPhoto: (req, res) => {
-    if (req.files === null) {
-      return res.status(400).json({ msg: "No file uploaded" });
-    }
-
-    const file = req.files.file;
-    console.log(req.body);
-
-    let galleryPath = `${__dirname}/../uploads/photos/${
-      req.body.category.toLowerCase() == "advertising"
-        ? "Client-Work"
-        : req.body.category.replace(/\/?\s+/g, "_")
-    }/${req.body.gallery.replace(/\/?\s+/g, "_").replace(/[^\w\s]/gi, "")}`;
-
-    file.mv(`${galleryPath}/${file.name}`, (err) => {
-      errCheck(err);
-      console.log("resizing image for thumbnail");
-      Jimp.read(`${galleryPath}/${file.name}`, (err, thumbnail) => {
-        errCheck(err);
-        thumbnail
-          .resize(480, Jimp.AUTO) // resize
-          .write(`${galleryPath}/thumbs/${file.name}`); // save
-
-        let newPhoto = req.body;
-        newPhoto.location = file.name;
-        newPhoto._id = mongodb.ObjectID();
-        console.log(newPhoto);
-        db.Gallery.updateOne(
-          { _id: mongodb.ObjectId(req.params.id) },
-          {
-            $push: { photos: newPhoto },
-          },
-          (err, photo) => {
-            errCheck(err);
-            db.Gallery.findOne(
-              { _id: mongodb.ObjectId(req.params.id) },
-              (err, gallery) => {
+            db.Gallery.updateOne(
+              { name: gallery.name, category: gallery.category },
+              {
+                $pull: { photos: { _id: mongodb.ObjectId(req.params.id) } },
+              },
+              (err, photo) => {
                 errCheck(err);
-                res.status(200).json(gallery);
+                res.status(200).json({ message: "Photo successfully deleted" });
               }
             );
           }
-        );
+        }
+      );
+    } catch (err) {
+      errCheck(err);
+    }
+  },
+  addPhoto: (req, res) => {
+    try {
+      if (req.files === null) {
+        return res.status(400).json({ msg: "No file uploaded" });
+      }
+
+      const file = req.files.file;
+      console.log(req.body);
+
+      let galleryPath = `${__dirname}/../uploads/photos/${
+        req.body.category.toLowerCase() == "advertising"
+          ? "Client-Work"
+          : req.body.category.replace(/\/?\s+/g, "_")
+      }/${req.body.gallery.replace(/\/?\s+/g, "_").replace(/[^\w\s]/gi, "")}`;
+
+      file.mv(`${galleryPath}/${file.name}`, (err) => {
+        errCheck(err);
+        console.log("resizing image for thumbnail");
+        Jimp.read(`${galleryPath}/${file.name}`, (err, thumbnail) => {
+          errCheck(err);
+          thumbnail
+            .resize(480, Jimp.AUTO) // resize
+            .write(`${galleryPath}/thumbs/${file.name}`); // save
+
+          let newPhoto = req.body;
+          newPhoto.location = file.name;
+          newPhoto._id = mongodb.ObjectID();
+          console.log(newPhoto);
+          db.Gallery.updateOne(
+            { _id: mongodb.ObjectId(req.params.id) },
+            {
+              $push: { photos: newPhoto },
+            },
+            (err, photo) => {
+              errCheck(err);
+              db.Gallery.findOne(
+                { _id: mongodb.ObjectId(req.params.id) },
+                (err, gallery) => {
+                  errCheck(err);
+                  res.status(200).json(gallery);
+                }
+              );
+            }
+          );
+        });
       });
-    });
+    } catch (err) {
+      errCheck(err);
+    }
   },
   copy: (req, res) => {
     let photo = req.body.photo;
@@ -246,7 +253,6 @@ module.exports = {
               (err, gallery) => {
                 errCheck(err);
                 if (req.body.reordered.photos) {
-                  // console.log(req.body.reordered);
                   let photos = req.body.reordered.photos;
                   console.log("updating photos");
                   for (i = 0; i < photos.length; i++) {
@@ -269,13 +275,9 @@ module.exports = {
                             db.Gallery.findOne(
                               { name: req.body.newPhoto.gallery },
                               (err, gallery) => {
-                                if (err) {
-                                  console.log(err);
-                                  return res.status(500).json({ err });
-                                } else {
-                                  console.log("sending response");
-                                  res.status(200).json(gallery);
-                                }
+                                errCheck(err);
+                                console.log("sending response");
+                                res.status(200).json(gallery);
                               }
                             );
                           }
