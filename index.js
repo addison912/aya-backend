@@ -66,7 +66,7 @@ function verifyToken(req, res, next) {
 }
 
 app.get("/api/test", function (req, res) {
-  res.json({ message: "Hello World" });
+  res.status(200).json({ message: "Hello World" });
 });
 
 const port = process.env.PORT || config.port;
