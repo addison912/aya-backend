@@ -86,4 +86,17 @@ module.exports = {
       errCheck(err);
     }
   },
+  test: (req, res) => {
+    try {
+      About.findOne({}, (err, about) => {
+        if (err) {
+          res.status(500).json("unable to get about page content");
+          return;
+        }
+        res.status(200).json({});
+      });
+    } catch (err) {
+      errCheck(err);
+    }
+  },
 };

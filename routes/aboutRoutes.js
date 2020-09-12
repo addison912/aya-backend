@@ -6,6 +6,7 @@ const express = require("express"),
 
 module.exports = router
   .get("/all", controllers.about.all)
+  .get("/test", controllers.about.test)
   .post("/edit", verifyToken, controllers.about.update)
   .post("/profile-pic", verifyToken, controllers.about.profilePic)
   .get("/test", function (req, res) {
