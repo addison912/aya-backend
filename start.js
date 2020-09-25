@@ -1,5 +1,7 @@
 const { exec } = require("child_process");
 
+start();
+
 function start() {
   exec("pm2 start index.js", (error, stdout, stderr) => {
     if (error) {
