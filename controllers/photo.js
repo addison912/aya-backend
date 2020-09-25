@@ -43,7 +43,7 @@ module.exports = {
                 });
               }
             });
-            console.log(response);
+            // console.log(response);
             res.status(200).json(response);
           }
         );
@@ -60,25 +60,21 @@ module.exports = {
         { "photos._id": mongodb.ObjectId(req.params.id) },
         (err, gallery) => {
           errCheck(err);
-          console.log(gallery);
+          // console.log(gallery);
           if (gallery && location) {
             try {
-              fs.unlinkSync(
-                `${__dirname}/../uploads/photos/${
-                  gallery.category.toLowerCase() == "advertising"
-                    ? "Client-Work"
-                    : gallery.category.replace(/\/?\s+/g, "_")
-                }/${gallery.name.replace(/\/?\s+/g, "-")}/${location}`
-              );
-              fs.unlinkSync(
-                `${__dirname}/../uploads/photos/${
-                  gallery.category.toLowerCase() == "advertising"
-                    ? "Client-Work"
-                    : gallery.category.replace(/\/?\s+/g, "_")
-                }/${gallery.name
-                  .replace(/\/?\s+/g, "_")
-                  .replace(/[^\w\s]/gi, "")}/thumbs/${location}`
-              );
+              let directory = `${__dirname}/../uploads/photos/${
+                gallery.category.toLowerCase() == "advertising"
+                  ? "Client-Work"
+                  : gallery.category.replace(/\/?\s+/g, "_")
+              }/${gallery.name.replace(/\/?\s+/g, "-")}`;
+
+              if (fs.existsSync(`${directory}/${location}`)) {
+                fs.unlinkSync(`${directory}/${location}`);
+              }
+              if (fs.existsSync(`${directory}/thumbs/${location}`)) {
+                fs.unlinkSync(`${directory}/thumbs/${location}`);
+              }
             } catch (err) {
               errCheck(err);
             }
@@ -106,7 +102,7 @@ module.exports = {
       }
 
       const file = req.files.file;
-      console.log(req.body);
+      // console.log(req.body);
 
       let galleryPath = `${__dirname}/../uploads/photos/${
         req.body.category.toLowerCase() == "advertising"
@@ -116,7 +112,7 @@ module.exports = {
 
       file.mv(`${galleryPath}/${file.name}`, (err) => {
         errCheck(err);
-        console.log("resizing image for thumbnail");
+        // console.log("resizing image for thumbnail");
         Jimp.read(`${galleryPath}/${file.name}`, (err, thumbnail) => {
           errCheck(err);
           thumbnail
@@ -126,7 +122,7 @@ module.exports = {
           let newPhoto = req.body;
           newPhoto.location = file.name;
           newPhoto._id = mongodb.ObjectID();
-          console.log(newPhoto);
+          // console.log(newPhoto);
           db.Gallery.updateOne(
             { _id: mongodb.ObjectId(req.params.id) },
             {
@@ -254,7 +250,7 @@ module.exports = {
                 errCheck(err);
                 if (req.body.reordered.photos) {
                   let photos = req.body.reordered.photos;
-                  console.log("updating photos");
+                  // console.log("updating photos");
                   for (i = 0; i < photos.length; i++) {
                     if (photos[i]._id && photos[i].order) {
                       let final = i == photos.length - 1;
@@ -276,7 +272,7 @@ module.exports = {
                               { name: req.body.newPhoto.gallery },
                               (err, gallery) => {
                                 errCheck(err);
-                                console.log("sending response");
+                                // console.log("sending response");
                                 res.status(200).json(gallery);
                               }
                             );
@@ -284,19 +280,19 @@ module.exports = {
                         }
                       );
                     } else if (i == photos.length - 1) {
-                      console.log("getting updated gallery");
+                      // console.log("getting updated gallery");
                       db.Gallery.findOne(
                         { name: req.body.newPhoto.gallery },
                         (err, gallery) => {
                           errCheck(err);
-                          console.log("sending response");
+                          // console.log("sending response");
                           res.status(200).json(gallery);
                         }
                       );
                     }
                   }
                 } else {
-                  console.log(gal);
+                  // console.log(gal);
                   res.status(200).json(gallery);
                 }
               }

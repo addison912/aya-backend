@@ -96,7 +96,9 @@ module.exports = {
 
       function deletePhotoFile(photo) {
         try {
-          fs.unlinkSync(`${__dirname}/../uploads/news/${photo.location}`);
+          if (fs.existsSync(`${__dirname}/../uploads/news/${photo.location}`)) {
+            fs.unlinkSync(`${__dirname}/../uploads/news/${photo.location}`);
+          }
         } catch (err) {
           console.log(err);
         }
@@ -234,9 +236,15 @@ module.exports = {
         if (post && post.photos) {
           for (let i = 0; i < post.photos.length; i++) {
             try {
-              fs.unlinkSync(
-                `${__dirname}/../uploads/news/${post.photos[i].location}`
-              );
+              if (
+                fs.existsSync(
+                  `${__dirname}/../uploads/news/${post.photos[i].location}`
+                )
+              ) {
+                fs.unlinkSync(
+                  `${__dirname}/../uploads/news/${post.photos[i].location}`
+                );
+              }
             } catch (err) {
               errCheck(err);
             }
