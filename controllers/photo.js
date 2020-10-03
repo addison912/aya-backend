@@ -116,7 +116,7 @@ module.exports = {
         Jimp.read(`${galleryPath}/${file.name}`, (err, thumbnail) => {
           errCheck(err);
           thumbnail
-            .resize(480, Jimp.AUTO) // resize
+            .resize(1000, Jimp.AUTO) // resize
             .write(`${galleryPath}/thumbs/${file.name}`); // save
 
           let newPhoto = req.body;

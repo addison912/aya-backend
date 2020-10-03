@@ -194,7 +194,7 @@ module.exports = {
             (err, thumbnail) => {
               errCheck(err);
               thumbnail
-                .resize(480, Jimp.AUTO) // resize
+                .resize(1000, Jimp.AUTO) // resize
                 .write("thumb.jpg"); // save
               console.log(file);
               createNewGallery();
@@ -272,7 +272,7 @@ module.exports = {
       Jimp.read(`${galleryPath}/${thumb.location}`, (err, thumbnail) => {
         errCheck(err);
         thumbnail
-          .resize(480, Jimp.AUTO) // resize
+          .resize(1000, Jimp.AUTO) // resize
           .write(`${galleryPath}/thumb.jpg`); // save
         res.json(thumbnail);
       });

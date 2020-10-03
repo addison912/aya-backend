@@ -80,10 +80,10 @@ module.exports = {
                   jwt.sign(
                     user,
                     config.jwtSecret,
-                    {
-                      // its good practice to have an expiration amount for jwt tokens.
-                      expiresIn: "24h",
-                    },
+                    // {
+                    //   // its good practice to have an expiration amount for jwt tokens.
+                    //   expiresIn: "24h",
+                    // },
                     (err, signedJwt) => {
                       if (err) {
                         return res.status(500).json({ err });
@@ -145,10 +145,10 @@ module.exports = {
               jwt.sign(
                 user,
                 config.jwtSecret,
-                {
-                  // its good practice to have an expiration amount for jwt tokens.
-                  expiresIn: "24h",
-                },
+                // {
+                //   // its good practice to have an expiration amount for jwt tokens.
+                //   expiresIn: "24h",
+                // },
                 (err, signedJwt) => {
                   if (err) {
                     console.log(err);
@@ -204,10 +204,10 @@ module.exports = {
                 jwt.sign(
                   verifiedUser,
                   config.jwtSecret,
-                  {
-                    // its good practice to have an expiration amount for jwt tokens.
-                    expiresIn: "24h",
-                  },
+                  // {
+                  //   // its good practice to have an expiration amount for jwt tokens.
+                  //   expiresIn: "24h",
+                  // },
                   (err, signedJwt) => {
                     if (err) {
                       console.log(err);
