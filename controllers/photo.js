@@ -54,34 +54,46 @@ module.exports = {
   },
   resize: (req, res) => {
     try {
-      console.log(req.body);
+      console.log("resize started");
       location = req.body.location;
+      console.log(location);
       db.Gallery.findOne(
         { "photos._id": mongodb.ObjectId(req.body._id) },
         (err, gallery) => {
           errCheck(err);
-          // console.log(gallery);
+          console.log(gallery.name);
           if (gallery && location) {
             try {
               let directory = `${__dirname}/../uploads/photos/${
                 gallery.category.toLowerCase() == "advertising"
                   ? "Client-Work"
                   : gallery.category.replace(/\/?\s+/g, "_")
-              }/${gallery.name.replace(/\/?\s+/g, "-")}`;
-
+              }/${gallery.name.replace(/\/?\s+/g, "_")}`;
+              console.log(directory);
               if (
                 fs.existsSync(`${directory}/thumbs/${location}`) &&
                 fs.existsSync(`${directory}/${location}`)
               ) {
+                console.log("image found");
                 fs.unlinkSync(`${directory}/thumbs/${location}`);
                 Jimp.read(`${directory}/${location}`, (err, thumbnail) => {
                   errCheck(err);
-                  thumbnail
-                    .resize(1000, Jimp.AUTO) // resize
-                    .write(`${directory}/thumbs/${location}`); // save
-                  res
-                    .status(200)
-                    .json({ message: "Photo successfully resized" });
+                  console.log("here");
+                  let image = new Jimp(`${directory}/${location}`, function (
+                    err,
+                    image
+                  ) {
+                    errCheck(err);
+                    let w =
+                      image.bitmap.width > 1000 ? 1000 : image.bitmap.width; //  width of the image
+                    console.log(w);
+                    thumbnail
+                      .resize(w, Jimp.AUTO) // resize
+                      .write(`${directory}/thumbs/${location}`); // save
+                    res
+                      .status(200)
+                      .json({ message: "Photo successfully resized" });
+                  });
                 });
               }
             } catch (err) {
@@ -108,7 +120,7 @@ module.exports = {
                 gallery.category.toLowerCase() == "advertising"
                   ? "Client-Work"
                   : gallery.category.replace(/\/?\s+/g, "_")
-              }/${gallery.name.replace(/\/?\s+/g, "-")}`;
+              }/${gallery.name.replace(/\/?\s+/g, "_")}`;
 
               if (fs.existsSync(`${directory}/${location}`)) {
                 fs.unlinkSync(`${directory}/${location}`);
