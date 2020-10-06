@@ -52,7 +52,48 @@ module.exports = {
       errCheck(err);
     }
   },
+  resize: (req, res) => {
+    try {
+      console.log(req.body);
+      location = req.body.location;
+      db.Gallery.findOne(
+        { "photos._id": mongodb.ObjectId(req.body._id) },
+        (err, gallery) => {
+          errCheck(err);
+          // console.log(gallery);
+          if (gallery && location) {
+            try {
+              let directory = `${__dirname}/../uploads/photos/${
+                gallery.category.toLowerCase() == "advertising"
+                  ? "Client-Work"
+                  : gallery.category.replace(/\/?\s+/g, "_")
+              }/${gallery.name.replace(/\/?\s+/g, "-")}`;
 
+              if (
+                fs.existsSync(`${directory}/thumbs/${location}`) &&
+                fs.existsSync(`${directory}/${location}`)
+              ) {
+                fs.unlinkSync(`${directory}/thumbs/${location}`);
+                Jimp.read(`${directory}/${location}`, (err, thumbnail) => {
+                  errCheck(err);
+                  thumbnail
+                    .resize(1000, Jimp.AUTO) // resize
+                    .write(`${directory}/thumbs/${location}`); // save
+                  res
+                    .status(200)
+                    .json({ message: "Photo successfully resized" });
+                });
+              }
+            } catch (err) {
+              errCheck(err);
+            }
+          }
+        }
+      );
+    } catch (err) {
+      errCheck(err);
+    }
+  },
   delete: (req, res) => {
     try {
       location = req.params.location;

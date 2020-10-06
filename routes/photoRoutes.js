@@ -16,6 +16,7 @@ module.exports = router
     console.log("test successful");
   })
   .post("/add/:id", verifyToken, controllers.photo.addPhoto)
+  .post("/resize", verifyToken, controllers.photo.resize)
   .post("/copy", verifyToken, controllers.photo.copy);
 
 // Verify Token
