@@ -1,4 +1,4 @@
-const db = require("./Models");
+const db = require("../Models");
 
 let shop_items = [
   {

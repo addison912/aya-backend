@@ -1,4 +1,4 @@
-const db = require("./Models");
+const db = require("../Models");
 
 let photos = [
   {
@@ -4598,21 +4598,21 @@ function createGalleries() {
         category: galleryData.category,
         order: galleryData.order,
       });
-      db.Photo.find({ gallery: galleryData.name }, function (
-        err,
-        foundGalleries
-      ) {
-        if (err) {
-          console.log(err);
-          return;
-        }
-        gallery.photos = foundGalleries;
-        gallery.save((err, savedGallery) => {
+      db.Photo.find(
+        { gallery: galleryData.name },
+        function (err, foundGalleries) {
           if (err) {
             console.log(err);
+            return;
           }
-        });
-      });
+          gallery.photos = foundGalleries;
+          gallery.save((err, savedGallery) => {
+            if (err) {
+              console.log(err);
+            }
+          });
+        }
+      );
     });
   });
 }

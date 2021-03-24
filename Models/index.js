@@ -5,10 +5,8 @@ mongoose.Promise = Promise;
 
 mongoose
   .connect(config.db, {
-    // retry to connect for 60 times
-    reconnectTries: 60,
-    // wait 1 second before retrying
-    reconnectInterval: 1000,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
   })
   .then((connection) => console.log("Connection established!"))
   .catch((err) => console.log("Connection failed!", err));
